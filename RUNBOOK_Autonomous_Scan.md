@@ -1,4 +1,4 @@
-# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.1, 2026-07-20)
+# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.2, 2026-07-20)
 
 **Purpose:** lets any fresh Claude session reproduce the full scan with zero rebuilding.
 Governing document: `Cowork_Watchlist_Scan_Prompt_v1.md` (project knowledge). This runbook is
@@ -32,11 +32,21 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 3. `python3 run_scan.py <data_dir>` — integrity checks + full classification (results.json).
 4. Confirm SPY's last bar date == the most recent completed US session. Weekend runs (Sat/Sun SGT)
    use Weekend Mode per Section 8; weekday runs produce the standard daily brief per Section 6.
-5. Cross-verify at least SPY + 2 random names against an independent web source (e.g.
-   stockanalysis.com history pages) and say in Section E exactly what was verified live.
-6. Earnings filter: only for names reaching Category B (and evening-watch courtesy checks),
-   via the Alpha Vantage connector if available in the session, else WebSearch. Free AV tier:
-   25 calls/day, 5/min — budget accordingly.
+5. Cross-verify at least SPY + 2 random names, last 3 daily bars each. VERIFICATION SOURCE ORDER
+   (web first, connector last — so an unattended run never stalls on an MCP permission card):
+   a. WebFetch a public history page — try stockanalysis.com/stocks/<sym>/history/ (and /etf/<sym>/
+      for ETFs); these worked in the manual build run;
+   b. if WebFetch is blocked/empty, try one alternate web source before giving up;
+   c. ONLY if all web routes fail AND the Alpha Vantage connector is already permitted this session,
+      use it — do NOT trigger a fresh connector-permission prompt in an unattended run;
+   d. if nothing verifies, ship the reports anyway and state in Section E that live cross-verification
+      was unavailable this run (carried-forward, single-source Yahoo). Never block delivery on it.
+   Say in Section E exactly which source verified which symbols.
+6. Earnings filter: only for names reaching Category B (and evening-watch courtesy checks). Same
+   source order — WebSearch first (query "<TICKER> next earnings date"); use the Alpha Vantage
+   earnings calendar only if already permitted this session. AV's calendar has gaps (e.g. UNH
+   returned no date on 3/6/12-month horizons on 2026-07-20) — if a date can't be verified from any
+   source, mark it UNVERIFIED and flag it; never fabricate. Free AV tier: 25 calls/day, 5/min.
 7. `render_reports.py` (adjust RUN_STAMP/LAST_BAR constants) → three dated reports.
    DELIVERY ORDER (durable first, cosmetic last):
    a. SendUserFile the three .md reports immediately (always available in Cowork sessions);
@@ -52,6 +62,11 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 - TEST FIRE LESSON (2026-07-19): a scheduled fresh session was created with a restricted tool
   context (no project access). v1.1 therefore makes the GitHub repo the canonical source for
   scripts and requires delivery via SendUserFile first, project writes best-effort.
+- v1.2 LESSON (2026-07-20): test fire #2 PASSED (9 uptrends, 4 approaching, 0 rejection candles,
+  regime FAILING/MIXED — matched the manual run) but chose the Alpha Vantage connector for
+  cross-verification and hit "Claude wants to use Time Series" permission cards an unattended run
+  can't tap. v1.2 therefore makes cross-verification and earnings checks WEB-FIRST, connector
+  optional/only-if-already-permitted, and never a blocker on delivery (step 5/6 above).
 
 - Data repo (LIVE, verified 2026-07-20): https://github.com/drphy68/Watchlist-data - fetch Action
   runs Tue-Sat 09:30 SGT; dress rehearsal reproduced the manual run's classifications exactly.
