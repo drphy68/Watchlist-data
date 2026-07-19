@@ -1,0 +1,1442 @@
+{
+ "swing": [
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "AMEX",
+   "ticker": "SPY",
+   "tv": "AMEX:SPY"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "NASDAQ",
+   "ticker": "QQQ",
+   "tv": "NASDAQ:QQQ"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "AMEX",
+   "ticker": "IWM",
+   "tv": "AMEX:IWM"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "AMEX",
+   "ticker": "DIA",
+   "tv": "AMEX:DIA"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "AMEX",
+   "ticker": "XLF",
+   "tv": "AMEX:XLF"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "AMEX",
+   "ticker": "XLE",
+   "tv": "AMEX:XLE"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "NASDAQ",
+   "ticker": "SOXX",
+   "tv": "NASDAQ:SOXX"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "CBOE",
+   "ticker": "VIX",
+   "tv": "CBOE:VIX"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "ICEUS",
+   "ticker": "DXY",
+   "tv": "ICEUS:DXY"
+  },
+  {
+   "section": "REGIME & SECTOR",
+   "exchange": "OANDA",
+   "ticker": "XAUUSD",
+   "tv": "OANDA:XAUUSD"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "NVDA",
+   "tv": "NASDAQ:NVDA"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "MSFT",
+   "tv": "NASDAQ:MSFT"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "AAPL",
+   "tv": "NASDAQ:AAPL"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "AMZN",
+   "tv": "NASDAQ:AMZN"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "META",
+   "tv": "NASDAQ:META"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "GOOGL",
+   "tv": "NASDAQ:GOOGL"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "AMD",
+   "tv": "NASDAQ:AMD"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "AVGO",
+   "tv": "NASDAQ:AVGO"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NYSE",
+   "ticker": "TSM",
+   "tv": "NYSE:TSM"
+  },
+  {
+   "section": "MEGA-CAP LIQUID CORE",
+   "exchange": "NASDAQ",
+   "ticker": "MU",
+   "tv": "NASDAQ:MU"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "VST",
+   "tv": "NYSE:VST"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NASDAQ",
+   "ticker": "CEG",
+   "tv": "NASDAQ:CEG"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "VRT",
+   "tv": "NYSE:VRT"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "GEV",
+   "tv": "NYSE:GEV"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "ETN",
+   "tv": "NYSE:ETN"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "NRG",
+   "tv": "NYSE:NRG"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "BE",
+   "tv": "NYSE:BE"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NASDAQ",
+   "ticker": "POWL",
+   "tv": "NASDAQ:POWL"
+  },
+  {
+   "section": "SEMIS & HARDWARE",
+   "exchange": "NASDAQ",
+   "ticker": "ASML",
+   "tv": "NASDAQ:ASML"
+  },
+  {
+   "section": "SEMIS & HARDWARE",
+   "exchange": "NASDAQ",
+   "ticker": "ARM",
+   "tv": "NASDAQ:ARM"
+  },
+  {
+   "section": "SEMIS & HARDWARE",
+   "exchange": "NASDAQ",
+   "ticker": "MRVL",
+   "tv": "NASDAQ:MRVL"
+  },
+  {
+   "section": "SEMIS & HARDWARE",
+   "exchange": "NASDAQ",
+   "ticker": "WDC",
+   "tv": "NASDAQ:WDC"
+  },
+  {
+   "section": "SEMIS & HARDWARE",
+   "exchange": "NASDAQ",
+   "ticker": "SNDK",
+   "tv": "NASDAQ:SNDK"
+  },
+  {
+   "section": "SEMIS & HARDWARE",
+   "exchange": "NASDAQ",
+   "ticker": "TER",
+   "tv": "NASDAQ:TER"
+  },
+  {
+   "section": "SOFTWARE & PLATFORMS",
+   "exchange": "NASDAQ",
+   "ticker": "PLTR",
+   "tv": "NASDAQ:PLTR"
+  },
+  {
+   "section": "SOFTWARE & PLATFORMS",
+   "exchange": "NASDAQ",
+   "ticker": "CRWD",
+   "tv": "NASDAQ:CRWD"
+  },
+  {
+   "section": "SOFTWARE & PLATFORMS",
+   "exchange": "NYSE",
+   "ticker": "NOW",
+   "tv": "NYSE:NOW"
+  },
+  {
+   "section": "SOFTWARE & PLATFORMS",
+   "exchange": "NYSE",
+   "ticker": "CRM",
+   "tv": "NYSE:CRM"
+  },
+  {
+   "section": "SOFTWARE & PLATFORMS",
+   "exchange": "NYSE",
+   "ticker": "SNOW",
+   "tv": "NYSE:SNOW"
+  },
+  {
+   "section": "SOFTWARE & PLATFORMS",
+   "exchange": "NASDAQ",
+   "ticker": "HOOD",
+   "tv": "NASDAQ:HOOD"
+  },
+  {
+   "section": "METALS & ENERGY",
+   "exchange": "NYSE",
+   "ticker": "FCX",
+   "tv": "NYSE:FCX"
+  },
+  {
+   "section": "METALS & ENERGY",
+   "exchange": "AMEX",
+   "ticker": "GDX",
+   "tv": "AMEX:GDX"
+  },
+  {
+   "section": "METALS & ENERGY",
+   "exchange": "NASDAQ",
+   "ticker": "FANG",
+   "tv": "NASDAQ:FANG"
+  },
+  {
+   "section": "METALS & ENERGY",
+   "exchange": "NYSE",
+   "ticker": "SCCO",
+   "tv": "NYSE:SCCO"
+  },
+  {
+   "section": "METALS & ENERGY",
+   "exchange": "NYSE",
+   "ticker": "HBM",
+   "tv": "NYSE:HBM"
+  },
+  {
+   "section": "FINANCIALS",
+   "exchange": "NYSE",
+   "ticker": "BAC",
+   "tv": "NYSE:BAC"
+  },
+  {
+   "section": "FINANCIALS",
+   "exchange": "NYSE",
+   "ticker": "JPM",
+   "tv": "NYSE:JPM"
+  },
+  {
+   "section": "FINANCIALS",
+   "exchange": "NYSE",
+   "ticker": "GS",
+   "tv": "NYSE:GS"
+  },
+  {
+   "section": "EVENT-DRIVEN HALF-SIZE",
+   "exchange": "NASDAQ",
+   "ticker": "HONA",
+   "tv": "NASDAQ:HONA"
+  },
+  {
+   "section": "EVENT-DRIVEN HALF-SIZE",
+   "exchange": "NYSE",
+   "ticker": "VGNT",
+   "tv": "NYSE:VGNT"
+  },
+  {
+   "section": "HIGH-BETA WATCH ONLY",
+   "exchange": "NYSE",
+   "ticker": "OKLO",
+   "tv": "NYSE:OKLO"
+  },
+  {
+   "section": "HIGH-BETA WATCH ONLY",
+   "exchange": "NASDAQ",
+   "ticker": "WULF",
+   "tv": "NASDAQ:WULF"
+  },
+  {
+   "section": "HIGH-BETA WATCH ONLY",
+   "exchange": "NASDAQ",
+   "ticker": "MSTR",
+   "tv": "NASDAQ:MSTR"
+  },
+  {
+   "section": "HIGH-BETA WATCH ONLY",
+   "exchange": "NASDAQ",
+   "ticker": "RKLB",
+   "tv": "NASDAQ:RKLB"
+  },
+  {
+   "section": "HIGH-BETA WATCH ONLY",
+   "exchange": "NYSE",
+   "ticker": "CVNA",
+   "tv": "NYSE:CVNA"
+  }
+ ],
+ "investor": [
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NYSE",
+   "ticker": "V",
+   "tv": "NYSE:V"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NYSE",
+   "ticker": "MA",
+   "tv": "NYSE:MA"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "MSFT",
+   "tv": "NASDAQ:MSFT"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "AAPL",
+   "tv": "NASDAQ:AAPL"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NYSE",
+   "ticker": "ICE",
+   "tv": "NYSE:ICE"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "GOOGL",
+   "tv": "NASDAQ:GOOGL"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "AMZN",
+   "tv": "NASDAQ:AMZN"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "META",
+   "tv": "NASDAQ:META"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "AVGO",
+   "tv": "NASDAQ:AVGO"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NYSE",
+   "ticker": "TSM",
+   "tv": "NYSE:TSM"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "ASML",
+   "tv": "NASDAQ:ASML"
+  },
+  {
+   "section": "CORE QUALITY COMPOUNDERS",
+   "exchange": "NASDAQ",
+   "ticker": "MU",
+   "tv": "NASDAQ:MU"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NASDAQ",
+   "ticker": "MNST",
+   "tv": "NASDAQ:MNST"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NASDAQ",
+   "ticker": "PAYX",
+   "tv": "NASDAQ:PAYX"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NASDAQ",
+   "ticker": "ADP",
+   "tv": "NASDAQ:ADP"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NASDAQ",
+   "ticker": "GILD",
+   "tv": "NASDAQ:GILD"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NYSE",
+   "ticker": "DHR",
+   "tv": "NYSE:DHR"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NASDAQ",
+   "ticker": "ADI",
+   "tv": "NASDAQ:ADI"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NYSE",
+   "ticker": "CB",
+   "tv": "NYSE:CB"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NYSE",
+   "ticker": "TJX",
+   "tv": "NYSE:TJX"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NASDAQ",
+   "ticker": "COST",
+   "tv": "NASDAQ:COST"
+  },
+  {
+   "section": "QUALITY DEFENSIVES",
+   "exchange": "NYSE",
+   "ticker": "MCD",
+   "tv": "NYSE:MCD"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NASDAQ",
+   "ticker": "CEG",
+   "tv": "NASDAQ:CEG"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "ETN",
+   "tv": "NYSE:ETN"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "GEV",
+   "tv": "NYSE:GEV"
+  },
+  {
+   "section": "AI POWER & GRID",
+   "exchange": "NYSE",
+   "ticker": "VRT",
+   "tv": "NYSE:VRT"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NYSE",
+   "ticker": "XYL",
+   "tv": "NYSE:XYL"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NYSE",
+   "ticker": "AWK",
+   "tv": "NYSE:AWK"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NYSE",
+   "ticker": "WTRG",
+   "tv": "NYSE:WTRG"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NYSE",
+   "ticker": "ECL",
+   "tv": "NYSE:ECL"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NYSE",
+   "ticker": "PNR",
+   "tv": "NYSE:PNR"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NYSE",
+   "ticker": "MWA",
+   "tv": "NYSE:MWA"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NASDAQ",
+   "ticker": "ERII",
+   "tv": "NASDAQ:ERII"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "NYSE",
+   "ticker": "VLTO",
+   "tv": "NYSE:VLTO"
+  },
+  {
+   "section": "WATER SCARCITY THEME",
+   "exchange": "AMEX",
+   "ticker": "FIW",
+   "tv": "AMEX:FIW"
+  },
+  {
+   "section": "METALS & ELECTRIFICATION",
+   "exchange": "NYSE",
+   "ticker": "BHP",
+   "tv": "NYSE:BHP"
+  },
+  {
+   "section": "METALS & ELECTRIFICATION",
+   "exchange": "NYSE",
+   "ticker": "SCCO",
+   "tv": "NYSE:SCCO"
+  },
+  {
+   "section": "METALS & ELECTRIFICATION",
+   "exchange": "NYSE",
+   "ticker": "FCX",
+   "tv": "NYSE:FCX"
+  },
+  {
+   "section": "METALS & ELECTRIFICATION",
+   "exchange": "AMEX",
+   "ticker": "COPX",
+   "tv": "AMEX:COPX"
+  },
+  {
+   "section": "ALTERNATIVE ASSET MANAGERS",
+   "exchange": "NYSE",
+   "ticker": "BAM",
+   "tv": "NYSE:BAM"
+  },
+  {
+   "section": "ALTERNATIVE ASSET MANAGERS",
+   "exchange": "NYSE",
+   "ticker": "BX",
+   "tv": "NYSE:BX"
+  },
+  {
+   "section": "SINGAPORE & ASIA HOME MARKET",
+   "exchange": "SGX",
+   "ticker": "D05",
+   "tv": "SGX:D05"
+  },
+  {
+   "section": "SINGAPORE & ASIA HOME MARKET",
+   "exchange": "SGX",
+   "ticker": "ES3",
+   "tv": "SGX:ES3"
+  },
+  {
+   "section": "SINGAPORE & ASIA HOME MARKET",
+   "exchange": "SGX",
+   "ticker": "C6L",
+   "tv": "SGX:C6L"
+  },
+  {
+   "section": "SINGAPORE & ASIA HOME MARKET",
+   "exchange": "HKEX",
+   "ticker": "9926",
+   "tv": "HKEX:9926"
+  }
+ ],
+ "excluded": [
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "TSLA",
+   "tv": "NASDAQ:TSLA"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "TQQQ",
+   "tv": "NASDAQ:TQQQ"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "BITSTAMP",
+   "ticker": "BTCUSD",
+   "tv": "BITSTAMP:BTCUSD"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "QUBT",
+   "tv": "NASDAQ:QUBT"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "AXTI",
+   "tv": "NASDAQ:AXTI"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "LUNR",
+   "tv": "NASDAQ:LUNR"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "MBLY",
+   "tv": "NASDAQ:MBLY"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "DUOL",
+   "tv": "NASDAQ:DUOL"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NYSE",
+   "ticker": "FOUR",
+   "tv": "NYSE:FOUR"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NYSE",
+   "ticker": "F",
+   "tv": "NYSE:F"
+  },
+  {
+   "section": "A DELIBERATE RULINGS",
+   "exchange": "NASDAQ",
+   "ticker": "HON",
+   "tv": "NASDAQ:HON"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "NASDAQ",
+   "ticker": "GOOG",
+   "tv": "NASDAQ:GOOG"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "NASDAQ",
+   "ticker": "NDX",
+   "tv": "NASDAQ:NDX"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "SPCFD",
+   "ticker": "SPX",
+   "tv": "SPCFD:SPX"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "",
+   "ticker": "NQ=F",
+   "tv": "NQ=F"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "CBOE",
+   "ticker": "UVIX",
+   "tv": "CBOE:UVIX"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "NASDAQ",
+   "ticker": "PHO",
+   "tv": "NASDAQ:PHO"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "NASDAQ",
+   "ticker": "PIO",
+   "tv": "NASDAQ:PIO"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "AMEX",
+   "ticker": "CGW",
+   "tv": "AMEX:CGW"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "NASDAQ",
+   "ticker": "AQWA",
+   "tv": "NASDAQ:AQWA"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "AMEX",
+   "ticker": "CPER",
+   "tv": "AMEX:CPER"
+  },
+  {
+   "section": "B DUPLICATE INSTRUMENTS",
+   "exchange": "LSE",
+   "ticker": "BRK-A",
+   "tv": "LSE:BRK-A"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "ANET",
+   "tv": "NYSE:ANET"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "QCOM",
+   "tv": "NASDAQ:QCOM"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "UNH",
+   "tv": "NYSE:UNH"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "TXN",
+   "tv": "NASDAQ:TXN"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "ADBE",
+   "tv": "NASDAQ:ADBE"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "AXP",
+   "tv": "NYSE:AXP"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "LSE",
+   "ticker": "BRK-B",
+   "tv": "LSE:BRK-B"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "NVO",
+   "tv": "NYSE:NVO"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "KO",
+   "tv": "NYSE:KO"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "PEP",
+   "tv": "NASDAQ:PEP"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "WMT",
+   "tv": "NASDAQ:WMT"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "CSCO",
+   "tv": "NASDAQ:CSCO"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "FDX",
+   "tv": "NYSE:FDX"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "PYPL",
+   "tv": "NASDAQ:PYPL"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NASDAQ",
+   "ticker": "WDAY",
+   "tv": "NASDAQ:WDAY"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "BSX",
+   "tv": "NYSE:BSX"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "STE",
+   "tv": "NYSE:STE"
+  },
+  {
+   "section": "C NEAR-MISS READMISSION CANDIDATES",
+   "exchange": "NYSE",
+   "ticker": "BR",
+   "tv": "NYSE:BR"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NASDAQ",
+   "ticker": "INTC",
+   "tv": "NASDAQ:INTC"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "BA",
+   "tv": "NYSE:BA"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "HUM",
+   "tv": "NYSE:HUM"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NASDAQ",
+   "ticker": "KHC",
+   "tv": "NASDAQ:KHC"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "ARE",
+   "tv": "NYSE:ARE"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "MLM",
+   "tv": "NYSE:MLM"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "COHR",
+   "tv": "NYSE:COHR"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NASDAQ",
+   "ticker": "LITE",
+   "tv": "NASDAQ:LITE"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NASDAQ",
+   "ticker": "MCHP",
+   "tv": "NASDAQ:MCHP"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "PPG",
+   "tv": "NYSE:PPG"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "GDDY",
+   "tv": "NYSE:GDDY"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NASDAQ",
+   "ticker": "GEN",
+   "tv": "NASDAQ:GEN"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "CIEN",
+   "tv": "NYSE:CIEN"
+  },
+  {
+   "section": "D QUALITY SCREEN FAILURES",
+   "exchange": "NYSE",
+   "ticker": "COR",
+   "tv": "NYSE:COR"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NYSE",
+   "ticker": "BABA",
+   "tv": "NYSE:BABA"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NASDAQ",
+   "ticker": "BIDU",
+   "tv": "NASDAQ:BIDU"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NASDAQ",
+   "ticker": "JD",
+   "tv": "NASDAQ:JD"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NASDAQ",
+   "ticker": "BILI",
+   "tv": "NASDAQ:BILI"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NYSE",
+   "ticker": "TME",
+   "tv": "NYSE:TME"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "OTC",
+   "ticker": "TCEHY",
+   "tv": "OTC:TCEHY"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NYSE",
+   "ticker": "EDU",
+   "tv": "NYSE:EDU"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NASDAQ",
+   "ticker": "GRAB",
+   "tv": "NASDAQ:GRAB"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NASDAQ",
+   "ticker": "ZLAB",
+   "tv": "NASDAQ:ZLAB"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "",
+   "ticker": "BGNE",
+   "tv": "BGNE"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "AMEX",
+   "ticker": "FXI",
+   "tv": "AMEX:FXI"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "NASDAQ",
+   "ticker": "MCHI",
+   "tv": "NASDAQ:MCHI"
+  },
+  {
+   "section": "E CHINA ADRS AND CHINA ETFS",
+   "exchange": "AMEX",
+   "ticker": "KWEB",
+   "tv": "AMEX:KWEB"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "SSE",
+   "ticker": "000300",
+   "tv": "SSE:000300"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "TPEX",
+   "ticker": "00845B",
+   "tv": "TPEX:00845B"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "TWSE",
+   "ticker": "00885",
+   "tv": "TWSE:00885"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "0700",
+   "tv": "HKEX:0700"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "1211",
+   "tv": "HKEX:1211"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "1477",
+   "tv": "HKEX:1477"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "TSE",
+   "ticker": "268A",
+   "tv": "TSE:268A"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "2801",
+   "tv": "HKEX:2801"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "SZSE",
+   "ticker": "300122",
+   "tv": "SZSE:300122"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "SZSE",
+   "ticker": "300142",
+   "tv": "SZSE:300142"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "SZSE",
+   "ticker": "300601",
+   "tv": "SZSE:300601"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "3067",
+   "tv": "HKEX:3067"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "3088",
+   "tv": "HKEX:3088"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "SSE",
+   "ticker": "600196",
+   "tv": "SSE:600196"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "TSE",
+   "ticker": "6125",
+   "tv": "TSE:6125"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "SSE",
+   "ticker": "688755",
+   "tv": "SSE:688755"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "9626",
+   "tv": "HKEX:9626"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "HKEX",
+   "ticker": "9988",
+   "tv": "HKEX:9988"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "LSE",
+   "ticker": "ASC",
+   "tv": "LSE:ASC"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "OTC",
+   "ticker": "ASOMY",
+   "tv": "OTC:ASOMY"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "MIL",
+   "ticker": "BF-B",
+   "tv": "MIL:BF-B"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "BME",
+   "ticker": "CLR",
+   "tv": "BME:CLR"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "LSE",
+   "ticker": "DEBS",
+   "tv": "LSE:DEBS"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "SIX",
+   "ticker": "NESN",
+   "tv": "SIX:NESN"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "LSE",
+   "ticker": "SVT",
+   "tv": "LSE:SVT"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "EURONEXT",
+   "ticker": "VIE",
+   "tv": "EURONEXT:VIE"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "OTC",
+   "ticker": "RGAKF",
+   "tv": "OTC:RGAKF"
+  },
+  {
+   "section": "F NON-US LISTINGS",
+   "exchange": "QSE",
+   "ticker": "MFMS",
+   "tv": "QSE:MFMS"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "ZM",
+   "tv": "NASDAQ:ZM"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "BYND",
+   "tv": "NASDAQ:BYND"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "MRNA",
+   "tv": "NASDAQ:MRNA"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "BNTX",
+   "tv": "NASDAQ:BNTX"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "CFI",
+   "ticker": "CVAC",
+   "tv": "CFI:CVAC"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "PACB",
+   "tv": "NASDAQ:PACB"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "CRVS",
+   "tv": "NASDAQ:CRVS"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NYSE",
+   "ticker": "GME",
+   "tv": "NYSE:GME"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "SARK",
+   "tv": "NASDAQ:SARK"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "",
+   "ticker": "ERUS",
+   "tv": "ERUS"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "",
+   "ticker": "MANA-USD",
+   "tv": "MANA-USD"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "",
+   "ticker": "JJC",
+   "tv": "JJC"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "CBOE",
+   "ticker": "TMFC",
+   "tv": "CBOE:TMFC"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "ROKU",
+   "tv": "NASDAQ:ROKU"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "DKNG",
+   "tv": "NASDAQ:DKNG"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "WYNN",
+   "tv": "NASDAQ:WYNN"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "TTD",
+   "tv": "NASDAQ:TTD"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NYSE",
+   "ticker": "RBLX",
+   "tv": "NYSE:RBLX"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NYSE",
+   "ticker": "WSM",
+   "tv": "NYSE:WSM"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NYSE",
+   "ticker": "IVZ",
+   "tv": "NYSE:IVZ"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "DJCO",
+   "tv": "NASDAQ:DJCO"
+  },
+  {
+   "section": "G THESIS-DEAD LEGACY",
+   "exchange": "NASDAQ",
+   "ticker": "EWBC",
+   "tv": "NASDAQ:EWBC"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "DIS",
+   "tv": "NYSE:DIS"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "C",
+   "tv": "NYSE:C"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "GE",
+   "tv": "NYSE:GE"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "PFE",
+   "tv": "NYSE:PFE"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "AMT",
+   "tv": "NYSE:AMT"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "MKL",
+   "tv": "NYSE:MKL"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "OXY",
+   "tv": "NYSE:OXY"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "MPLX",
+   "tv": "NYSE:MPLX"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "KMI",
+   "tv": "NYSE:KMI"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "CW",
+   "tv": "NYSE:CW"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "MP",
+   "tv": "NYSE:MP"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "HIMS",
+   "tv": "NYSE:HIMS"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "SG",
+   "tv": "NYSE:SG"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "CRCL",
+   "tv": "NYSE:CRCL"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NASDAQ",
+   "ticker": "SPCX",
+   "tv": "NASDAQ:SPCX"
+  },
+  {
+   "section": "H SOUND US NAMES NO SLOT",
+   "exchange": "NYSE",
+   "ticker": "NOK",
+   "tv": "NYSE:NOK"
+  },
+  {
+   "section": "I REGIONAL ETF PLUMBING",
+   "exchange": "AMEX",
+   "ticker": "VWO",
+   "tv": "AMEX:VWO"
+  },
+  {
+   "section": "I REGIONAL ETF PLUMBING",
+   "exchange": "AMEX",
+   "ticker": "VEA",
+   "tv": "AMEX:VEA"
+  },
+  {
+   "section": "I REGIONAL ETF PLUMBING",
+   "exchange": "CBOE",
+   "ticker": "IEFA",
+   "tv": "CBOE:IEFA"
+  },
+  {
+   "section": "I REGIONAL ETF PLUMBING",
+   "exchange": "AMEX",
+   "ticker": "IEUR",
+   "tv": "AMEX:IEUR"
+  },
+  {
+   "section": "I REGIONAL ETF PLUMBING",
+   "exchange": "CBOE",
+   "ticker": "ARKK",
+   "tv": "CBOE:ARKK"
+  },
+  {
+   "section": "I REGIONAL ETF PLUMBING",
+   "exchange": "CBOE",
+   "ticker": "ARKG",
+   "tv": "CBOE:ARKG"
+  }
+ ]
+}
