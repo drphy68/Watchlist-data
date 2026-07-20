@@ -1,10 +1,10 @@
 """Render the three Weekend Mode reports from results.json."""
 import json, sys
-import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, "/home/claude/scan")
 from scan_engine import OPERATIONALIZATIONS
 
-R = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "results.json")))
-WL = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "watchlists.json")))
+R = json.load(open("/home/claude/scan/results.json"))
+WL = json.load(open("/home/claude/scan/watchlists.json"))
 
 RUN_STAMP = "Sunday 2026-07-19, ~23:55 SGT (completed Monday 2026-07-20 ~01:00 SGT)"
 LAST_BAR = "2026-07-17 (Friday)"
@@ -238,8 +238,9 @@ AMD and GS were verified live via the Alpha Vantage earnings calendar; no other 
   HKEX:2801 (9), HKEX:3067 (1), HKEX:3088 (23), LSE:ASC (4), LSE:DEBS (3), LSE:SVT (2),
   SZSE:300601 (1), TPEX:00845B (1), OANDA:XAUUSD (1) - typical vendor artifacts on non-US series.
 - China A-share series show an 11-12 day gap in Feb 2026 - Lunar New Year closure (benign).
-- BITSTAMP:BTCUSD and MANA-USD: partial Sunday bar (2026-07-19) trimmed to honour the
-  completed-bars-only rule; Saturday 07-18 is their true last completed bar (24/7 assets).
+- BITSTAMP:BTCUSD and MANA-USD (24/7 assets): any bar dated after SPY's last completed session
+  is trimmed to honour the completed-bars-only rule (operationalization #11), so their last bar
+  is aligned to SPY's reference session rather than a later weekend bar.
 - LSE:BRK-A / LSE:BRK-B rows were mapped to the US Berkshire listings (assumption; the TV export's
   LSE prefix appears to be an artifact).
 - BGNE retrieved under its current Nasdaq ticker lineage (BeiGene renamed BeOne Medicines/ONC in 2025;
@@ -291,8 +292,8 @@ exc = build("excluded", "Watchlist Scan 2026-07-19 — EXCLUDED list (informatio
 exc = exc.replace("## B. Action candidates\n\n**None.**",
                   "## B. Action candidates (informational only — these names are excluded by your own rulings)\n\n**None.**")
 
-open("Watchlist_Scan_2026-07-19_Swing.md", "w").write(swing)
-open("Watchlist_Scan_2026-07-19_Investor.md", "w").write(inv)
-open("Watchlist_Scan_2026-07-19_Excluded.md", "w").write(exc)
+open("/home/claude/scan/Watchlist_Scan_2026-07-19_Swing.md", "w").write(swing)
+open("/home/claude/scan/Watchlist_Scan_2026-07-19_Investor.md", "w").write(inv)
+open("/home/claude/scan/Watchlist_Scan_2026-07-19_Excluded.md", "w").write(exc)
 print("written:",
       len(swing.splitlines()), "/", len(inv.splitlines()), "/", len(exc.splitlines()), "lines")
