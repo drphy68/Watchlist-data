@@ -1,4 +1,4 @@
-# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.2, 2026-07-20)
+# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.3.1, 2026-07-20)
 
 **Purpose:** lets any fresh Claude session reproduce the full scan with zero rebuilding.
 Governing document: `Cowork_Watchlist_Scan_Prompt_v1.md` (project knowledge). This runbook is
@@ -54,6 +54,27 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
       claude/latest_scan_summary.md with a 10-line digest; if it is NOT available, say so
       explicitly in the final message — do not fail the run over it;
    c. only then produce landscape .docx versions (pandoc + sectPr patch) and send those too.
+   d. DEPOSIT TO GOOGLE DRIVE (owner's archive): folder "Watchlist Scans", folder id
+      `17lVei5BDbMdN7XC1jGlEDyZ4L5NtzXI8` (account phyinvest21@gmail.com), via the Google Drive
+      connector create_file, parentId = that id, disableConversionToGoogleType=true.
+      SIZE-SAFE RULES (learned 2026-07-20 — a large .docx truncated into a corrupt partial):
+      - .md files: upload via **textContent** (raw UTF-8), NOT base64. The text path handled a 40 KB
+        .md fine; use it for all three .md, contentMimeType text/markdown.
+      - .docx files: upload via base64Content, contentMimeType
+        application/vnd.openxmlformats-officedocument.wordprocessingml.document — but ONLY IF the
+        base64 string length is ≤ 28,000 chars (~20 KB binary; the connector's per-call ceiling sits
+        ~30 KB base64). If a .docx's base64 exceeds that, DO NOT UPLOAD IT (a partial upload creates
+        a corrupt file the connector cannot delete). Skip it cleanly and note in the final message
+        which .docx were skipped for size — the matching .md carries the full content and the .docx is
+        already delivered to chat/project. NEVER upload a truncated/partial payload.
+      - After each successful create_file, confirm the returned viewUrl AND that the returned fileSize
+        equals the local file's byte size; if they differ, treat the upload as failed and say so.
+      - The connector has NO delete tool: if a bad file already exists from a prior run, you cannot
+        remove it — flag it for the owner to delete manually (give the file id).
+      If the Google Drive connector is unavailable/unpermitted, do NOT fail the run — reports are
+      already delivered via (a)-(c); note the skip and why. (For guaranteed deposit of ALL sizes/formats,
+      the upgrade path is Route B: a GitHub Actions + rclone bridge, server-side, no payload ceiling —
+      would also enable OneDrive. Not built; noted for future.)
 8. Honesty rules of Section 7 apply verbatim: flag every data failure, never populate an empty
    category, recompute everything fresh, report verified-live vs carried-forward.
 
@@ -62,6 +83,17 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 - TEST FIRE LESSON (2026-07-19): a scheduled fresh session was created with a restricted tool
   context (no project access). v1.1 therefore makes the GitHub repo the canonical source for
   scripts and requires delivery via SendUserFile first, project writes best-effort.
+- v1.3 (2026-07-20): added Google Drive deposit of all six report files to folder "Watchlist Scans"
+  (id 17lVei5BDbMdN7XC1jGlEDyZ4L5NtzXI8, account phyinvest21@gmail.com) as delivery step 7d. Connector
+  needed WRITE re-authorization (read-only grant returned 403 on create_file until re-consented). Deposit
+  is best-effort: never blocks the already-delivered reports. OneDrive was not used — the Microsoft 365
+  connector publishes only read/search tools (no file upload), so OneDrive deposit is not currently
+  possible through it; revisit if MS adds an upload tool or via a GitHub-Actions+rclone bridge.
+- v1.3.1 (2026-07-20): first live Drive deposit — 5/6 files landed & verified; Excluded.docx (139-row
+  table, base64 36.5k chars) exceeded the connector's per-call ceiling and uploaded as a CORRUPT
+  truncated partial that could not be deleted (no delete tool). Fix in step 7d: .md via textContent
+  (handles 40KB+), .docx via base64 only if base64 <= 28k chars else SKIP CLEAN (never partial),
+  verify returned fileSize == local size. Owner had to delete the corrupt file + README manually.
 - v1.2 LESSON (2026-07-20): test fire #2 PASSED (9 uptrends, 4 approaching, 0 rejection candles,
   regime FAILING/MIXED — matched the manual run) but chose the Alpha Vantage connector for
   cross-verification and hit "Claude wants to use Time Series" permission cards an unattended run
