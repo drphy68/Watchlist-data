@@ -5,7 +5,7 @@ fetch_watchlist_data.py. Writes results.json (full computed detail per symbol).
 Report rendering is done separately (render_reports.py).
 """
 import json, os, sys
-import os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, "/home/claude/scan")
 from scan_engine import classify, load_csv, sanity, MIN_ROWS, OPERATIONALIZATIONS
 
 CONTEXT_ONLY = {"CBOE:VIX", "ICEUS:DXY", "OANDA:XAUUSD", "BITSTAMP:BTCUSD",
@@ -14,8 +14,15 @@ NO_VOLUME_OK = CONTEXT_ONLY | {"SSE:000300"}
 
 def main(data_dir):
     manifest = json.load(open(os.path.join(data_dir, "manifest.json")))
-    symmap = {s["tv"]: s for s in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "symbol_map.json")))}
+    symmap = {s["tv"]: s for s in json.load(open("/home/claude/scan/symbol_map.json"))}
     results = {}
+    # Reference session = SPY's last completed daily bar (spec Section 3.3). Used to define
+    # "completed bar" for 24/7 / foreign-calendar assets instead of a hardcoded date, so the
+    # rule generalizes across runs. (OPERATIONALIZATION #11 — disclosed in scan_engine.py.)
+    _spy = manifest.get("AMEX:SPY", {})
+    ref_date = None
+    if _spy.get("status") == "ok":
+        ref_date = load_csv(os.path.join(data_dir, _spy["file"]))[-1]["date"]
     for tv, m in manifest.items():
         if tv.startswith("_"):
             continue
@@ -27,11 +34,13 @@ def main(data_dir):
             results[tv] = entry
             continue
         rows = load_csv(os.path.join(data_dir, m["file"]))
-        # completed-bars-only rule: 24/7 assets include a partial bar for the
-        # run day (Sunday) - drop any bar dated after the last US session
-        if tv in ("BITSTAMP:BTCUSD", "MANA-USD"):
+        # completed-bars-only rule (spec 3.3, OPERATIONALIZATION #11): a 24/7 or foreign-calendar
+        # asset can carry a bar dated after the last completed US session (a partial/in-progress
+        # bar on the run day). Trim any bar strictly newer than SPY's last completed bar. Derived
+        # from ref_date, never a literal, so future runs stay correct.
+        if tv in ("BITSTAMP:BTCUSD", "MANA-USD") and ref_date:
             before = len(rows)
-            rows = [r for r in rows if r["date"] <= "2026-07-18"]
+            rows = [r for r in rows if r["date"] <= ref_date]
             if len(rows) != before:
                 entry["trimmed_partial_bars"] = before - len(rows)
         flags = sanity(rows, allow_zero_vol=tv in NO_VOLUME_OK)
@@ -51,7 +60,7 @@ def main(data_dir):
         entry["why"] = r["why"]
         entry["detail"] = r["detail"]
         results[tv] = entry
-    json.dump(results, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "results.json"), "w"), indent=1, default=str)
+    json.dump(results, open("/home/claude/scan/results.json", "w"), indent=1, default=str)
 
     # console summary
     from collections import Counter

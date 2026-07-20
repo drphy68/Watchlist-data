@@ -30,6 +30,7 @@ OPERATIONALIZATIONS = [
     "stop buffer -> 0.1*ATR(14) below the structural level",
     "hypothetical entry for 2R pre-check -> last close",
     "nearest overhead structural target -> lowest daily swing high (of last 120 bars) above last close; if none, name is at highs and target test passes by absence of overhead structure (noted per name)",
+    "'completed daily bar' for a 24/7 or foreign-calendar asset -> last bar dated on or before SPY's last completed session (spec Section 3.3 names SPY as the reference but does not define this for 24/7/non-US instruments); partial run-day bars are trimmed. Applied in run_scan.py via ref_date, not a literal date.",
 ]
 
 def load_csv(path):
