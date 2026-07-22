@@ -6,7 +6,8 @@ Report rendering is done separately (render_reports.py).
 """
 import json, os, sys
 sys.path.insert(0, "/home/claude/scan")
-from scan_engine import classify, load_csv, sanity, MIN_ROWS, OPERATIONALIZATIONS
+from scan_engine import (classify, load_csv, sanity, MIN_ROWS, OPERATIONALIZATIONS,
+                          half_day_dates, volume_module)
 
 CONTEXT_ONLY = {"CBOE:VIX", "ICEUS:DXY", "OANDA:XAUUSD", "BITSTAMP:BTCUSD",
                 "SPCFD:SPX", "NASDAQ:NDX", "NQ=F", "MANA-USD"}
@@ -23,6 +24,12 @@ def main(data_dir):
     ref_date = None
     if _spy.get("status") == "ok":
         ref_date = load_csv(os.path.join(data_dir, _spy["file"]))[-1]["date"]
+
+    # Volume module (Section 4.2, v1.2): half-day dates derived by rule, computed once for a
+    # window comfortably covering the ~300+ trading day (~14 month) lookback plus margin.
+    ref_year = int(ref_date[:4]) if ref_date else 2026
+    half_days = half_day_dates(range(ref_year - 2, ref_year + 2))
+
     for tv, m in manifest.items():
         if tv.startswith("_"):
             continue
@@ -59,6 +66,9 @@ def main(data_dir):
         entry["cls"] = r["cls"]
         entry["why"] = r["why"]
         entry["detail"] = r["detail"]
+        # Section 4.2 volume diagnostics (v1.2) — report-only, computed after and separate
+        # from classify(); never fed back into cls/why/ranking (Section 8 no-effect rule).
+        entry["detail"]["volume"] = volume_module(rows, half_days, r)
         results[tv] = entry
     json.dump(results, open("/home/claude/scan/results.json", "w"), indent=1, default=str)
 
@@ -81,6 +91,15 @@ def main(data_dir):
     for tv in sorted(bad):
         v = results[tv]
         print("  ", tv, v["status"], v.get("integrity_flags", ""))
+
+    # Volume module (v1.2) sanity summary — report-only, does not affect any category above.
+    v3_tags = Counter(v["detail"]["volume"]["v3"]["tag"] for v in results.values()
+                       if v.get("cls") == "UPTREND" and v.get("detail", {}).get("volume", {}).get("v3"))
+    v2_verdicts = Counter(v["detail"]["volume"]["v2"]["verdict"] for v in results.values()
+                          if v.get("detail", {}).get("volume", {}).get("v2"))
+    print("V3 OBV TAGS (uptrends):", dict(v3_tags))
+    print("V2 DEMAND-CONFIRMATION VERDICTS (rejection bars):", dict(v2_verdicts))
+    print("HALF-DAYS IN WINDOW (rule-derived, sample):", half_days[:6], "..." if len(half_days) > 6 else "")
 
 if __name__ == "__main__":
     main(sys.argv[1])

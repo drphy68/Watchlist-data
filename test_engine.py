@@ -1,7 +1,10 @@
 """Unit tests for scan_engine with hand-constructed synthetic series."""
 import sys, math
 sys.path.insert(0, "/home/claude/scan")
-from scan_engine import swings, hh_hl, weekly_bars, sma, atr_wilder, classify
+from scan_engine import (swings, hh_hl, weekly_bars, sma, atr_wilder, classify,
+                          half_day_dates, avgvol50, rvol_series, obv, volume_module,
+                          volume_adjustment_candidates, V1_QUIET_RVOL, V1_SPIKE_RVOL,
+                          V2_CONFIRM_RVOL, V3_SLOPE_LOOKBACK)
 from datetime import datetime, timedelta
 
 def mkrows(prices, start="2025-01-06"):
@@ -177,5 +180,93 @@ if d.get("pre2r"):
         check("rejection-path: R-multiple recomputes", abs(p["r_multiple"] - expect_r) < 1e-9,
               f"{p['r_multiple']} vs {expect_r}")
         check("rejection-path: passes flag consistent with 2R", p["passes"] == (expect_r >= 2.0))
+
+# =====================================================================================
+# Volume module tests (Section 4.2, v1.2)
+# =====================================================================================
+
+# --- half_day_dates: rule-derived, spot-check known weekday configurations ---
+# 2026: July 4 is a Saturday -> observed Friday July 3, half day Thursday July 2.
+hd2026 = half_day_dates([2026])
+check("half-day: July 4 on Saturday -> half day Thu July 2", "2026-07-02" in hd2026, str(hd2026))
+# 2025: July 4 is a Friday -> half day Thursday July 3.
+hd2025 = half_day_dates([2025])
+check("half-day: July 4 on Friday -> half day Thu July 3", "2025-07-03" in hd2025, str(hd2025))
+# 2027: July 4 is a Sunday -> half day Friday July 3 (day before actual July 4th).
+hd2027 = half_day_dates([2027])
+check("half-day: July 4 on Sunday -> half day Fri July 2", "2027-07-02" in hd2027, str(hd2027))
+# Thanksgiving Friday: 2026 Thanksgiving is Nov 26 (4th Thursday) -> Nov 27.
+check("half-day: Friday after Thanksgiving 2026", "2026-11-27" in hd2026, str(hd2026))
+# Christmas Eve: 2026-12-24 is a Thursday (weekday) -> included.
+check("half-day: Dec 24 2026 (weekday) included", "2026-12-24" in hd2026, str(hd2026))
+# 2025-12-24 is a Wednesday (weekday) -> included; sanity on a second year.
+check("half-day: Dec 24 2025 (weekday) included", "2025-12-24" in hd2025, str(hd2025))
+
+# --- avgvol50: simple average, half-days excluded, offset by one day ---
+vol_rows = [dict(date=(datetime(2026, 1, 1) + timedelta(days=i)).strftime("%Y-%m-%d"),
+                 o=1, h=1, l=1, c=1, v=100.0) for i in range(60)]
+av = avgvol50(vol_rows, half_days=[])
+check("avgvol50: None until 50 eligible prior days", av[49] is None and av[50] is not None,
+      f"av[49]={av[49]} av[50]={av[50]}")
+check("avgvol50: simple average value", av[50] == 100.0, str(av[50]))
+# bump one bar's volume and confirm it dilutes the FOLLOWING day's average, not its own
+vol_rows2 = [dict(r) for r in vol_rows]
+vol_rows2[10]["v"] = 5000.0
+av2 = avgvol50(vol_rows2, half_days=[])
+check("avgvol50: a bar's own volume does not inflate its own benchmark",
+      av2[10] is None or av2[10] != 5000.0)
+check("avgvol50: the spike shows up in a later window", av2[55] > av[50], f"{av2[55]} vs {av[50]}")
+# half-day exclusion: mark day 10 as a half day and confirm its volume is skipped from the window
+hd_date = vol_rows[10]["date"]
+av3 = avgvol50(vol_rows2, half_days=[hd_date])
+check("avgvol50: half-day bar excluded from the rolling window", av3[55] < av2[55],
+      f"{av3[55]} vs {av2[55]}")
+
+# --- obv: up day adds, down day subtracts, flat day no change ---
+obv_rows = mkrows([10, 12, 12, 9, 11])  # up, flat, down, up
+o = obv(obv_rows)
+check("obv seeds at 0", o[0] == 0.0)
+check("obv up day adds volume", o[1] == 1000.0, str(o[1]))
+check("obv flat day no change", o[2] == o[1], str(o[2]))
+check("obv down day subtracts volume", o[3] == o[2] - 1000.0, str(o[3]))
+check("obv up day adds again", o[4] == o[3] + 1000.0, str(o[4]))
+
+# --- volume_module: V1 quiet-pullback classification on a constructed leg ---
+quiet_leg_rows = build_uptrend_with_rejection()  # reuse the rejection-path fixture (has a zone + pullback)
+res_v = classify(quiet_leg_rows)
+half_days_test = half_day_dates([2025, 2026])
+vol_res = volume_module(quiet_leg_rows, half_days_test, res_v)
+check("volume_module: V3 computed for UPTREND name", "v3" in vol_res, str(vol_res.get("v3")))
+if "v3" in vol_res:
+    check("volume_module: V3 tag is one of the defined states",
+          vol_res["v3"]["tag"] in ("ACCUM", "NEUTRAL", "DIVERGENCE-WARNING"), vol_res["v3"]["tag"])
+check("volume_module: V2 computed for rejection bar", "v2" in vol_res, str(vol_res.get("v2")))
+if "v2" in vol_res:
+    check("volume_module: V2 verdict is one of the defined states",
+          vol_res["v2"]["verdict"] in ("CONFIRMED", "UNCONFIRMED", "SUSPECT", None), vol_res["v2"]["verdict"])
+
+# --- V2 boundary tests via direct construction (RVOL thresholds) ---
+def make_rejection_case(rvol_last):
+    """50 quiet days (RVOL~1.0) then a rejection-style last bar whose volume yields rvol_last."""
+    rows = [dict(date=(datetime(2026, 1, 1) + timedelta(days=i)).strftime("%Y-%m-%d"),
+                o=100, h=101, l=99, c=100, v=1000.0) for i in range(55)]
+    rows.append(dict(date=(datetime(2026, 1, 1) + timedelta(days=55)).strftime("%Y-%m-%d"),
+                     o=100, h=102, l=98, c=101, v=1000.0 * rvol_last))
+    return rows
+
+for rvol_in, expect in [(2.0, "CONFIRMED"), (1.2, "UNCONFIRMED"), (0.5, "SUSPECT")]:
+    rows_v2 = make_rejection_case(rvol_in)
+    fake_result = dict(cls="UPTREND", detail=dict(rejection=dict(type="test"), daily_swing_highs=[]))
+    v = volume_module(rows_v2, [], fake_result)
+    check(f"V2 boundary: RVOL={rvol_in}x -> {expect}", v["v2"]["verdict"] == expect,
+          f"got {v['v2']['verdict']}")
+
+# half-day forces UNCONFIRMED regardless of RVOL
+rows_hd = make_rejection_case(3.0)
+hd_last = rows_hd[-1]["date"]
+fake_result_hd = dict(cls="UPTREND", detail=dict(rejection=dict(type="test"), daily_swing_highs=[]))
+v_hd = volume_module(rows_hd, [hd_last], fake_result_hd)
+check("V2: half-day session forces UNCONFIRMED regardless of RVOL",
+      v_hd["v2"]["verdict"] == "UNCONFIRMED", str(v_hd["v2"]))
 
 print("\n" + ("ALL PASS" if not fails else f"FAILURES: {fails}"))

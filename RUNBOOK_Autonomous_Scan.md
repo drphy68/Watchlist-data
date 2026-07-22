@@ -1,4 +1,4 @@
-# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.3.1, 2026-07-20)
+# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.4, 2026-07-22)
 
 **Purpose:** lets any fresh Claude session reproduce the full scan with zero rebuilding.
 Governing document: `Cowork_Watchlist_Scan_Prompt_v1.md` (project knowledge). This runbook is
@@ -20,9 +20,14 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 1. Fetch the toolchain from the data repo (works in ANY session — needs only shell access):
    for F in scan_engine.py run_scan.py render_reports.py symbol_map.json watchlists.json; do
      curl -sL -o "$F" "https://raw.githubusercontent.com/drphy68/Watchlist-data/main/$F"; done
-   (scan_engine.py holds the Section 4 mechanics — DO NOT MODIFY; amendments only via the owner's
-   written instruction. Mirror copies exist in project knowledge under claude/autonomy/ when
-   project access is available, but the repo is the canonical runtime source.)
+   (scan_engine.py holds the Section 4.1 mechanics — DO NOT MODIFY; amendments only via the owner's
+   written instruction. Section 4.2 (volume module, v1.2) is computed automatically by run_scan.py —
+   no manual step is needed to produce V1/V2/V3/AvgVol50; they land in results.json under
+   detail['volume'] for every symbol and render.py already reads them. Mirror copies exist in project
+   knowledge under claude/autonomy/ when project access is available, but the repo is the canonical
+   runtime source — CONFIRM the repo copies are v1.2-current (grep for "volume_module" in
+   scan_engine.py) before trusting them; if the repo still holds pre-v1.2 files, use the project
+   mirror instead and flag the repo as stale in the final message.)
 2. Download data (shell, allowlisted domain):
    `curl -L -o data.zip https://raw.githubusercontent.com/drphy68/Watchlist-data/main/watchlist_data.zip`
    Unzip; freshness rule: `_meta.generated_utc` must be <= 4 days old AND SPY's last bar must be
@@ -47,7 +52,18 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
    earnings calendar only if already permitted this session. AV's calendar has gaps (e.g. UNH
    returned no date on 3/6/12-month horizons on 2026-07-20) — if a date can't be verified from any
    source, mark it UNVERIFIED and flag it; never fabricate. Free AV tier: 25 calls/day, 5/min.
-7. `render_reports.py` (adjust RUN_STAMP/LAST_BAR constants) → three dated reports.
+7. `render_reports.py` (adjust RUN_STAMP/LAST_BAR constants, AND — new in v1.4 — VOLUME_RUN_NO) →
+   three dated reports.
+   VOLUME_RUN_NO (Section 8 report-only counter, v1.2): determine N by reading the most recent
+   PREVIOUS delivered report's header line "Volume module (v1.2, Section 8): report-only, run N of
+   10" — check, in order: (a) project doc claude/latest_scan_summary.md if Projects is available;
+   (b) the most recently created Watchlist_Scan_*.md in the Google Drive "Watchlist Scans" folder
+   (search_files, sort by createdTime) if the Drive connector is available; (c) if neither is
+   reachable or no prior v1.2 report is found, this is the FIRST run since v1.2 deployment
+   (2026-07-22) — set VOLUME_RUN_NO = 1. Otherwise set it to (found N) + 1, capping display at "10 of
+   10" — do not silently roll past 10; if N was already 10, state in the final message that the
+   Section 8 calibration review is due and ask the owner for a promotion/extension/amend decision
+   rather than guessing which. State in Section E which method (a/b/c) determined N this run.
    DELIVERY ORDER (durable first, cosmetic last):
    a. SendUserFile the three .md reports immediately (always available in Cowork sessions);
    b. IF the Projects tool is available: project_write the .md files and update
@@ -80,6 +96,26 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 
 ## Known operational facts (learned 2026-07-19 run)
 
+- v1.4 (2026-07-22): owner ratified and incorporated spec v1.2 (volume module — AvgVol50/RVOL, V1
+  quiet-pullback, V2 demand-confirmation, V3 OBV accumulation tag; REPORT-ONLY for 10 runs per
+  Section 8 sunset clause, see VOLUME_RUN_NO procedure in step 7 above). scan_engine.py gained
+  half_day_dates() (NYSE early-close dates derived by RULE, not hardcoded per year — see its
+  docstring), avgvol50(), obv(), volume_adjustment_candidates() (coarse split-artifact heuristic,
+  NOT a corporate-actions audit — always disclosed as such), and volume_module() — the last is
+  called AFTER classify() and merged into detail['volume'] by run_scan.py; classify() itself
+  (Section 4.1) was left byte-for-byte unchanged, so the ratified price-structure mechanics cannot
+  be affected even by accident. render_reports.py's weekend_table/section_B/section_C/header now
+  show the volume columns/lines the spec requires; a new volume_e_section() adds the Section
+  3.5/7.6/8 disclosures dynamically from results.json every run (unlike the older E_COMMON block,
+  which is frozen narrative from the first run and must still be hand-updated per run as before).
+  test_engine.py gained a full volume-module test block (half-day rule spot-checks across three
+  July-4 weekday configurations, AvgVol50 windowing, OBV arithmetic, V1/V2/V3 boundary cases) — full
+  suite re-run and passing before v1.4 was declared ready. ACTION NEEDED: the owner must push the
+  updated scan_engine.py / run_scan.py / render_reports.py / test_engine.py / this runbook to the
+  `drphy68/Watchlist-data` GitHub repo — until that happens, the repo copies are pre-v1.2 and a
+  fresh unattended session pulling from raw.githubusercontent.com will run the OLD engine with no
+  volume module. The live scheduled task's prompt has been updated (2026-07-22) to warn the session
+  to check for this and use the project mirror if the repo is stale.
 - TEST FIRE LESSON (2026-07-19): a scheduled fresh session was created with a restricted tool
   context (no project access). v1.1 therefore makes the GitHub repo the canonical source for
   scripts and requires delivery via SendUserFile first, project writes best-effort.
@@ -112,8 +148,9 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 - Permanent data flags: HONA (listed Jun 2026, too new), CVAC/ERUS/JJC/SPCX (no data/delisted),
   MIL:BF-B (unusable mapping), VGNT/CRCL/RGAKF/MFMS/688755 short series, crypto weekend partial
   bar must be trimmed, QSE has no Friday session, China A-share LNY gaps are benign.
-- 10 operationalizations of unquantified plan language are embedded in scan_engine.py
-  (OPERATIONALIZATIONS list) and must be printed in Section E until the owner ratifies them.
+- 13 operationalizations of unquantified plan language are embedded in scan_engine.py
+  (OPERATIONALIZATIONS list, +2 added with the v1.2 volume module) and must be printed in Section E
+  until the owner ratifies them.
 - Watchlist changes: owner uploads new TradingView export .txt files to the project; then
   regenerate watchlists.json/symbol_map.json (build scripts in claude/autonomy/) and update the
   GitHub copy of fetch_watchlist_data.py (symbol list is embedded in it).

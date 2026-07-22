@@ -10,6 +10,15 @@ RUN_STAMP = "Sunday 2026-07-19, ~23:55 SGT (completed Monday 2026-07-20 ~01:00 S
 LAST_BAR = "2026-07-17 (Friday)"
 SOURCE = ("Yahoo Finance daily chart API (split-adjusted, not dividend-adjusted), "
           "sole source for ALL symbols - see Section E flag on Stooq")
+# Volume module (Section 8, v1.2): report-only for the first 10 runs after v1.2 deployment
+# (2026-07-22). Each session determines N by reading the previous delivered report's header
+# line and incrementing; defaults to 1 if none found (see RUNBOOK step 3b). EDIT PER RUN.
+VOLUME_RUN_NO = 1
+VOLUME_RUN_TOTAL = 10
+VOLUME_STATUS = ("report-only, run %d of %d (results shown, zero effect on category/ranking "
+                  "per Section 8)" % (VOLUME_RUN_NO, VOLUME_RUN_TOTAL)
+                  if VOLUME_RUN_NO <= VOLUME_RUN_TOTAL else
+                  "sunset review due — owner has not yet logged a promotion/extension decision")
 
 CONTEXT_ONLY = {"CBOE:VIX", "ICEUS:DXY", "OANDA:XAUUSD", "BITSTAMP:BTCUSD",
                 "SPCFD:SPX", "NASDAQ:NDX", "NQ=F", "MANA-USD"}
@@ -34,6 +43,62 @@ def dist_str(d):
         return "-"
     return f"{x:+.2f}"
 
+def vol_of(v):
+    return (v.get("detail") or {}).get("volume") or {}
+
+def v3_str(v):
+    v3 = vol_of(v).get("v3")
+    return v3["tag"] if v3 else "-"
+
+def v1_str(v):
+    v1 = vol_of(v).get("v1")
+    if not v1:
+        return "-"
+    if v1.get("status") == "leg too short":
+        return f"leg too short ({v1['n_bars']}b)"
+    mr = v1.get("mean_rvol")
+    return f"{v1['status']}{' (mean RVOL %.2f)' % mr if mr is not None else ''}"
+
+def avgvol50_str(v):
+    a = vol_of(v).get("avgvol50")
+    return "-" if a is None else f"{a:,.0f}"
+
+def vol_line_B(v):
+    """Section B action-candidate volume line per spec Section 6:
+    'vol: rejection 1.8x CONFIRMED | pullback quiet | OBV ACCUM'"""
+    vol = vol_of(v)
+    v2 = vol.get("v2") or {}
+    v1 = vol.get("v1") or {}
+    v3 = vol.get("v3") or {}
+    rej_part = "rejection -"
+    if v2.get("rvol") is not None:
+        rej_part = f"rejection {v2['rvol']:.2f}x {v2.get('verdict') or 'n/a'}"
+        if v2.get("half_day"):
+            rej_part += " (half-day session)"
+    v1_part = "pullback -"
+    if v1.get("status") == "leg too short":
+        v1_part = f"pullback leg too short ({v1['n_bars']}b, not evaluated)"
+    elif v1.get("status"):
+        v1_part = "pullback " + ("quiet" if v1["status"] == "quiet" else "distribution-pattern")
+        if v1.get("spike_date"):
+            v1_part += f" (spike {v1['spike_date']} {v1['spike_rvol']:.2f}x)"
+    v3_part = f"OBV {v3.get('tag', '-')}" if v3 else "OBV -"
+    return f"vol: {rej_part} | {v1_part} | {v3_part}"
+
+def vol_suffix_C(v):
+    """Section C evening-watch volume suffix (v1.2): V1 status + V3 tag."""
+    vol = vol_of(v)
+    v1 = vol.get("v1"); v3 = vol.get("v3")
+    parts = []
+    if v1:
+        if v1.get("status") == "leg too short":
+            parts.append(f"V1 leg too short ({v1['n_bars']}b)")
+        else:
+            parts.append("V1 " + v1["status"])
+    if v3:
+        parts.append("V3 " + v3["tag"])
+    return (" [" + "; ".join(parts) + "]") if parts else ""
+
 def cls_short(v):
     c = v.get("cls") or v["status"]
     return {"RANGE/AMBIGUOUS": "RANGE", "UPTREND": "UP", "DOWNTREND": "DOWN",
@@ -47,26 +112,29 @@ def why_str(v):
 
 def weekend_table(tvs, list_name):
     hdr = ("| Symbol | D-cls | W-cls | Close (07-17) | 50DMA (Δ5d) | ATR14 | "
-           "Daily swing highs | Daily swing lows | Zone [factors] | Dist(ATR) | Failed condition / note |\n"
-           "|---|---|---|---|---|---|---|---|---|---|---|\n")
+           "Daily swing highs | Daily swing lows | Zone [factors] | Dist(ATR) | "
+           "AvgVol50 | V3 (OBV) | V1 (pullback) | Failed condition / note |\n"
+           "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n")
     out = hdr
     for tv in tvs:
         v = R[tv]
         if v["status"] not in ("OK",):
-            out += f"| {tv} | {cls_short(v)} | - | - | - | - | - | - | - | - | see Section E |\n"
+            out += f"| {tv} | {cls_short(v)} | - | - | - | - | - | - | - | - | - | - | - | see Section E |\n"
             continue
         d = v["detail"]
         slope = ""
         if d.get("ma50") is not None and d.get("ma50_prev5") is not None:
             slope = f" ({d['ma50']-d['ma50_prev5']:+.2f})"
         ctx = " (context)" if tv in CONTEXT_ONLY else ""
-        out += ("| {sym} | {dc} | {wc} | {c} | {ma}{sl} | {atr} | {sh} | {sl2} | {z} | {di} | {why}{ctx} |\n"
+        out += ("| {sym} | {dc} | {wc} | {c} | {ma}{sl} | {atr} | {sh} | {sl2} | {z} | {di} | "
+                "{av} | {v3} | {v1} | {why}{ctx} |\n"
                 .format(sym=tv, dc=d["daily_structure"], wc=d["weekly_structure"],
                         c=f2(d["last_close"]), ma=f2(d["ma50"]), sl=slope,
                         atr=f2(d["atr14"]), sh=swings_str(d["daily_swing_highs"]),
                         sl2=swings_str(d["daily_swing_lows"]), z=zone_str(d),
-                        di=dist_str(d), why=("UPTREND - eligible" if v["cls"] == "UPTREND"
-                                             else why_str(v)), ctx=ctx))
+                        di=dist_str(d), av=avgvol50_str(v), v3=v3_str(v), v1=v1_str(v),
+                        why=("UPTREND - eligible" if v["cls"] == "UPTREND"
+                             else why_str(v)), ctx=ctx))
     return out
 
 def flag_lists(tvs):
@@ -151,10 +219,11 @@ def section_B(tvs, label):
               "anyway, which would have suppressed ranking.)\n")
     else:
         for tv in g:
-            d = R[tv]["detail"]; p = d["pre2r"]
+            v = R[tv]; d = v["detail"]; p = d["pre2r"]
             t += (f"- **{tv}** — zone {zone_str(d)}; rejection: {d['rejection']['type']} on "
                   f"{d['rejection']['bar']['date']}; entry~{f2(p['entry'])}, stop {f2(p['stop'])} "
                   f"(2xATR={f2(p['two_atr'])}), target {p['target_note']}, R={p['r_multiple'] and round(p['r_multiple'],2)}. "
+                  f"{vol_line_B(v)}. "
                   "Next step per plan: verify on TradingView; if confirmed, set alert at the hourly "
                   "trigger — break above the most recent hourly lower high.\n")
     return t
@@ -165,12 +234,12 @@ def section_C(tvs, label, extra_earn=None):
     if not o:
         t += "None in the " + label + " list.\n"
     for tv in o:
-        d = R[tv]["detail"]
+        v = R[tv]; d = v["detail"]
         earn = ""
         if extra_earn and tv in extra_earn:
             earn = " " + extra_earn[tv]
         t += (f"- **{tv}** — close {f2(d['last_close'])}, distance to zone {dist_str(d)} ATR "
-              f"(ATR14 {f2(d['atr14'])}); zone {zone_str(d)}.{earn}\n")
+              f"(ATR14 {f2(d['atr14'])}); zone {zone_str(d)}.{vol_suffix_C(v)}{earn}\n")
     return t
 
 def section_D(tvs):
@@ -257,12 +326,56 @@ selloff and both Layer-1 ETFs out of UPTREND. Empty Category B is the expected o
 (Section 7.5 - all values computed fresh from raw bars this run).
 """
 
+def volume_e_section(tvs):
+    """Dynamic, data-driven Section E addendum for the volume module (Section 3.5/7.6/8, v1.2) —
+    unlike E_COMMON (frozen narrative from the first run), this is regenerated from R every run."""
+    t = "\n**Volume module disclosures (Section 3.5 / 7.6 / 8, v1.2):**\n\n"
+    hd_sample = None
+    suspects = []
+    split_candidates = {}
+    for tv in tvs:
+        v = R[tv]
+        if v["status"] != "OK":
+            continue
+        vol = vol_of(v)
+        if hd_sample is None and vol.get("half_days_in_window"):
+            hd_sample = vol["half_days_in_window"]
+        v2 = vol.get("v2")
+        if v2 and v2.get("verdict") == "SUSPECT":
+            suspects.append((tv, v2))
+        sc = vol.get("split_candidates")
+        if sc:
+            split_candidates[tv] = sc
+    t += ("- Volume/price split-adjustment consistency: NOT independently verified against a "
+          "corporate-actions calendar (Section 3.5) — a coarse >=35% close-to-close move heuristic "
+          "surfaces split-candidate dates for manual review instead of a definitive audit. ")
+    if split_candidates:
+        t += "Candidate dates flagged this run: " + "; ".join(
+            f"{tv} ({', '.join(c['date'] for c in cs)})" for tv, cs in split_candidates.items()) + ".\n"
+    else:
+        t += "No candidate dates flagged this run.\n"
+    t += ("- Half-day sessions excluded from AvgVol50 (rule-derived, Section 3.5), sample from this "
+          "run's lookback window: "
+          + (", ".join(hd_sample) if hd_sample else "none fell inside the lookback window") + ".\n")
+    if suspects:
+        t += ("- **SUSPECT V2 verdicts (rejection-bar RVOL < 1.0x — a hammer nobody swung):** "
+              + "; ".join(f"{tv} (RVOL {v2['rvol']:.2f}x)" for tv, v2 in suspects) + ".\n")
+    else:
+        t += "- No SUSPECT V2 verdicts this run.\n"
+    t += ("- Per Section 7.6: volume diagnostics detect institutional *footprints*, not intent — "
+          "block trades and dark-pool activity are only partially visible on the consolidated tape. "
+          "No volume tag above is proof of accumulation, only evidence-weight.\n")
+    t += ("- Reminder (Section 8): all volume results this run are report-only — " + VOLUME_STATUS
+          + "; nothing above altered any category admission or ranking.\n")
+    return t
+
 def header(title, list_label, n):
     return (f"# {title}\n\n"
             f"**Run:** {RUN_STAMP} · **Mode: WEEKEND** (Section 8) · **List:** {list_label} ({n} symbols)\n\n"
             f"**Data source:** {SOURCE}\n\n"
             f"**Last completed daily bar (SPY):** {LAST_BAR}. All analysis uses completed daily bars only.\n\n"
-            f"**Standing instructions:** Cowork_Watchlist_Scan_Prompt_v1.md (v1.0). Watchlist versions: "
+            f"**Volume module (v1.2, Section 8):** {VOLUME_STATUS}.\n\n"
+            f"**Standing instructions:** Cowork_Watchlist_Scan_Prompt_v1.md (v1.2). Watchlist versions: "
             f"as uploaded 2026-07-19 (3 TradingView export files).\n\n---\n\n")
 
 def build(list_key, title, label, earn=None):
@@ -279,6 +392,7 @@ def build(list_key, title, label, earn=None):
     t += section_D(ordered)
     t += section_flags(ordered, label)
     t += E_COMMON
+    t += volume_e_section(ordered)
     return t
 
 earn_notes = {

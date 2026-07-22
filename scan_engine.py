@@ -31,6 +31,8 @@ OPERATIONALIZATIONS = [
     "hypothetical entry for 2R pre-check -> last close",
     "nearest overhead structural target -> lowest daily swing high (of last 120 bars) above last close; if none, name is at highs and target test passes by absence of overhead structure (noted per name)",
     "'completed daily bar' for a 24/7 or foreign-calendar asset -> last bar dated on or before SPY's last completed session (spec Section 3.3 names SPY as the reference but does not define this for 24/7/non-US instruments); partial run-day bars are trimmed. Applied in run_scan.py via ref_date, not a literal date.",
+    "half-day session dates (Section 3.5, v1.2) -> derived by RULE each run (day before the observed July 4th holiday; Friday after Thanksgiving = day after the 4th Thursday of November; Dec 24 only if it falls Mon-Fri), not a hardcoded per-year list, so the exclusion generalizes to any year without manual maintenance. See half_day_dates() in scan_engine.py.",
+    "volume/price split-adjustment consistency check (Section 3.5, v1.2) -> no maintained corporate-actions calendar is cross-checked; instead, days where close-to-close price moves >=35% are surfaced as split-candidate dates for manual review (volume_adjustment_candidates()). This is a coarse heuristic, not a definitive audit -- Section E must say so explicitly, and OBV/RVOL figures spanning a flagged date are tagged suspect.",
 ]
 
 def load_csv(path):
@@ -288,6 +290,183 @@ def classify(rows):
                                           target=target, target_note=tgt_note,
                                           r_multiple=r_mult, passes=pass2r)
     return res
+
+
+# =====================================================================================
+# Section 4.2 — Volume module (added v1.2, 2026-07-22, drafted-and-owner-incorporated).
+# REPORT-ONLY per Section 8: nothing below may alter cls_result['cls'] or any category
+# admission/ranking decision made in classify(). Called separately, after classify(),
+# and merged into detail['volume'] by the caller (run_scan.py) — classify() itself is
+# left byte-for-byte unchanged, per the "never alter Section 4.1" rule.
+# =====================================================================================
+V1_QUIET_RVOL = 0.9         # quiet-pullback mean-RVOL ceiling [PARAMETER — pending ratification]
+V1_SPIKE_RVOL = 2.0         # quiet-pullback down-day spike floor [PARAMETER — pending ratification]
+V2_CONFIRM_RVOL = 1.5       # demand-confirmation RVOL floor [PARAMETER — pending ratification]
+V3_SLOPE_LOOKBACK = 20      # OBV slope lookback, trading days [PARAMETER — pending ratification]
+SPLIT_CANDIDATE_MOVE = 0.35 # close-to-close |chg| flagged as a possible unadjusted split artifact
+
+def half_day_dates(years):
+    """NYSE scheduled 1pm-ET early closes, derived by RULE (not a hardcoded per-year table):
+      - the business day before the OBSERVED July 4th holiday (if July 4 falls on a Saturday,
+        the holiday is observed the preceding Friday and the half day falls on the Thursday
+        before that; if July 4 is a Sunday, the holiday is observed the following Monday and
+        the half day is the Friday before the actual July 4th; otherwise the half day is the
+        weekday immediately before July 4th itself);
+      - the Friday after Thanksgiving (Thanksgiving = 4th Thursday of November);
+      - December 24th, only if it falls Monday-Friday (no separate half day if it's a weekend).
+    Operationalizes Section 3.5's 'typically July 3 or the weekday before/after July 4' language;
+    logged in OPERATIONALIZATIONS and Section E, pending ratification."""
+    out = []
+    for y in years:
+        jul4 = datetime(y, 7, 4)
+        wd = jul4.weekday()  # Mon=0 ... Sun=6
+        if wd == 5:  # Saturday -> observed Friday July 3; half day Thursday July 2
+            half = jul4 - timedelta(days=2)
+        elif wd == 6:  # Sunday -> observed Monday July 5; half day is the preceding Friday July 2
+            half = jul4 - timedelta(days=2)
+        else:
+            half = jul4 - timedelta(days=1)
+            while half.weekday() >= 5:
+                half -= timedelta(days=1)
+        out.append(half.strftime("%Y-%m-%d"))
+
+        d = datetime(y, 11, 1)
+        thu_count = 0
+        thanksgiving = None
+        while d.month == 11:
+            if d.weekday() == 3:
+                thu_count += 1
+                if thu_count == 4:
+                    thanksgiving = d
+                    break
+            d += timedelta(days=1)
+        if thanksgiving:
+            out.append((thanksgiving + timedelta(days=1)).strftime("%Y-%m-%d"))
+
+        xmas_eve = datetime(y, 12, 24)
+        if xmas_eve.weekday() < 5:
+            out.append(xmas_eve.strftime("%Y-%m-%d"))
+    return sorted(set(out))
+
+def volume_adjustment_candidates(rows, threshold=SPLIT_CANDIDATE_MOVE):
+    """Coarse split-artifact scan (Section 3.5): dates where close-to-close price moved by
+    >= threshold. NOT a definitive split-adjustment audit (no corporate-actions calendar is
+    cross-checked) -- flags candidate dates for manual review; Section E must disclose this
+    is a heuristic, not a verification."""
+    flags = []
+    for i in range(1, len(rows)):
+        pc = rows[i - 1]["c"]
+        if pc <= 0:
+            continue
+        chg = (rows[i]["c"] - pc) / pc
+        if abs(chg) >= threshold:
+            flags.append(dict(date=rows[i]["date"], chg=chg))
+    return flags
+
+def avgvol50(rows, half_days):
+    """Simple 50-day average of daily volume, excluding half-day sessions (Section 3.5).
+    avgvol50[i] uses the 50 eligible days ending the day BEFORE bar i, so a bar never dilutes
+    its own benchmark (Section 4.2). Returns a list aligned to rows (None until 50 eligible
+    prior days exist)."""
+    hd = set(half_days)
+    out = [None] * len(rows)
+    eligible_vols = []
+    for i, r in enumerate(rows):
+        if len(eligible_vols) >= 50:
+            out[i] = sum(eligible_vols[-50:]) / 50.0
+        if r["date"] not in hd:
+            eligible_vols.append(r["v"])
+    return out
+
+def rvol_series(rows, av):
+    return [(rows[i]["v"] / av[i]) if av[i] else None for i in range(len(rows))]
+
+def obv(rows):
+    """On-Balance Volume, seeded at 0 at the start of the data window (Section 4.2 V3).
+    Absolute level is meaningless / source-dependent; only slope and swing-to-swing
+    comparisons are used."""
+    out = [0.0] * len(rows)
+    cum = 0.0
+    for i in range(1, len(rows)):
+        if rows[i]["c"] > rows[i - 1]["c"]:
+            cum += rows[i]["v"]
+        elif rows[i]["c"] < rows[i - 1]["c"]:
+            cum -= rows[i]["v"]
+        out[i] = cum
+    return out
+
+def volume_module(rows, half_days, cls_result):
+    """Section 4.2 diagnostics (V1/V2/V3 + AvgVol50/RVOL). REPORT-ONLY: returns a dict to be
+    stashed at detail['volume'] by the caller; never mutates cls_result['cls'] or ranking."""
+    d = cls_result["detail"]
+    hd_set = set(half_days)
+    av = avgvol50(rows, half_days)
+    rv = rvol_series(rows, av)
+    n = len(rows)
+    vol = dict(
+        avgvol50=av[-1],
+        last_rvol=rv[-1],
+        half_days_in_window=[h for h in half_days if rows[0]["date"] <= h <= rows[-1]["date"]],
+        split_candidates=volume_adjustment_candidates(rows),
+    )
+
+    is_uptrend = cls_result.get("cls") == "UPTREND"
+    d_hs = d.get("daily_swing_highs") or []
+
+    # V3 — OBV accumulation tag (every UPTREND name)
+    if is_uptrend:
+        ob = obv(rows)
+        slope_ok = n > V3_SLOPE_LOOKBACK and ob[-1] > ob[n - 1 - V3_SLOPE_LOOKBACK]
+        divergence = False
+        if len(d_hs) >= 2 and "idx" in d_hs[-1] and "idx" in d_hs[-2]:
+            i_last, i_prev = d_hs[-1]["idx"], d_hs[-2]["idx"]
+            price_hh = d_hs[-1]["px"] > d_hs[-2]["px"]
+            obv_hh = ob[i_last] > ob[i_prev]
+            divergence = price_hh and not obv_hh
+        tag = "DIVERGENCE-WARNING" if divergence else ("ACCUM" if slope_ok else "NEUTRAL")
+        vol["v3"] = dict(tag=tag, slope_pass=slope_ok, divergence=divergence,
+                          obv_last=ob[-1],
+                          obv_lookback=ob[n - 1 - V3_SLOPE_LOOKBACK] if n > V3_SLOPE_LOOKBACK else None)
+
+    # V1 — quiet-pullback test (Approaching or has-rejection UPTREND names only; leg >= 3 bars)
+    if is_uptrend and (d.get("approaching") or d.get("rejection")) and d_hs and "idx" in d_hs[-1]:
+        i_sh = d_hs[-1]["idx"]
+        leg = list(range(i_sh + 1, n))
+        if len(leg) < 3:
+            vol["v1"] = dict(status="leg too short", n_bars=len(leg))
+        else:
+            rvols = [rv[i] for i in leg if rv[i] is not None]
+            mean_rv = (sum(rvols) / len(rvols)) if rvols else None
+            spike = None
+            for i in leg:
+                r = rows[i]
+                if r["c"] < r["o"] and rv[i] is not None and rv[i] >= V1_SPIKE_RVOL:
+                    if spike is None or rv[i] > spike[1]:
+                        spike = (r["date"], rv[i])
+            passed = mean_rv is not None and mean_rv <= V1_QUIET_RVOL and spike is None
+            vol["v1"] = dict(status=("quiet" if passed else "distribution-pattern"),
+                              mean_rvol=mean_rv, n_bars=len(leg), coverage=len(rvols),
+                              spike_date=spike[0] if spike else None,
+                              spike_rvol=spike[1] if spike else None)
+
+    # V2 — demand-confirmation test (rejection bar only)
+    if d.get("rejection"):
+        r_last = rv[-1]
+        half_day_bar = rows[-1]["date"] in hd_set
+        if half_day_bar:
+            verdict = "UNCONFIRMED"
+        elif r_last is None:
+            verdict = None
+        elif r_last >= V2_CONFIRM_RVOL:
+            verdict = "CONFIRMED"
+        elif r_last >= 1.0:
+            verdict = "UNCONFIRMED"
+        else:
+            verdict = "SUSPECT"
+        vol["v2"] = dict(rvol=r_last, verdict=verdict, half_day=half_day_bar)
+
+    return vol
+
 
 if __name__ == "__main__":
     print("scan_engine module - import and call classify(rows)")
