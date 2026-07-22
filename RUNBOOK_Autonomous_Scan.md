@@ -1,4 +1,4 @@
-# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.4, 2026-07-22)
+# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.5, 2026-07-22)
 
 **Purpose:** lets any fresh Claude session reproduce the full scan with zero rebuilding.
 Governing document: `Cowork_Watchlist_Scan_Prompt_v1.md` (project knowledge). This runbook is
@@ -18,16 +18,26 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 ## Fresh-session procedure (what a scheduled run must do)
 
 1. Fetch the toolchain from the data repo (works in ANY session — needs only shell access):
-   for F in scan_engine.py run_scan.py render_reports.py symbol_map.json watchlists.json; do
+   for F in scan_engine.py run_scan.py render_reports.py render_html.py symbol_map.json watchlists.json; do
      curl -sL -o "$F" "https://raw.githubusercontent.com/drphy68/Watchlist-data/main/$F"; done
+   CHECK EACH FETCH LANDED (a missing GitHub file downloads as the literal text "404: Not Found", not
+   an HTTP error curl reports): `head -c 20 render_html.py` — if it starts with "404" or the file is
+   near-empty, that file is NOT yet on the repo. As of 2026-07-22 this is EXPECTED for render_html.py
+   and this runbook itself (v1.5) — see the v1.5 entry below; the push to GitHub could not be
+   completed from a Cowork session (no write credentials) and is pending the owner's manual upload.
+   If render_html.py 404s, skip step 7bis this run (produce .md reports only) and say so plainly in
+   the final message — do not treat it as a run failure.
    (scan_engine.py holds the Section 4.1 mechanics — DO NOT MODIFY; amendments only via the owner's
    written instruction. Section 4.2 (volume module, v1.2) is computed automatically by run_scan.py —
    no manual step is needed to produce V1/V2/V3/AvgVol50; they land in results.json under
    detail['volume'] for every symbol and render.py already reads them. Mirror copies exist in project
    knowledge under claude/autonomy/ when project access is available, but the repo is the canonical
-   runtime source — CONFIRM the repo copies are v1.2-current (grep for "volume_module" in
-   scan_engine.py) before trusting them; if the repo still holds pre-v1.2 files, use the project
-   mirror instead and flag the repo as stale in the final message.)
+   runtime source. The v1.2 repo-push gap noted in v1.4 is CLOSED as of 2026-07-22 — repo-fetched
+   scan_engine.py was grepped live (volume_module present) and the full test_engine.py suite (43
+   checks) was run against the repo-fetched copies, not local ones, and passed. Still confirm currency
+   before trusting the repo blindly (grep for "volume_module" in scan_engine.py) — if a future push
+   ever regresses this, fall back to the project mirror and flag the repo as stale in the final
+   message.)
 2. Download data (shell, allowlisted domain):
    `curl -L -o data.zip https://raw.githubusercontent.com/drphy68/Watchlist-data/main/watchlist_data.zip`
    Unzip; freshness rule: `_meta.generated_utc` must be <= 4 days old AND SPY's last bar must be
@@ -64,8 +74,23 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
    10" — do not silently roll past 10; if N was already 10, state in the final message that the
    Section 8 calibration review is due and ask the owner for a promotion/extension/amend decision
    rather than guessing which. State in Section E which method (a/b/c) determined N this run.
+
+   7bis. `python3 render_html.py` (same EDIT-PER-RUN constants as render_reports.py this run —
+   RUN_STAMP, LAST_BAR, LAST_BAR_DATE, VOLUME_RUN_NO; `DEMO_BANNER` MUST be `""` in production, it
+   exists only for design previews) → three dated `.html` dashboards, one per list. These are the
+   human-readable view; the `.md` reports remain the archive of record and carry the full Section E
+   narrative. RECONCILE before shipping: independently compute uptrends/approaching/action-candidates/
+   data-flags counts per list from results.json (data-flags = status != OK OR non-empty
+   integrity_flags — the SAME definition run_scan.py's console summary uses) and confirm they equal
+   the numbers embedded in each HTML's stat cards, and that the count of `class="drow"` elements
+   equals the list's symbol count. A mismatch is a STOP condition — do not ship the HTML until it's
+   fixed (a real mismatch was found and fixed 2026-07-22: an earlier render_html.py undercounted
+   "data flags" by only counting hard status failures, missing OK-status-but-integrity-flagged
+   symbols — 1 vs 3 on Swing, 4 vs 24 on Excluded that run).
+
    DELIVERY ORDER (durable first, cosmetic last):
-   a. SendUserFile the three .md reports immediately (always available in Cowork sessions);
+   a. SendUserFile the three .md AND three .html reports immediately (both are small and durable;
+      always available in Cowork sessions);
    b. IF the Projects tool is available: project_write the .md files and update
       claude/latest_scan_summary.md with a 10-line digest; if it is NOT available, say so
       explicitly in the final message — do not fail the run over it;
@@ -74,8 +99,11 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
       `17lVei5BDbMdN7XC1jGlEDyZ4L5NtzXI8` (account phyinvest21@gmail.com), via the Google Drive
       connector create_file, parentId = that id, disableConversionToGoogleType=true.
       SIZE-SAFE RULES (learned 2026-07-20 — a large .docx truncated into a corrupt partial):
-      - .md files: upload via **textContent** (raw UTF-8), NOT base64. The text path handled a 40 KB
-        .md fine; use it for all three .md, contentMimeType text/markdown.
+      - .md AND .html files: upload via **textContent** (raw UTF-8), NOT base64 — contentMimeType
+        text/markdown for .md, text/html for .html. The text path handled a 40 KB .md fine; the same
+        path is used for .html (v1.5) specifically to sidestep the base64 ceiling below — a self-
+        contained dashboard HTML can be tens of KB and must never risk the truncation that corrupted
+        Excluded.docx on 2026-07-20.
       - .docx files: upload via base64Content, contentMimeType
         application/vnd.openxmlformats-officedocument.wordprocessingml.document — but ONLY IF the
         base64 string length is ≤ 28,000 chars (~20 KB binary; the connector's per-call ceiling sits
@@ -96,6 +124,35 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
 
 ## Known operational facts (learned 2026-07-19 run)
 
+- v1.5 (2026-07-22): (1) The v1.4 "ACTION NEEDED" repo-push gap is CLOSED — verified LIVE this
+  session by fetching scan_engine.py from raw.githubusercontent.com (not git) and grepping for
+  "volume_module" (result: 1, present) and by running the full test_engine.py suite against the
+  repo-fetched files in an isolated directory with an adjusted import path (43/43 checks pass, 0
+  fail). (2) Added `render_html.py`, a presentation-only companion to render_reports.py — reads the
+  same results.json/watchlists.json, computes nothing, and requires no spec ratification (it is not
+  part of Section 4/6 of the standing instructions, which govern the .md report). Two real bugs were
+  found and fixed while proving it out against genuine data (not the demo fixture it shipped with):
+  (a) a SyntaxError on Python 3.11 — a `—` escape was used inside an f-string {} expression,
+  which is illegal pre-3.12; fixed by extracting it to an EMDASH constant; (b) `t.split(':')[1]`
+  crashed on context tickers with no colon (NQ=F, MANA-USD) when rendering the Excluded list's
+  sector-chip row; fixed to `[-1]`. (3) A genuine RECONCILIATION MISMATCH was caught and fixed: the
+  HTML's "data flags" stat card only counted hard status failures (NO_DATA/DATA_TOO_SHORT), silently
+  dropping OK-status-but-integrity-flagged symbols (e.g. OHLC-inconsistent bars) that the rest of the
+  pipeline (run_scan.py's console FLAGGED/FAILED count) does count. Undercounted 1 vs 3 on Swing and
+  4 vs 24 on Excluded before the fix; 0 mismatches across all 3 lists x 5 metrics after. See step 7bis
+  above for the mandatory reconciliation procedure every future run must repeat (this is a code-review
+  catch, not a one-time fix — a future edit to either renderer could reintroduce drift). (4) HTML
+  deposit to Google Drive uses textContent (never base64) — see step 7d. (5) **GITHUB PUSH BLOCKED —
+  ACTION NEEDED:** unlike the v1.4 file set (which the owner uploaded manually via GitHub's web UI —
+  commit "Add files via upload", confirmed present via a live raw.githubusercontent.com fetch +
+  grep this session), render_html.py and this v1.5 runbook could NOT be pushed from this Cowork
+  session — `git push` failed with "Authentication failed... Password authentication is not supported
+  for Git operations" (tried both the plain remote and an `x-access-token` header using the session's
+  GITHUB_TOKEN env var, which turned out to hold the literal placeholder string "proxy-injected", not
+  a real credential). This session has git READ access (clone, ls-remote, raw.githubusercontent.com
+  all work) but no WRITE access. The owner must upload render_html.py and this runbook to the repo
+  root manually (same drag-and-drop method used for v1.2) before any fresh session can rely on
+  step 7bis — until then, expect the 404 case in step 1 above every run.
 - v1.4 (2026-07-22): owner ratified and incorporated spec v1.2 (volume module — AvgVol50/RVOL, V1
   quiet-pullback, V2 demand-confirmation, V3 OBV accumulation tag; REPORT-ONLY for 10 runs per
   Section 8 sunset clause, see VOLUME_RUN_NO procedure in step 7 above). scan_engine.py gained
