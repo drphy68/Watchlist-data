@@ -1,4 +1,4 @@
-# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.5, 2026-07-22)
+# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.6, 2026-07-24)
 
 **Purpose:** lets any fresh Claude session reproduce the full scan with zero rebuilding.
 Governing document: `Cowork_Watchlist_Scan_Prompt_v1.md` (project knowledge). This runbook is
@@ -14,6 +14,40 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
    session. Its prompt tells the session to follow this runbook.
 3. **Human leg (unchanged):** all trade decisions, TradingView verification, hourly triggers,
    and any parameter ratification remain with the owner. Category B empty is a normal outcome.
+
+## Heartbeat (proof-of-life write) — v1.6, MANDATORY, do this before anything that can fail
+
+On 2026-07-23 the 20:30 SGT scheduled run produced NO artifact anywhere the owner could check —
+no project doc, no Google Drive file, and (as of the 2026-07-24 investigation) no confirmed
+push/email notification either. Freshness was independently re-checked for that exact firing time
+and RULED OUT as the cause (GitHub's fetch had already committed Wednesday's close by 10:12 UTC,
+two hours before the 12:30 UTC/20:30 SGT trigger — the data was fresh). So the failure happened
+either before the trigger's session ever started, or silently somewhere inside it, and there was
+no way to tell which after the fact. That must never happen again.
+
+Immediately after Step 1 below (toolchain fetch) succeeds — BEFORE Step 2's freshness gate, before
+any data-dependent logic, before anything else that can fail — write a heartbeat marker:
+
+- IF the Projects tool is available: `project_write` to `claude/run_heartbeat.md` with: run start
+  timestamp (UTC and SGT), `STATUS: RUN STARTED — toolchain fetched OK`, and whether this is the
+  scheduled weekday fire or a manual/diagnostic fire. This overwrites the previous run's heartbeat
+  (it is a single always-current marker, not a log) — `claude/latest_scan_summary.md` remains the
+  durable per-day archive once a run actually completes.
+- IF Projects is unavailable, `PushNotification` the same content instead and say so plainly in the
+  final message.
+
+From that point on, ON EVERY STOP OR ERROR — the Step 2 freshness gate failing, an unhandled
+exception anywhere in run_scan.py/render_reports.py/render_html.py, a connector failure that blocks
+delivery, or any other reason execution halts before Step 4's SendUserFile — IMMEDIATELY overwrite
+`claude/run_heartbeat.md` with `STATUS: STOPPED at <step name>`, the exact reason (the manifest date
+vs the required date, or the literal exception text — never a vague "something went wrong"), and the
+timestamp, before ending the turn. On successful completion, overwrite it one final time with
+`STATUS: COMPLETED — see latest_scan_summary.md` (Step 4b already writes the full digest there).
+
+This is deliberately the very first write of the run. It costs one small tool call and must never
+be skipped under time pressure — it is the only artifact able to distinguish "the trigger never
+fired" from "the trigger fired and failed silently," which is exactly the ambiguity the 2026-07-23
+gap could not be resolved from afterward.
 
 ## Fresh-session procedure (what a scheduled run must do)
 
@@ -42,7 +76,9 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
    `curl -L -o data.zip https://raw.githubusercontent.com/drphy68/Watchlist-data/main/watchlist_data.zip`
    Unzip; freshness rule: `_meta.generated_utc` must be <= 4 days old AND SPY's last bar must be
    the most recent completed US session (note: on Mondays the newest manifest is Saturday's, which
-   correctly holds Friday's close - that PASSES). If either check fails, STOP and notify the owner
+   correctly holds Friday's close - that PASSES). If either check fails, update
+   `claude/run_heartbeat.md` per the Heartbeat section above (`STATUS: STOPPED — stale data`, with
+   the manifest's actual last-bar date and the date that was required), notify the owner, and STOP
    rather than scanning stale data.
 3. `python3 run_scan.py <data_dir>` — integrity checks + full classification (results.json).
 4. Confirm SPY's last bar date == the most recent completed US session. Weekend runs (Sat/Sun SGT)
@@ -120,10 +156,31 @@ plumbing only — it changes nothing in the trading plan's mechanical definition
       the upgrade path is Route B: a GitHub Actions + rclone bridge, server-side, no payload ceiling —
       would also enable OneDrive. Not built; noted for future.)
 8. Honesty rules of Section 7 apply verbatim: flag every data failure, never populate an empty
-   category, recompute everything fresh, report verified-live vs carried-forward.
+   category, recompute everything fresh, report verified-live vs carried-forward. Any unhandled
+   error or STOP at any step must update `claude/run_heartbeat.md` before the turn ends (see the
+   Heartbeat section above) — a command running without error isn't evidence its effect landed, and
+   a session that stops without writing anything anywhere is the hardest failure mode to diagnose
+   after the fact.
 
 ## Known operational facts (learned 2026-07-19 run)
 
+- v1.6 (2026-07-24): investigated "no scans since 2026-07-22." Hard evidence gathered: (1) the
+  GitHub fetch Action DID commit fresh data on schedule both days in question — "data 2026-07-22"
+  landed 10:13:45 UTC, "data 2026-07-23" landed 10:12:50 UTC, both well before the scan trigger's
+  12:30 UTC (20:30 SGT) fire time — so the GH Actions ~9h-delay / freshness-gate theory from the
+  prior digest does NOT explain the 2026-07-23 gap specifically; data was fresh when that trigger
+  fired. (2) Neither the Trading Investor project nor the Google Drive "Watchlist Scans" folder
+  received any file dated 2026-07-23 or later (last landing in both places: 2026-07-22). (3) A
+  same-day diagnostic manual fire (2026-07-24T07:03:46Z / 15:03 SGT) correctly hit the freshness
+  gate — at that moment the newest committed data still only held through 2026-07-22's close, one
+  session behind the 2026-07-23 close that had already completed by 15:03 SGT, so a STOP there was
+  the CORRECT behavior, not a bug. (4) The owner had not yet checked for a push/email notification
+  from the 2026-07-23 20:30 SGT firing at the time of this entry, so whether that run fired at all,
+  fired and crashed silently, or fired and notified-but-didn't-persist remains UNCONFIRMED — this
+  runbook does not claim a resolved root cause it doesn't have. FIX SHIPPED regardless of which of
+  those it turns out to be: the Heartbeat mechanism above, so the next occurrence leaves forensic
+  evidence instead of a silent gap. The very next scheduled fire (2026-07-24, 20:30 SGT) is the
+  first live test of both the heartbeat and whether the underlying issue recurs.
 - v1.5 (2026-07-22): (1) The v1.4 "ACTION NEEDED" repo-push gap is CLOSED — verified LIVE this
   session by fetching scan_engine.py from raw.githubusercontent.com (not git) and grepping for
   "volume_module" (result: 1, present) and by running the full test_engine.py suite against the
