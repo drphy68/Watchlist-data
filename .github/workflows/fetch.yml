@@ -1,26 +1,104 @@
 name: Daily watchlist data fetch
 
+# v2 (2026-07-25).  Three changes over v1, all aimed at one failure mode:
+# on 2026-07-25 a run at 09:13 UTC produced a manifest in which every US
+# symbol ended at Thursday's close while every non-US symbol had Friday's,
+# so the downstream scan hard-stopped on its freshness gate and nobody was
+# told.  v2 (a) takes three shots at the data inside the window the scan
+# needs, (b) seeds each run from the last good zip so a short source can
+# never destroy good held data, and (c) ends red when the reference symbol
+# is still short, which is the only in-product signal GitHub gives for free.
+
 on:
   schedule:
-    - cron: "30 1 * * 2-6"
+    # The scan fires at 12:30 UTC daily.  The bar it needs closes at
+    # 20:00-21:00 UTC the previous day.  These three attempts sit inside
+    # that window.  GitHub queues scheduled runs and has been observed to
+    # start this job up to ~8h late, which is exactly why there are three.
+    - cron: "10 22 * * 1-5"   # ~2h after the US close, same calendar day
+    - cron: "30 1 * * 2-6"    # original slot, kept as the second attempt
+    - cron: "5 10 * * 2-6"    # last chance before the 12:30 UTC scan
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
+# Two attempts must never race each other onto the same branch.
+concurrency:
+  group: watchlist-data
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch OHLCV data
-        run: python3 fetch_watchlist_data.py
+      # The CSVs are not committed - only the zip is.  Unpacking it gives the
+      # script the last known-good bars, which is what makes its never-regress
+      # rule able to protect anything.
+      - name: Seed from last good zip
+        run: |
+          mkdir -p watchlist_data
+          if [ -f watchlist_data.zip ]; then
+            unzip -oq watchlist_data.zip -d watchlist_data
+            echo "Seeded $(ls watchlist_data | wc -l) files from the last good zip"
+          else
+            echo "No previous zip - cold start"
+          fi
 
+      - name: Fetch OHLCV data
+        id: fetch
+        env:
+          WL_MAX_ROUNDS: "3"
+          WL_ROUND_WAIT: "600"
+        run: |
+          set +e
+          python3 fetch_watchlist_data.py 2>&1 | tee fetch.log
+          echo "rc=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      # Commit BEFORE the gate below, so partial or lagging data still lands
+      # and the next attempt can build on it.  A red run is a notification,
+      # never a rollback.
       - name: Commit updated data
         run: |
           git config user.name "watchlist-bot"
           git config user.email "actions@users.noreply.github.com"
           git add watchlist_data.zip watchlist_data/manifest.json
-          git commit -m "data $(date -u +%F)" || echo "no changes"
+          git commit -m "data $(date -u +%F) $(date -u +%H:%M)Z" || echo "no changes"
+          git pull --rebase --autostash || true
           git push
+
+      - name: Job summary
+        if: always()
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          m = json.load(open("watchlist_data/manifest.json")).get("_meta", {})
+          print("## Watchlist data fetch\n")
+          print("| field | value |")
+          print("|---|---|")
+          for k in ("generated_utc", "script_version", "expected_last_us_session",
+                    "reference_symbol", "reference_symbol_last",
+                    "reference_symbol_at_expected", "us_symbols_total",
+                    "us_symbols_short", "retry_rounds_used", "kept_previous",
+                    "source_counts"):
+              print("| {} | {} |".format(k, m.get(k)))
+          short = m.get("us_symbols_short_examples") or []
+          if short:
+              print("\nShort of the expected session: " + ", ".join(short))
+          PY
+
+      # Ends the run red when the reference symbol is behind, i.e. when the
+      # scan is going to hard-stop tonight.  GitHub emails the owner on a
+      # failed scheduled workflow, which is the whole point: the 2026-07-23
+      # to 07-25 outage was invisible precisely because nothing ever failed
+      # loudly.
+      - name: Gate on US session freshness
+        run: |
+          if [ "${{ steps.fetch.outputs.rc }}" != "0" ]; then
+            echo "::error::Reference symbol is short of the most recent completed US session - tonight's scan will hard-stop on the freshness gate."
+            exit 1
+          fi
+          echo "Data is scan-ready."
