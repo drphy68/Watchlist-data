@@ -1,13 +1,26 @@
 name: Daily watchlist data fetch
 
-# v2 (2026-07-25).  Three changes over v1, all aimed at one failure mode:
-# on 2026-07-25 a run at 09:13 UTC produced a manifest in which every US
-# symbol ended at Thursday's close while every non-US symbol had Friday's,
-# so the downstream scan hard-stopped on its freshness gate and nobody was
-# told.  v2 (a) takes three shots at the data inside the window the scan
-# needs, (b) seeds each run from the last good zip so a short source can
-# never destroy good held data, and (c) ends red when the reference symbol
-# is still short, which is the only in-product signal GitHub gives for free.
+# v2.1 (2026-07-25).  Fixes two bugs introduced by v2 and observed live on
+# the re-run of run #7:
+#
+#   1. "git pull --rebase --autostash" cannot merge watchlist_data.zip.  A
+#      binary file has no line structure, so rebase declares a conflict,
+#      aborts mid-replay and leaves the runner in detached HEAD:
+#         warning: Cannot merge binary files: watchlist_data.zip
+#         CONFLICT (content): Merge conflict in watchlist_data.zip
+#         fatal: You are not currently on a branch.  exit 128
+#      v2.1 never merges the artefacts.  It sets the remote tip as the base
+#      and writes this run's freshly generated files on top of it, which is
+#      the correct semantics for a generated artefact: last writer wins.
+#
+#   2. The job summary parsed the manifest unconditionally, so once the
+#      commit step had left conflict markers in it, the summary died too
+#      (JSONDecodeError) and the run's real result was never printed.
+#      v2.1 makes the summary incapable of failing the run.
+#
+# v2's own purpose is unchanged: three attempts inside the window the scan
+# needs, seed from the last good zip so a short source can never destroy
+# held data, and end the run red when the reference symbol is still short.
 
 on:
   schedule:
@@ -34,6 +47,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # The CSVs are not committed - only the zip is.  Unpacking it gives the
       # script the last known-good bars, which is what makes its never-regress
@@ -61,22 +76,83 @@ jobs:
       # Commit BEFORE the gate below, so partial or lagging data still lands
       # and the next attempt can build on it.  A red run is a notification,
       # never a rollback.
+      #
+      # The artefacts are copied out of the work tree first, the work tree is
+      # reset to the remote tip, and the artefacts are written back on top.
+      # No merge, no rebase, therefore no binary conflict.  If the push is
+      # rejected because someone else moved the branch in between, the same
+      # sequence simply replays against the new tip.
       - name: Commit updated data
-        run: |
-          git config user.name "watchlist-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add watchlist_data.zip watchlist_data/manifest.json
-          git commit -m "data $(date -u +%F) $(date -u +%H:%M)Z" || echo "no changes"
-          git pull --rebase --autostash || true
-          git push
-
-      - name: Job summary
         if: always()
         run: |
-          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
-          import json
-          m = json.load(open("watchlist_data/manifest.json")).get("_meta", {})
+          set -uo pipefail
+
+          if [ ! -f watchlist_data.zip ] || [ ! -f watchlist_data/manifest.json ]; then
+            echo "::warning::No artefacts produced by this run - nothing to commit."
+            exit 0
+          fi
+
+          git config user.name "watchlist-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          STAGE="$(mktemp -d)"
+          mkdir -p "$STAGE/watchlist_data"
+          cp watchlist_data.zip                "$STAGE/watchlist_data.zip"
+          cp watchlist_data/manifest.json      "$STAGE/watchlist_data/manifest.json"
+
+          pushed=0
+          for attempt in 1 2 3; do
+            git fetch --no-tags --prune origin main || { echo "fetch failed"; sleep 5; continue; }
+            # -f is required: the work tree still holds this run's modified
+            # artefacts, and a plain checkout refuses to overwrite them.  They
+            # are safe in $STAGE and are written back immediately below.
+            git checkout -f -B main origin/main || { echo "checkout failed"; sleep 5; continue; }
+            git reset --hard origin/main || { echo "reset failed"; sleep 5; continue; }
+
+            mkdir -p watchlist_data
+            cp "$STAGE/watchlist_data.zip"           watchlist_data.zip
+            cp "$STAGE/watchlist_data/manifest.json" watchlist_data/manifest.json
+
+            git add -- watchlist_data.zip watchlist_data/manifest.json
+            if git diff --cached --quiet; then
+              echo "Remote already holds identical artefacts - nothing to commit."
+              pushed=1
+              break
+            fi
+
+            git commit -m "data $(date -u +%F) $(date -u +%H:%M)Z"
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt."
+              pushed=1
+              break
+            fi
+
+            echo "Push rejected on attempt $attempt - branch moved; replaying against the new tip."
+            sleep 5
+          done
+
+          if [ "$pushed" -ne 1 ]; then
+            echo "::error::Could not push updated data after 3 attempts."
+            exit 1
+          fi
+
+      # This step reports.  It must never be the reason a run is red, because
+      # a red run is the freshness alarm and a false alarm destroys the signal.
+      - name: Job summary
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 - >> "$GITHUB_STEP_SUMMARY" <<'PY' || echo "(summary step failed; see the fetch log)" >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+
           print("## Watchlist data fetch\n")
+          p = pathlib.Path("watchlist_data/manifest.json")
+          try:
+              meta = json.loads(p.read_text()).get("_meta", {})
+          except Exception as exc:
+              print("Manifest could not be read: `{}: {}`".format(type(exc).__name__, exc))
+              raise SystemExit(0)
+
           print("| field | value |")
           print("|---|---|")
           for k in ("generated_utc", "script_version", "expected_last_us_session",
@@ -84,10 +160,10 @@ jobs:
                     "reference_symbol_at_expected", "us_symbols_total",
                     "us_symbols_short", "retry_rounds_used", "kept_previous",
                     "source_counts"):
-              print("| {} | {} |".format(k, m.get(k)))
-          short = m.get("us_symbols_short_examples") or []
+              print("| {} | {} |".format(k, meta.get(k)))
+          short = meta.get("us_symbols_short_examples") or []
           if short:
-              print("\nShort of the expected session: " + ", ".join(short))
+              print("\nShort of the expected session: " + ", ".join(map(str, short)))
           PY
 
       # Ends the run red when the reference symbol is behind, i.e. when the
@@ -96,8 +172,14 @@ jobs:
       # to 07-25 outage was invisible precisely because nothing ever failed
       # loudly.
       - name: Gate on US session freshness
+        if: always()
         run: |
-          if [ "${{ steps.fetch.outputs.rc }}" != "0" ]; then
+          RC="${{ steps.fetch.outputs.rc }}"
+          if [ -z "$RC" ]; then
+            echo "::error::The fetch step did not report a result."
+            exit 1
+          fi
+          if [ "$RC" != "0" ]; then
             echo "::error::Reference symbol is short of the most recent completed US session - tonight's scan will hard-stop on the freshness gate."
             exit 1
           fi
