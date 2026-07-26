@@ -1,4 +1,4 @@
-# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.6, 2026-07-24)
+# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.8, 2026-07-25)
 
 **Purpose:** lets any fresh Claude session reproduce the full scan with zero rebuilding.
 Governing document: `Cowork_Watchlist_Scan_Prompt_v1.md` (project knowledge). This runbook is
@@ -111,6 +111,19 @@ gap could not be resolved from afterward.
    Section 8 calibration review is due and ask the owner for a promotion/extension/amend decision
    rather than guessing which. State in Section E which method (a/b/c) determined N this run.
 
+   OWNER RULING (2026-07-25) — BINDING, DO NOT RE-LITIGATE. The 2026-07-24 catch-up set is
+   **run 1 of 10**. The 2026-07-22 run executed engine v1.2 and computed volume internally but never
+   DISPLAYED it. The owner ruled that the Section 8 probation counts OBSERVABLE runs — ten reports
+   the owner can actually read and judge — not module executions. Rationale recorded so it survives
+   into sessions that were not present: (i) the purpose of a ten-run probation is ten observations
+   before promotion, and an undisplayed run buys nine; (ii) clause (c) above already yields 1
+   mechanically, so any future session reading artefacts alone reaches the same number without
+   needing to be told this exception — a rule that requires oral history is not a rule.
+   CONSEQUENCE: no code change follows from this ruling. Anchor: 2026-07-24 = run 1. The Section 8
+   calibration review falls due on the 10th DELIVERED report counting the 2026-07-24 set as first.
+   A session that finds a prior header still simply increments it; this clause exists only to stop
+   the 07-22 question being reopened.
+
    7bis. `python3 render_html.py` (same EDIT-PER-RUN constants as render_reports.py this run —
    RUN_STAMP, LAST_BAR, LAST_BAR_DATE, VOLUME_RUN_NO; `DEMO_BANNER` MUST be `""` in production, it
    exists only for design previews) → three dated `.html` dashboards, one per list. These are the
@@ -151,10 +164,41 @@ gap could not be resolved from afterward.
         equals the local file's byte size; if they differ, treat the upload as failed and say so.
       - The connector has NO delete tool: if a bad file already exists from a prior run, you cannot
         remove it — flag it for the owner to delete manually (give the file id).
+      - **TEXTCONTENT HAS A SECOND, NON-OBVIOUS CEILING (learned 2026-07-25).** The binding limit on a
+        textContent upload is not the connector — it is the *Read* tool's per-call token cap (~25,000
+        tokens), because the bytes must pass through the session's context to become textContent.
+        Read's offset/limit work at LINE granularity, so a file whose SINGLE LONGEST LINE exceeds that
+        cap cannot be read completely by any means and therefore cannot be uploaded verbatim at all.
+        This bites minified HTML specifically: on 2026-07-25 Watchlist_Scan_2026-07-24_Excluded.html
+        (114,147 bytes) had its entire <body> on ONE 109,815-character line (~49,179 tokens) and was
+        correctly SKIPPED rather than uploaded partially. Swing.html (50,147 B, longest line 45,818
+        chars) and Investor.html (43,817 B) both uploaded fine. RULE: before attempting an .html
+        deposit, check the longest line with `awk '{if(length($0)>m)m=length($0)}END{print m}' FILE`.
+        If it exceeds ~90,000 characters, SKIP CLEAN and say so — never split, never partial.
+        STANDING FIX (presentation-only, no spec ratification needed): render_html.py should emit a
+        newline after each `</tr>` / between table rows so no single line is unreadable. Until that
+        ships, expect the largest list's .html to be undepositable every run.
+      - **.docx ARE NOW ALL OVER THE BASE64 CEILING (measured 2026-07-25).** Actual base64 lengths for
+        the 2026-07-24 set: Investor 29,892 chars (22,418 B), Swing 31,060 (23,293 B), Excluded 41,580
+        (31,183 B) — all above the 28,000-char limit above, so all three SKIP CLEAN by rule. Do not
+        treat a skipped .docx as a failure; the matching .md carries the full content and is already
+        in Drive and in the project. Measure, state the numbers, move on.
       If the Google Drive connector is unavailable/unpermitted, do NOT fail the run — reports are
       already delivered via (a)-(c); note the skip and why. (For guaranteed deposit of ALL sizes/formats,
       the upgrade path is Route B: a GitHub Actions + rclone bridge, server-side, no payload ceiling —
       would also enable OneDrive. Not built; noted for future.)
+
+   7e. DELIVERY CLOSE-OUT (v1.7, MANDATORY). Step 7d has existed since v1.3, yet on the 2026-07-24
+   catch-up run NOTHING was deposited to Drive — the step was silently dropped from the session's
+   working task list and no one noticed until the owner asked why the folder was empty. A step that
+   exists in a runbook but not in the run's task list does not happen. Therefore: before ending the
+   turn, run an explicit close-out and PRINT THE TABLE in the final message — one row per artifact
+   (3 .md, 3 .html, 3 .docx) x each destination (chat via SendUserFile, project doc, Google Drive),
+   each cell either the verified byte count / file id, or SKIPPED with the rule-derived reason.
+   Never write "delivered" or "confirmed" as a bare word: a tool call returning without error is not
+   evidence its effect landed (this is the owner's standing rule). If a destination is genuinely
+   unavailable, that is an acceptable row value — an omitted row is not.
+
 8. Honesty rules of Section 7 apply verbatim: flag every data failure, never populate an empty
    category, recompute everything fresh, report verified-live vs carried-forward. Any unhandled
    error or STOP at any step must update `claude/run_heartbeat.md` before the turn ends (see the
@@ -164,6 +208,27 @@ gap could not be resolved from afterward.
 
 ## Known operational facts (learned 2026-07-19 run)
 
+- v1.8 (2026-07-25): OWNER RULING on VOLUME_RUN_NO — the Section 8 probation counts OBSERVABLE
+  (delivered and displayed) runs, not module executions. 2026-07-24 = run 1 of 10; the 2026-07-22
+  run, which computed volume but never displayed it, does not count. This CONFIRMS the number the
+  mechanical rule in step 7 already produced, so no code or parameter changed; the clause was added
+  to step 7 purely so no future session reopens the question. `classify()` and every ratified
+  parameter untouched. Section E narrative text in render_reports.py was updated to state the
+  settled ruling instead of the old open caveat ("an owner could reasonably argue ... run 2") —
+  presentation-only string change. NOTE: the GitHub copies of the runbook and render_reports.py are
+  now behind the project copies until the owner uploads them manually.
+- v1.7 (2026-07-25): the 2026-07-24 catch-up run delivered all six reports to chat and all three .md
+  to the project, but deposited NOTHING to Google Drive. Diagnosis from artifacts, not inference: the
+  folder was writable (canAddChildren true) and the SAME Drive connector had been used successfully
+  during that very run to READ the folder for the VOLUME_RUN_NO check (recorded in Section E of the
+  delivered Swing report). So the connector, the permissions and the folder were all fine — step 7d
+  was simply omitted from execution. Remediated 2026-07-25: Swing.md (28,219 B), Investor.md
+  (26,023 B), Excluded.md (49,175 B), Swing.html (50,147 B) and Investor.html (43,817 B) all uploaded
+  and each verified by returned fileSize == local byte count; Excluded.html skipped (read-ceiling, see
+  7d) and all three .docx skipped (base64 ceiling, see 7d). Fix shipped: step 7e close-out table above.
+  Housekeeping: README_2026-07-20_Excluded_docx_INCOMPLETE_please_delete.txt (id
+  1OwnzsGKBsivvXQAgZqGIotnG2HvwSGyS) is now stale — the corrupt .docx it referred to is gone from the
+  folder — and the owner can delete it manually (the connector still has no delete tool).
 - v1.6 (2026-07-24): investigated "no scans since 2026-07-22." Hard evidence gathered: (1) the
   GitHub fetch Action DID commit fresh data on schedule both days in question — "data 2026-07-22"
   landed 10:13:45 UTC, "data 2026-07-23" landed 10:12:50 UTC, both well before the scan trigger's

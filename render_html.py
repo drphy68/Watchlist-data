@@ -6,6 +6,19 @@ archive; these are the human-readable view.
 
 Pipeline: run after render_reports.py. Reads the same results.json/watchlists.json.
 Outputs: Watchlist_Scan_<LAST_BAR_DATE>_<List>.html
+
+FIX (2026-07-26) - ONE-LINE-PER-ROW: the per-symbol rows (Section D, one
+<details class="drow"> per symbol) were being joined with "".join(...) and no
+separator, so every row landed on a single physical line. On the Excluded list
+(largest watchlist) that line reached 109,815 characters, which exceeds the
+read-tool line-chunking limit used to verify/deposit these files - the file
+could not be read completely by any method and could not be uploaded to
+Google Drive at all (Watchlist_Scan_2026-07-24_Excluded.html was SKIPPED for
+exactly this reason in the 2026-07-25 Drive-deposit diagnosis). Changed the three "".join(...) calls that build Section B, C
+and D to "\n".join(...) instead. This has ZERO visual effect (browsers
+collapse whitespace between block-level elements), only makes the file
+line-chunkable. No change to any tag, class, data value, or the classify()-
+derived category assignment.
 """
 import json, html, os, sys
 
@@ -13,9 +26,9 @@ SCAN_DIR = os.environ.get("SCAN_DIR", "/home/claude/scan")
 OUT_DIR = os.environ.get("HTML_OUT_DIR", SCAN_DIR)
 
 # ---- EDIT PER RUN (mirrors render_reports.py; kept identical to its constants this run) ----
-RUN_STAMP = "Sunday 2026-07-19, ~23:55 SGT (completed Monday 2026-07-20 ~01:00 SGT)"
-LAST_BAR = "2026-07-17 (Friday)"
-LAST_BAR_DATE = "2026-07-17"       # used in filenames
+RUN_STAMP = "Sunday 2026-07-26, ~00:45 SGT (CATCH-UP run, covers the 2026-07-23/24/25 gap)"
+LAST_BAR = "2026-07-24 (Friday)"
+LAST_BAR_DATE = "2026-07-24"       # used in filenames
 SOURCE_SHORT = "Yahoo Finance daily (split-adj.)"
 SPEC_VER = "v1.2"
 VOLUME_RUN_NO, VOLUME_RUN_TOTAL = 1, 10
@@ -279,13 +292,13 @@ def build(list_key, title):
     o.append('</div>')
     o.append('<h2>B \u00b7 Action candidates</h2>')
     if acts:
-        o.append('<div class="cards">' + "".join(action_card(t) for t in acts) + '</div>')
+        o.append('<div class="cards">' + "\n".join(action_card(t) for t in acts) + '</div>')
     else:
         o.append('<div class="callout">None this run \u2014 a normal, successful outcome. '
                  'No threshold is lowered to populate this section.</div>')
     o.append('<h2>C \u00b7 Evening watch</h2>')
     if watch:
-        o.append('<div class="cards">' + "".join(watch_card(t) for t in watch) + '</div>')
+        o.append('<div class="cards">' + "\n".join(watch_card(t) for t in watch) + '</div>')
     else:
         o.append('<div class="callout">No uptrend names approaching zones.</div>')
     o.append('<h2>D \u00b7 All symbols</h2>'
@@ -295,7 +308,7 @@ def build(list_key, title):
              '<button onclick="flt(\'rng\',this)">Range</button>'
              '<button onclick="flt(\'dn\',this)">Downtrend</button>'
              '<button onclick="flt(\'nd\',this)">No data</button></div>')
-    o.append("".join(d_row(t) for t in tvs))
+    o.append("\n".join(d_row(t) for t in tvs))
     o.append('<details class="sect"><summary>E \u00b7 Data quality &amp; verification flags</summary>'
              '<pre>See the .md report of the same date for the full Section E narrative \u2014 '
              'the archive of record. Symbols with retrieval failures appear above as NO DATA.</pre></details>')

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-fetch_watchlist_data.py  -  Watchlist OHLCV downloader (v1.2, 2026-07-25)
+fetch_watchlist_data.py  -  Watchlist OHLCV downloader (v1.3, 2026-07-25)
 For: drphy68 pre-open watchlist scan (Weekend Mode run)
 
 WHAT IT DOES
   Downloads ~2 years of daily OHLCV bars for 224 watchlist symbols from
-  Stooq (primary) with Yahoo Finance as fallback, saves one CSV per symbol,
-  writes a manifest of what came from where, and zips everything into
-  watchlist_data.zip in the same folder.
+  Yahoo Finance (sole source - Stooq formally retired v1.3, see changelog),
+  saves one CSV per symbol, writes a manifest of what came from where, and
+  zips everything into watchlist_data.zip in the same folder.
 
 HOW TO RUN (needs only Python 3.8+, no extra installs)
   Windows :  py fetch_watchlist_data.py
@@ -17,6 +17,38 @@ HOW TO RUN (needs only Python 3.8+, no extra installs)
 
 It only READS public price data and writes files into a new subfolder
 "watchlist_data" next to itself.
+
+v1.3 (2026-07-25) - STOOQ RETIRED (OWNER RULING: "try once to repair, failing
+  which retire it")
+  ONE repair attempt was made and failed, so Stooq is now formally retired:
+    - Every production run this pipeline has ever recorded shows
+      source_counts = {"yahoo": 219} - zero symbols from Stooq, not a recent
+      blip (see Pipeline_Lag_2026-07-25.md).
+    - The request code was reviewed for a fixable defect and none was found:
+      try_stooq() uses the correct CSV endpoint, the same browser User-Agent
+      that succeeds for Yahoo from the identical GitHub Actions run, and
+      correct CSV parsing. Same header, same code path, same host class -
+      only Stooq fails, which points at Stooq itself (its own
+      rate limiting / anti-bot policy against shared cloud IP ranges,
+      consistent with the historical "exceeded the daily hits limit"
+      message this script already had to special-case), not a bug here.
+    - Two independent network paths were tested live on 2026-07-25 and both
+      were inconclusive by policy, not by evidence: this session's own
+      sandbox blocks the market-data domain class outright (Yahoo included,
+      so it cannot isolate a Stooq-specific problem), and Anthropic's
+      WebFetch tool refuses stooq.com under its own robots.txt policy. This
+      pipeline's actual execution host is GitHub Actions, which the manifest
+      evidence above already covers directly - no live retest was needed
+      there because the production record already answers the question with
+      a large, cost-free sample (every run, not one probe).
+  CHANGE: `stooq_dead` now starts True, so try_stooq() is never called and
+  Yahoo is attempted first for every symbol. The `stooq` key stays in
+  SYMBOLS and try_stooq()/fetch_one() are left in place, dormant, so this
+  is reversible in one line if a genuinely working replacement is ever
+  needed. No change to the Yahoo request path, the CSV schema, any manifest
+  key's meaning, or any file this script does not own. classify() and every
+  ratified scan parameter are untouched (this script never imports or calls
+  either).
 
 v1.2 (2026-07-25) - US-SESSION FRESHNESS GUARD
   On 2026-07-25 a run at 09:13 UTC produced a manifest in which all 185
@@ -232,7 +264,10 @@ def main():
     if RESUME:
         print("WL_RESUME=1: completed symbols will be skipped (manual-run mode)")
 
-    stooq_dead = False
+    stooq_dead = True  # v1.3: Stooq formally retired by owner ruling 2026-07-25 -
+                        # repair attempt failed (see module docstring); Yahoo is
+                        # now attempted first for every symbol. Flip to False only
+                        # if a genuinely working fix or replacement is deployed.
     kept_previous = 0
     n = len(SYMBOLS)
     fname_of, fpath_of = {}, {}
@@ -327,7 +362,7 @@ def main():
     ref = manifest.get(REF_US) if isinstance(manifest.get(REF_US), dict) else {}
     manifest["_meta"] = {
         "generated_utc": datetime.now(timezone.utc).isoformat(),
-        "script_version": "1.2",
+        "script_version": "1.3",
         "expected_last_us_session": expected,
         "reference_symbol": REF_US,
         "reference_symbol_last": ref.get("last"),
@@ -338,6 +373,8 @@ def main():
         "retry_rounds_used": rounds_used,
         "kept_previous": kept_previous,
         "source_counts": srcs,
+        "stooq_retired": True,
+        "stooq_retired_date": "2026-07-25",
     }
     json.dump(manifest, open(manifest_path, "w"), indent=1)
 

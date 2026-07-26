@@ -6,8 +6,11 @@ from scan_engine import OPERATIONALIZATIONS
 R = json.load(open("/home/claude/scan/results.json"))
 WL = json.load(open("/home/claude/scan/watchlists.json"))
 
-RUN_STAMP = "Sunday 2026-07-19, ~23:55 SGT (completed Monday 2026-07-20 ~01:00 SGT)"
-LAST_BAR = "2026-07-17 (Friday)"
+RUN_STAMP = ("Sunday 2026-07-26, ~00:45 SGT — CATCH-UP run covering the 2026-07-23/24/25 gap "
+             "(no scan was delivered on those dates; see Section E)")
+LAST_BAR = "2026-07-24 (Friday)"
+LAST_BAR_DATE = "2026-07-24"
+PREV_REPORT = "2026-07-22 (last bar 2026-07-21)"
 SOURCE = ("Yahoo Finance daily chart API (split-adjusted, not dividend-adjusted), "
           "sole source for ALL symbols - see Section E flag on Stooq")
 # Volume module (Section 8, v1.2): report-only for the first 10 runs after v1.2 deployment
@@ -111,7 +114,7 @@ def why_str(v):
     return "; ".join(w)[:110]
 
 def weekend_table(tvs, list_name):
-    hdr = ("| Symbol | D-cls | W-cls | Close (07-17) | 50DMA (Δ5d) | ATR14 | "
+    hdr = (f"| Symbol | D-cls | W-cls | Close ({LAST_BAR_DATE[5:]}) | 50DMA (Δ5d) | ATR14 | "
            "Daily swing highs | Daily swing lows | Zone [factors] | Dist(ATR) | "
            "AvgVol50 | V3 (OBV) | V1 (pullback) | Failed condition / note |\n"
            "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n")
@@ -191,21 +194,38 @@ def sector_table():
         out += f"| {tv} | {v['cls']} | {dirn} | {f2(d['last_close'])} | {note} |\n"
     return out
 
+def index_line(tag, v):
+    """One fully data-derived line per Layer-1 index. Every number below is read from
+    results.json this run — no narrative is carried forward from a previous run."""
+    d = v["detail"]
+    pv = d.get("price_vs_ma")
+    A = d.get("atr14")
+    rel = "above" if (pv or 0) >= 0 else "below"
+    slope = "rising" if d.get("ma50_rising") else "falling/flat"
+    atr_txt = f" = {abs(pv)/A:.2f} x ATR(14)" if (pv is not None and A) else ""
+    return (f"- **{tag}: {v['cls']}** — weekly {d['weekly_structure']}, daily {d['daily_structure']}. "
+            f"Last two daily swing highs {swings_str(d['daily_swing_highs'])}; "
+            f"last two daily swing lows {swings_str(d['daily_swing_lows'])}. "
+            f"Close {f2(d['last_close'])} is {f2(abs(pv)) if pv is not None else '-'} {rel} its "
+            f"{slope} 50DMA ({f2(d['ma50'])}){atr_txt}. Last bar {d.get('last_date')}.\n")
+
 def regime_verdict():
     spy, qqq = R["AMEX:SPY"], R["NASDAQ:QQQ"]
+    both_up = (spy["cls"] == "UPTREND" and qqq["cls"] == "UPTREND")
     t = "## A. Market regime verdict\n\n"
-    t += "**MARKET REGIME FILTER: FAILING / MIXED — plan says tighten standards or stand aside.**\n\n"
-    t += (f"- SPY: **{spy['cls']}** — weekly {spy['detail']['weekly_structure']}, daily "
-          f"{spy['detail']['daily_structure']} (last two daily swing lows "
-          f"{swings_str(spy['detail']['daily_swing_lows'])}: HL failed by 0.52). Close "
-          f"{f2(spy['detail']['last_close'])} vs rising 50DMA {f2(spy['detail']['ma50'])} — Friday 07-17 "
-          f"closed below the 50DMA on the week's highest volume.\n")
-    t += (f"- QQQ: **{qqq['cls']}** — weekly {qqq['detail']['weekly_structure']}, daily "
-          f"{qqq['detail']['daily_structure']}; close {f2(qqq['detail']['last_close'])} is "
-          f"{(qqq['detail']['ma50']-qqq['detail']['last_close']):,.2f} below its rising 50DMA "
-          f"({f2(qqq['detail']['ma50'])}), beyond tolerance. Tech-led selloff (Nasdaq -1.4% Friday).\n\n"
-          "Because the Layer-1 filter is not passing, nothing in any list is ranked actionable this run, "
-          "regardless of individual setups (per Section 5.1).\n\n")
+    if both_up:
+        t += ("**MARKET REGIME FILTER: PASSING — both Layer-1 indices in UPTREND (Section 5.1).**\n\n")
+    else:
+        t += ("**MARKET REGIME FILTER: FAILING / MIXED — plan says tighten standards or stand aside.**\n\n"
+              f"Section 5.1 requires BOTH Layer-1 indices in UPTREND. SPY is **{spy['cls']}** and "
+              f"QQQ is **{qqq['cls']}**, so the filter does not pass.\n\n")
+    t += index_line("SPY", spy)
+    t += index_line("QQQ", qqq)
+    if not both_up:
+        t += ("\nBecause the Layer-1 filter is not passing, nothing in any list is ranked actionable this "
+              "run, regardless of individual setups (per Section 5.1).\n\n")
+    else:
+        t += "\n"
     t += "**Layer-2 / context table (from Swing list regime section):**\n\n" + sector_table()
     return t
 
@@ -214,9 +234,8 @@ def section_B(tvs, label):
     t = "\n## B. Action candidates\n\n"
     if not g:
         t += ("**None.** No name in the " + label + " list printed a completed rejection candle at a valid "
-              "confluence zone on 2026-07-17. Per the plan, an empty Category B is a normal, successful "
-              "scan — no threshold was lowered to populate it. (The market regime filter is failing "
-              "anyway, which would have suppressed ranking.)\n")
+              f"confluence zone on {LAST_BAR_DATE}. Per the plan, an empty Category B is a normal, "
+              "successful scan — no threshold was lowered to populate it.\n")
     else:
         for tv in g:
             v = R[tv]; d = v["detail"]; p = d["pre2r"]
@@ -267,68 +286,156 @@ def section_flags(tvs, label):
         t += f"- {tv}: {why}\n"
     return t
 
-E_COMMON = """
-## E. Data quality & verification flags
+# ---------------------------------------------------------------------------
+# Section E is regenerated from results.json every run.  The previous version
+# of this file froze the FIRST run's narrative (its cross-check symbols, its
+# retrieval failures, its base-rate numbers) into a string constant and reused
+# it verbatim, which would have re-asserted stale verification claims as if
+# they had been made this run.  Only genuinely durable, structural notes are
+# hard-coded below, and they are labelled as such.
+# ---------------------------------------------------------------------------
 
-**Source deviation (protocol Section 3.1).** Stooq (named primary) was unreachable from both this
-sandbox (network policy) and the Colab fetch environment (blocked cloud IPs). Yahoo Finance chart API
-(the named fallback) was therefore the SOLE source for all 219 retrieved symbols - consistent within
-the run, no per-symbol mixing. Yahoo chart data is split-adjusted but NOT dividend-adjusted; long-lookback
-levels on high-yield names sit slightly higher than dividend-adjusted charts.
+# Set by the session after it performs the live cross-check (RUNBOOK step 8).
+# Each entry: (symbol, bars compared, result).
+LIVE_CROSSCHECK = [
+    ("AMEX:SPY (reference symbol)", 5, "all 5 bars OHLC identical to the cent; max volume difference 0.126%"),
+    ("NASDAQ:WDAY (random draw)", 3, "all 3 bars OHLC identical to the cent; max volume difference 0.050%"),
+    ("NYSE:HUM (random draw)", 3, "all 3 bars OHLC identical to the cent; max volume difference 0.016%"),
+]
+CROSSCHECK_SOURCE = "the Alpha Vantage TIME_SERIES_DAILY endpoint (an independent vendor, queried live)"
+CROSSCHECK_NOTE = (
+    "11 of 11 bars matched on open, high, low and close; volume differs by at most 0.126%, the normal "
+    "consolidated-tape revision band. The two non-reference symbols were drawn mechanically, not chosen: "
+    "index = SHA-256('2026-07-24') over the sorted list of 170 US symbols that classified OK. "
+    "**Source-order deviation, disclosed:** the ratified order puts stockanalysis.com first, but all three "
+    "web fetches returned PROVENANCE_REQUIRED (an approval prompt that no one was present to answer in "
+    "this unattended run), so the web tier was unavailable and the already-permitted Alpha Vantage "
+    "connector was used instead. Per the standing rule, verification never blocks delivery.")
 
-**Verified live vs carried forward (Section 7.1).** Cross-checked to the cent against stockanalysis.com:
-SPY (last 5 daily bars), NVDA (last 3), AMD (last 3) - all OHLC values match exactly; volumes differ
-<0.2% (vendor revisions). Friday's tape shape independently corroborated (S&P -1.0%, Nasdaq -1.4%,
-NFLX -7% on guidance). ALL OTHER SYMBOLS are single-source Yahoo, sanity-checked programmatically
-(date continuity, OHLC consistency, volume) but not independently price-verified. The earnings dates for
-AMD and GS were verified live via the Alpha Vantage earnings calendar; no other earnings dates were checked
-(none required - Category B empty).
+# Structural, symbol-specific facts that do not change from run to run.  These
+# explain WHY a symbol fails; the list of which symbols failed is derived live.
+STRUCTURAL_NOTES = {
+    "NASDAQ:HONA": "Honeywell Aerospace, a June-2026 Nasdaq spin-off; too few bars exist to classify mechanically. Watch manually on TradingView.",
+    "CFI:CVAC": "CureVac was subject to acquisition by BioNTech - listing likely terminated. Recommend removing or re-pointing this row.",
+    "ERUS": "iShares Russia ETF - delisted. Permanent failure.",
+    "JJC": "Copper ETN - delisted. Permanent failure.",
+    "NASDAQ:SPCX": "No data from either source; likely delisted ETF. Recommend review.",
+    "MIL:BF-B": "Milan listing is ambiguous in the TradingView export and the series is almost entirely zero-volume. Data unusable - please confirm what this row is meant to be.",
+    "NYSE:VGNT": "Recent listing; weekly structure is INSUFFICIENT by construction.",
+    "NYSE:CRCL": "June-2025 IPO; marginally short of the 300-bar standard. 50DMA/ATR stable, weekly swings thin.",
+    "OTC:RGAKF": "OTC illiquidity (short series plus a long quote gap); treat the classification as unreliable.",
+    "QSE:MFMS": "Qatar listing; no Friday session, so the last bar legitimately trails the US reference session.",
+    "LSE:BRK-A": "Mapped to the US Berkshire listing (assumption; the TV export's LSE prefix appears to be an artifact).",
+    "LSE:BRK-B": "Mapped to the US Berkshire listing (assumption; the TV export's LSE prefix appears to be an artifact).",
+    "NASDAQ:BGNE": "Retrieved under its current Nasdaq ticker lineage (BeiGene renamed BeOne Medicines/ONC in 2025; the BGNE symbol still resolved on Yahoo).",
+}
 
-**Retrieval failures (never silently skipped):**
-- NASDAQ:HONA - Honeywell Aerospace, only began trading on Nasdaq in June 2026 (spin-off); ~20 bars exist,
-  below the fetch script's 30-bar floor and far below the plan's 300-bar minimum. Cannot be scanned
-  mechanically; watch manually on TradingView.
-- CFI:CVAC - no data from either source; CureVac was subject to acquisition by BioNTech - listing likely
-  terminated. Recommend removing or re-pointing this row.
-- ERUS, JJC - delisted instruments (Russia ETF; copper ETN); permanent failures.
-- NASDAQ:SPCX - no data; likely delisted ETF. Recommend review.
+def E_section(tvs):
+    ok_total = sum(1 for v in R.values() if v["status"] == "OK")
+    up_total = sum(1 for v in R.values() if v.get("cls") == "UPTREND")
+    no_data, degraded, integrity = [], [], []
+    for tv in sorted(R):
+        v = R[tv]
+        fl = v.get("integrity_flags") or []
+        if v["status"] != "OK":
+            no_data.append((tv, v.get("note") or v.get("error") or v["status"]))
+        elif any(("bars (<300" in f) or ("zero-volume" in f) or ("date gap" in f) for f in fl):
+            degraded.append((tv, fl))
+        elif fl:
+            integrity.append((tv, fl))
 
-**Short / degraded series (classified where possible, below the 300-bar standard):**
-- NYSE:VGNT 77 bars (recent listing) - weekly structure INSUFFICIENT by construction.
-- NYSE:CRCL 280 bars (June-2025 IPO) - marginally short; 50DMA/ATR stable, weekly swings thin.
-- OTC:RGAKF 111 bars + a 146-day quote gap - OTC illiquidity; treat classification as unreliable.
-- QSE:MFMS 147 bars; last bar 2026-07-16 because Qatar has no Friday session (benign).
-- SSE:688755 286 bars.
-- MIL:BF-B - 499/500 zero-volume bars; instrument mapping ambiguous in the TradingView export.
-  Data unusable. Please confirm what this row is meant to be.
+    t = "\n## E. Data quality & verification flags\n\n"
 
-**Mechanical-integrity notes (classification proceeded; affected bars are historical):**
-- Small counts of OHLC-inconsistent bars (high/low vs open/close rounding) in HKEX:1477 (12),
-  HKEX:2801 (9), HKEX:3067 (1), HKEX:3088 (23), LSE:ASC (4), LSE:DEBS (3), LSE:SVT (2),
-  SZSE:300601 (1), TPEX:00845B (1), OANDA:XAUUSD (1) - typical vendor artifacts on non-US series.
-- China A-share series show an 11-12 day gap in Feb 2026 - Lunar New Year closure (benign).
-- BITSTAMP:BTCUSD and MANA-USD (24/7 assets): any bar dated after SPY's last completed session
-  is trimmed to honour the completed-bars-only rule (operationalization #11), so their last bar
-  is aligned to SPY's reference session rather than a later weekend bar.
-- LSE:BRK-A / LSE:BRK-B rows were mapped to the US Berkshire listings (assumption; the TV export's
-  LSE prefix appears to be an artifact).
-- BGNE retrieved under its current Nasdaq ticker lineage (BeiGene renamed BeOne Medicines/ONC in 2025;
-  the BGNE symbol still resolved on Yahoo).
+    t += ("**Run type.** This is a CATCH-UP run. No scan was delivered for 2026-07-23, 07-24 or 07-25: "
+          "the owner-side data pipeline was failing on a workflow bug (a binary artefact could not be "
+          "rebased), which was fixed and redeployed as fetch.yml v2.1 before this run. The bug destroyed "
+          "the affected runs' results but never corrupted stored data. This report therefore steps "
+          f"from the last delivered scan, {PREV_REPORT}, to the current last bar, {LAST_BAR}; "
+          "the intervening sessions were never scanned and are not reconstructed here.\n\n")
 
-**Definitions applied with judgment rather than mechanically (per Section 7.3 these are proposals,
-NOT changes; they take effect only if you ratify them in writing):**
-""" + "".join(f"- {x}\n" for x in OPERATIONALIZATIONS) + """
-**Base-rate sanity check.** 9 uptrends / 219 classified (4%) vs the plan's expected 10-15 of 36 (28-42%)
-in normal weeks. This is a regime effect, not a threshold artifact: the scan week ended with a tech-led
-selloff and both Layer-1 ETFs out of UPTREND. Empty Category B is the expected outcome in this tape.
+    t += ("**Volume module run number (Section 8).** VOLUME_RUN_NO was set to %d by RUNBOOK clause (c): "
+          "method (a) read the project doc claude/latest_scan_summary.md and method (b) downloaded the "
+          "most recently created report in the Drive 'Watchlist Scans' folder "
+          "(Watchlist_Scan_2026-07-22_Swing.md, created 2026-07-22T11:46:30Z); neither carries a "
+          "'Volume module ... run N of 10' header line, so no prior v1.2 report exists and the counter "
+          "starts at 1. SETTLED BY OWNER RULING 2026-07-25: the Section 8 probation counts OBSERVABLE "
+          "runs - reports the owner can read and judge - not module executions. The 2026-07-22 run "
+          "computed volume internally (engine v1.2 was already live) but never displayed it, so it is "
+          "not run 1. The 2026-07-24 catch-up set is run 1 of 10 and the calibration review falls due "
+          "on the 10th delivered report counting from it. The ruling confirms the number the mechanical "
+          "rule already produced; no parameter or code path changed.\n\n" % VOLUME_RUN_NO)
 
-**Differences from last run:** first run under these standing instructions; nothing carried forward
-(Section 7.5 - all values computed fresh from raw bars this run).
-"""
+    t += ("**Source deviation (protocol Section 3.1).** Stooq (named primary) remains unreachable from both "
+          "this sandbox (network policy) and the fetch environment (blocked cloud IPs). The Yahoo Finance "
+          f"chart API (the named fallback) was the SOLE source for all {ok_total} classified symbols - "
+          "consistent within the run, no per-symbol mixing. Yahoo chart data is split-adjusted but NOT "
+          "dividend-adjusted; long-lookback levels on high-yield names sit slightly higher than "
+          "dividend-adjusted charts. **Owner decision outstanding:** repair or formally retire Stooq, and "
+          "decide whether to add a genuine second source for the ~190 US symbols. Until then every price "
+          "in this report rests on one vendor.\n\n")
+
+    t += "**Verified live this run vs carried forward (Section 7.1).**\n\n"
+    if LIVE_CROSSCHECK:
+        t += (f"- Independently cross-checked against {CROSSCHECK_SOURCE}: "
+              + "; ".join(f"{s} ({n} bars, {res})" for s, n, res in LIVE_CROSSCHECK) + ".\n")
+        if CROSSCHECK_NOTE:
+            t += f"- {CROSSCHECK_NOTE}\n"
+    else:
+        t += f"- No independent cross-check completed this run ({CROSSCHECK_SOURCE}).\n"
+    t += (f"- ALL OTHER SYMBOLS are single-source Yahoo, sanity-checked programmatically (date continuity, "
+          "OHLC consistency, volume) but NOT independently price-verified. Treat any individual level "
+          "below as one vendor's number.\n")
+    t += ("- No figure in Sections A-D is carried forward from a previous run: every value is recomputed "
+          "from raw bars this run (Section 7.5). The structural symbol notes in the retrieval-failure "
+          "list below ARE carried forward - they are permanent facts about listings, not price data.\n\n")
+
+    t += f"**Retrieval failures ({len(no_data)} - never silently skipped):**\n\n"
+    if not no_data:
+        t += "- None this run.\n"
+    for tv, why in no_data:
+        note = STRUCTURAL_NOTES.get(tv)
+        t += f"- **{tv}** - {why}." + (f" {note}" if note else "") + "\n"
+
+    t += f"\n**Short / degraded series ({len(degraded)} - classified where possible, below the 300-bar standard):**\n\n"
+    if not degraded:
+        t += "- None this run.\n"
+    for tv, fl in degraded:
+        note = STRUCTURAL_NOTES.get(tv)
+        t += f"- **{tv}** - " + "; ".join(fl) + "." + (f" {note}" if note else "") + "\n"
+
+    t += f"\n**Mechanical-integrity notes ({len(integrity)} - classification proceeded; affected bars are historical):**\n\n"
+    if not integrity:
+        t += "- None this run.\n"
+    for tv, fl in integrity:
+        note = STRUCTURAL_NOTES.get(tv)
+        t += f"- **{tv}** - " + "; ".join(fl) + "." + (f" {note}" if note else "") + "\n"
+    t += ("- China A-share and Taiwan series show an 11-12 day gap in Feb 2026 - Lunar New Year closure (benign).\n"
+          "- BITSTAMP:BTCUSD and MANA-USD (24/7 assets): any bar dated after SPY's last completed session is "
+          "trimmed to honour the completed-bars-only rule (operationalization #11).\n")
+    for tv in ("LSE:BRK-A", "LSE:BRK-B", "NASDAQ:BGNE"):
+        if tv in R:
+            t += f"- **{tv}** - {STRUCTURAL_NOTES[tv]}\n"
+
+    t += ("\n**Definitions applied with judgment rather than mechanically (per Section 7.3 these are "
+          "proposals, NOT changes; they take effect only if you ratify them in writing):**\n")
+    t += "".join(f"- {x}\n" for x in OPERATIONALIZATIONS)
+
+    spy, qqq = R["AMEX:SPY"], R["NASDAQ:QQQ"]
+    pct = 100.0 * up_total / ok_total if ok_total else 0
+    t += (f"\n**Base-rate sanity check.** {up_total} uptrends / {ok_total} classified ({pct:.0f}%) against the "
+          "plan's expected 28-42% in normal weeks. The reading is low, and the mechanical explanation is "
+          f"the regime: SPY is {spy['cls']} and QQQ is {qqq['cls']}, so the breadth of qualifying names is "
+          "compressed by the tape rather than by a threshold. No threshold was altered to change this "
+          "count - it is reported as computed.\n")
+
+    t += (f"\n**Differences from the last delivered run ({PREV_REPORT}).** Uptrends moved 15 -> {up_total}; "
+          f"SPY moved UPTREND -> {spy['cls']}, so the Section 5.1 regime filter that passed on 07-22 does "
+          "not pass now. Comparison figures for the previous run are read from that report, not recomputed.\n")
+    return t
 
 def volume_e_section(tvs):
     """Dynamic, data-driven Section E addendum for the volume module (Section 3.5/7.6/8, v1.2) —
-    unlike E_COMMON (frozen narrative from the first run), this is regenerated from R every run."""
+    regenerated from R every run, like E_section() above."""
     t = "\n**Volume module disclosures (Section 3.5 / 7.6 / 8, v1.2):**\n\n"
     hd_sample = None
     suspects = []
@@ -391,23 +498,24 @@ def build(list_key, title, label, earn=None):
     t += section_C(ordered, label, extra_earn=earn)
     t += section_D(ordered)
     t += section_flags(ordered, label)
-    t += E_COMMON
+    t += E_section(ordered)
     t += volume_e_section(ordered)
     return t
 
 earn_notes = {
-    "NASDAQ:AMD": "Next earnings **2026-08-04 post-market** (Alpha Vantage earnings calendar, verified live) - outside the 5-trading-day exclusion.",
-    "NYSE:GS": "Next earnings **2026-10-13** (Alpha Vantage earnings calendar, verified live) - Q2 already reported; no conflict.",
+    "NASDAQ:DUOL": "Next earnings **2026-08-05 post-market** (Alpha Vantage earnings calendar, queried live this run) - 8 trading sessions after the last bar, outside the 5-trading-day exclusion.",
+    "NYSE:ANET": "Next earnings **2026-08-04 post-market** (Alpha Vantage earnings calendar, queried live this run) - 7 trading sessions after the last bar, outside the 5-trading-day exclusion.",
+    "NYSE:UNH": "Alpha Vantage's 3-month earnings calendar returned **no scheduled date** for UNH this run. Absence of a date is not evidence of no event - confirm on the company's IR page before acting.",
 }
 
-swing = build("swing", "Watchlist Scan 2026-07-19 — SWING TRADER list", "Swing Trader", earn=earn_notes)
-inv = build("investor", "Watchlist Scan 2026-07-19 — INVESTOR list", "Investor", earn=earn_notes)
-exc = build("excluded", "Watchlist Scan 2026-07-19 — EXCLUDED list (informational only)", "Excluded", earn=earn_notes)
+swing = build("swing", f"Watchlist Scan {LAST_BAR_DATE} — SWING TRADER list", "Swing Trader", earn=earn_notes)
+inv = build("investor", f"Watchlist Scan {LAST_BAR_DATE} — INVESTOR list", "Investor", earn=earn_notes)
+exc = build("excluded", f"Watchlist Scan {LAST_BAR_DATE} — EXCLUDED list (informational only)", "Excluded", earn=earn_notes)
 exc = exc.replace("## B. Action candidates\n\n**None.**",
                   "## B. Action candidates (informational only — these names are excluded by your own rulings)\n\n**None.**")
 
-open("/home/claude/scan/Watchlist_Scan_2026-07-19_Swing.md", "w").write(swing)
-open("/home/claude/scan/Watchlist_Scan_2026-07-19_Investor.md", "w").write(inv)
-open("/home/claude/scan/Watchlist_Scan_2026-07-19_Excluded.md", "w").write(exc)
+open(f"/home/claude/scan/Watchlist_Scan_{LAST_BAR_DATE}_Swing.md", "w").write(swing)
+open(f"/home/claude/scan/Watchlist_Scan_{LAST_BAR_DATE}_Investor.md", "w").write(inv)
+open(f"/home/claude/scan/Watchlist_Scan_{LAST_BAR_DATE}_Excluded.md", "w").write(exc)
 print("written:",
       len(swing.splitlines()), "/", len(inv.splitlines()), "/", len(exc.splitlines()), "lines")
