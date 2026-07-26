@@ -1,4 +1,4 @@
-# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.8, 2026-07-25)
+# RUNBOOK — Autonomous Daily Pre-Open Watchlist Scan (v1.9, 2026-07-26)
 
 **Purpose:** lets any fresh Claude session reproduce the full scan with zero rebuilding.
 Governing document: `Cowork_Watchlist_Scan_Prompt_v1.md` (project knowledge). This runbook is
@@ -84,15 +84,33 @@ gap could not be resolved from afterward.
 4. Confirm SPY's last bar date == the most recent completed US session. Weekend runs (Sat/Sun SGT)
    use Weekend Mode per Section 8; weekday runs produce the standard daily brief per Section 6.
 5. Cross-verify at least SPY + 2 random names, last 3 daily bars each. VERIFICATION SOURCE ORDER
-   (web first, connector last — so an unattended run never stalls on an MCP permission card):
+   (web first, connectors last — so an unattended run never stalls on an MCP permission card):
    a. WebFetch a public history page — try stockanalysis.com/stocks/<sym>/history/ (and /etf/<sym>/
       for ETFs); these worked in the manual build run;
    b. if WebFetch is blocked/empty, try one alternate web source before giving up;
-   c. ONLY if all web routes fail AND the Alpha Vantage connector is already permitted this session,
-      use it — do NOT trigger a fresh connector-permission prompt in an unattended run;
+   c. ONLY if all web routes fail AND a connector below is already permitted this session, use ONE
+      of them — do NOT trigger a fresh connector-permission prompt in an unattended run; if the
+      first tool call on an unattended run would raise a consent card, treat that connector as
+      UNAVAILABLE and fall through, exactly as for any other connector (CONNECTOR CONSENT rule):
+        - IBKR (`mcp__Interactive_Brokers_IBKR__*`), preferred when available: `search_contracts`
+          to resolve the ticker to a `contract_id` (pick the primary listing by exact symbol +
+          country_code, same disambiguation rule used for options), then `get_price_history` with
+          `step=ONE_DAY`, `step_count=3`, `outside_rth=false`. For non-US listings pass the
+          contract's native `exchange` field. A `"delayed":900`-style field in the response is
+          fine and expected for non-US markets without a live subscription — delayed-by-minutes
+          data is immaterial for a bar that closed hours ago; do not treat `delayed` as a failure.
+          Verified 2026-07-26: SPY (5 bars), NASDAQ:WDAY and NYSE:HUM (the mechanically-selected
+          pair from the 2026-07-24 run) all matched the locally-held Yahoo closes to the cent;
+          SEHK:700 (Tencent, not a watchlist symbol, used only to test non-US reach) returned
+          correctly with `delayed:900`. Coverage across the full non-US roster (SGX, TSE, SSE/SZSE,
+          LSE, Euronext, SIX, MIL, BME) has NOT been swept symbol-by-symbol — if `search_contracts`
+          returns no match or `get_price_history` errors for a specific name, fall through to
+          Alpha Vantage rather than treating it as a hard stop.
+        - Alpha Vantage (`TIME_SERIES_DAILY`/`TIME_SERIES_DAILY_ADJUSTED`), if IBKR is unavailable
+          or didn't cover the symbol;
    d. if nothing verifies, ship the reports anyway and state in Section E that live cross-verification
       was unavailable this run (carried-forward, single-source Yahoo). Never block delivery on it.
-   Say in Section E exactly which source verified which symbols.
+   Say in Section E exactly which source (including which connector) verified which symbols.
 6. Earnings filter: only for names reaching Category B (and evening-watch courtesy checks). Same
    source order — WebSearch first (query "<TICKER> next earnings date"); use the Alpha Vantage
    earnings calendar only if already permitted this session. AV's calendar has gaps (e.g. UNH
@@ -208,6 +226,22 @@ gap could not be resolved from afterward.
 
 ## Known operational facts (learned 2026-07-19 run)
 
+- v1.9 (2026-07-26): owner connected the Interactive Brokers (IBKR) MCP connector. Added to step 5's
+  cross-verification source order as the preferred connector-tier option (ahead of Alpha Vantage),
+  same CONNECTOR CONSENT safeguards apply. Live-verified this session: SPY (5 daily bars), and
+  NASDAQ:WDAY / NYSE:HUM (the exact mechanically-selected pair from the 2026-07-24 report) all
+  matched the locally-held Yahoo closes to the cent — 7 of 7 bars, zero mismatches. Also confirmed
+  IBKR reaches at least one non-US exchange (SEHK) via `search_contracts` + `get_price_history`,
+  returning correctly-labelled delayed (`delayed:900`) data, which is immaterial for end-of-day bars.
+  NOT yet done: a full per-exchange coverage sweep of the watchlist's ~30 non-US names, or
+  confirmation that this connector is attached to the SCHEDULED session (this session is
+  interactive/chat; the daily trigger runs as a separate fresh session and may not carry the same
+  connector attachment — unconfirmed, does not block this step 5 change since the existing
+  CONNECTOR CONSENT fallback already handles an unavailable connector gracefully). A SEPARATE,
+  larger question — whether IBKR could replace the Yahoo/GitHub-Actions fetch pipeline entirely for
+  the full 224-symbol daily fetch, not just the 3-symbol spot-check — is being investigated
+  separately and is NOT part of this change; step 1-4 (the actual data source for classification)
+  are untouched. `classify()` and every ratified parameter untouched.
 - v1.8 (2026-07-25): OWNER RULING on VOLUME_RUN_NO — the Section 8 probation counts OBSERVABLE
   (delivered and displayed) runs, not module executions. 2026-07-24 = run 1 of 10; the 2026-07-22
   run, which computed volume but never displayed it, does not count. This CONFIRMS the number the
