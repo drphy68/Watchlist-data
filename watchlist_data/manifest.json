@@ -1534,7 +1534,7 @@
   "file": "LSE_ASC.csv",
   "source": "yahoo",
   "source_code": "ASC.L",
-  "rows": 759,
+  "rows": 760,
   "first": "2023-07-31",
   "last": "2026-07-30"
  },
@@ -1561,7 +1561,7 @@
   "file": "BME_CLR.csv",
   "source": "yahoo",
   "source_code": "CLR.MC",
-  "rows": 765,
+  "rows": 766,
   "first": "2023-07-31",
   "last": "2026-07-30"
  },
@@ -1570,7 +1570,7 @@
   "file": "LSE_DEBS.csv",
   "source": "yahoo",
   "source_code": "DEBS.L",
-  "rows": 759,
+  "rows": 760,
   "first": "2023-07-31",
   "last": "2026-07-30"
  },
@@ -1588,7 +1588,7 @@
   "file": "LSE_SVT.csv",
   "source": "yahoo",
   "source_code": "SVT.L",
-  "rows": 759,
+  "rows": 760,
   "first": "2023-07-31",
   "last": "2026-07-30"
  },
@@ -1597,7 +1597,7 @@
   "file": "EURONEXT_VIE.csv",
   "source": "yahoo",
   "source_code": "VIE.PA",
-  "rows": 765,
+  "rows": 766,
   "first": "2023-07-31",
   "last": "2026-07-30"
  },
@@ -1615,9 +1615,9 @@
   "file": "QSE_MFMS.csv",
   "source": "yahoo",
   "source_code": "MFMS.QA",
-  "rows": 156,
+  "rows": 157,
   "first": "2025-12-15",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ZM": {
   "status": "ok",
@@ -2004,7 +2004,7 @@
   "last": "2026-07-29"
  },
  "_meta": {
-  "generated_utc": "2026-07-30T07:45:00.727829+00:00",
+  "generated_utc": "2026-07-30T10:08:22.429242+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-07-29",
   "reference_symbol": "AMEX:SPY",
@@ -2014,7 +2014,7 @@
   "us_symbols_short": 0,
   "us_symbols_short_examples": [],
   "retry_rounds_used": 1,
-  "kept_previous": 1,
+  "kept_previous": 0,
   "source_counts": {
    "yahoo": 221
   },
