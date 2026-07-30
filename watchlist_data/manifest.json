@@ -4,63 +4,63 @@
   "file": "AMEX_SPY.csv",
   "source": "yahoo",
   "source_code": "SPY",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:QQQ": {
   "status": "ok",
   "file": "NASDAQ_QQQ.csv",
   "source": "yahoo",
   "source_code": "QQQ",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:IWM": {
   "status": "ok",
   "file": "AMEX_IWM.csv",
   "source": "yahoo",
   "source_code": "IWM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:DIA": {
   "status": "ok",
   "file": "AMEX_DIA.csv",
   "source": "yahoo",
   "source_code": "DIA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:XLF": {
   "status": "ok",
   "file": "AMEX_XLF.csv",
   "source": "yahoo",
   "source_code": "XLF",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:XLE": {
   "status": "ok",
   "file": "AMEX_XLE.csv",
   "source": "yahoo",
   "source_code": "XLE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:SOXX": {
   "status": "ok",
   "file": "NASDAQ_SOXX.csv",
   "source": "yahoo",
   "source_code": "SOXX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "CBOE:VIX": {
   "status": "ok",
@@ -94,639 +94,639 @@
   "file": "NASDAQ_NVDA.csv",
   "source": "yahoo",
   "source_code": "NVDA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MSFT": {
   "status": "ok",
   "file": "NASDAQ_MSFT.csv",
   "source": "yahoo",
   "source_code": "MSFT",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:AAPL": {
   "status": "ok",
   "file": "NASDAQ_AAPL.csv",
   "source": "yahoo",
   "source_code": "AAPL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:AMZN": {
   "status": "ok",
   "file": "NASDAQ_AMZN.csv",
   "source": "yahoo",
   "source_code": "AMZN",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:META": {
   "status": "ok",
   "file": "NASDAQ_META.csv",
   "source": "yahoo",
   "source_code": "META",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:GOOGL": {
   "status": "ok",
   "file": "NASDAQ_GOOGL.csv",
   "source": "yahoo",
   "source_code": "GOOGL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:AMD": {
   "status": "ok",
   "file": "NASDAQ_AMD.csv",
   "source": "yahoo",
   "source_code": "AMD",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:AVGO": {
   "status": "ok",
   "file": "NASDAQ_AVGO.csv",
   "source": "yahoo",
   "source_code": "AVGO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:TSM": {
   "status": "ok",
   "file": "NYSE_TSM.csv",
   "source": "yahoo",
   "source_code": "TSM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MU": {
   "status": "ok",
   "file": "NASDAQ_MU.csv",
   "source": "yahoo",
   "source_code": "MU",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:VST": {
   "status": "ok",
   "file": "NYSE_VST.csv",
   "source": "yahoo",
   "source_code": "VST",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:CEG": {
   "status": "ok",
   "file": "NASDAQ_CEG.csv",
   "source": "yahoo",
   "source_code": "CEG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:VRT": {
   "status": "ok",
   "file": "NYSE_VRT.csv",
   "source": "yahoo",
   "source_code": "VRT",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:GEV": {
   "status": "ok",
   "file": "NYSE_GEV.csv",
   "source": "yahoo",
   "source_code": "GEV",
-  "rows": 586,
+  "rows": 587,
   "first": "2024-03-27",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:ETN": {
   "status": "ok",
   "file": "NYSE_ETN.csv",
   "source": "yahoo",
   "source_code": "ETN",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:NRG": {
   "status": "ok",
   "file": "NYSE_NRG.csv",
   "source": "yahoo",
   "source_code": "NRG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BE": {
   "status": "ok",
   "file": "NYSE_BE.csv",
   "source": "yahoo",
   "source_code": "BE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:POWL": {
   "status": "ok",
   "file": "NASDAQ_POWL.csv",
   "source": "yahoo",
   "source_code": "POWL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ASML": {
   "status": "ok",
   "file": "NASDAQ_ASML.csv",
   "source": "yahoo",
   "source_code": "ASML",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ARM": {
   "status": "ok",
   "file": "NASDAQ_ARM.csv",
   "source": "yahoo",
   "source_code": "ARM",
-  "rows": 720,
+  "rows": 721,
   "first": "2023-09-14",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MRVL": {
   "status": "ok",
   "file": "NASDAQ_MRVL.csv",
   "source": "yahoo",
   "source_code": "MRVL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:WDC": {
   "status": "ok",
   "file": "NASDAQ_WDC.csv",
   "source": "yahoo",
   "source_code": "WDC",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:SNDK": {
   "status": "ok",
   "file": "NASDAQ_SNDK.csv",
   "source": "yahoo",
   "source_code": "SNDK",
-  "rows": 365,
+  "rows": 366,
   "first": "2025-02-13",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:TER": {
   "status": "ok",
   "file": "NASDAQ_TER.csv",
   "source": "yahoo",
   "source_code": "TER",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:PLTR": {
   "status": "ok",
   "file": "NASDAQ_PLTR.csv",
   "source": "yahoo",
   "source_code": "PLTR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:CRWD": {
   "status": "ok",
   "file": "NASDAQ_CRWD.csv",
   "source": "yahoo",
   "source_code": "CRWD",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:NOW": {
   "status": "ok",
   "file": "NYSE_NOW.csv",
   "source": "yahoo",
   "source_code": "NOW",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:CRM": {
   "status": "ok",
   "file": "NYSE_CRM.csv",
   "source": "yahoo",
   "source_code": "CRM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:SNOW": {
   "status": "ok",
   "file": "NYSE_SNOW.csv",
   "source": "yahoo",
   "source_code": "SNOW",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:HOOD": {
   "status": "ok",
   "file": "NASDAQ_HOOD.csv",
   "source": "yahoo",
   "source_code": "HOOD",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:FCX": {
   "status": "ok",
   "file": "NYSE_FCX.csv",
   "source": "yahoo",
   "source_code": "FCX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:GDX": {
   "status": "ok",
   "file": "AMEX_GDX.csv",
   "source": "yahoo",
   "source_code": "GDX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:FANG": {
   "status": "ok",
   "file": "NASDAQ_FANG.csv",
   "source": "yahoo",
   "source_code": "FANG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:SCCO": {
   "status": "ok",
   "file": "NYSE_SCCO.csv",
   "source": "yahoo",
   "source_code": "SCCO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:HBM": {
   "status": "ok",
   "file": "NYSE_HBM.csv",
   "source": "yahoo",
   "source_code": "HBM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BAC": {
   "status": "ok",
   "file": "NYSE_BAC.csv",
   "source": "yahoo",
   "source_code": "BAC",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:JPM": {
   "status": "ok",
   "file": "NYSE_JPM.csv",
   "source": "yahoo",
   "source_code": "JPM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:GS": {
   "status": "ok",
   "file": "NYSE_GS.csv",
   "source": "yahoo",
   "source_code": "GS",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:HONA": {
   "status": "ok",
   "file": "NASDAQ_HONA.csv",
   "source": "yahoo",
   "source_code": "HONA",
-  "rows": 31,
+  "rows": 32,
   "first": "2026-06-15",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:VGNT": {
   "status": "ok",
   "file": "NYSE_VGNT.csv",
   "source": "yahoo",
   "source_code": "VGNT",
-  "rows": 85,
+  "rows": 86,
   "first": "2026-03-27",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:OKLO": {
   "status": "ok",
   "file": "NYSE_OKLO.csv",
   "source": "yahoo",
   "source_code": "OKLO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:WULF": {
   "status": "ok",
   "file": "NASDAQ_WULF.csv",
   "source": "yahoo",
   "source_code": "WULF",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MSTR": {
   "status": "ok",
   "file": "NASDAQ_MSTR.csv",
   "source": "yahoo",
   "source_code": "MSTR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:RKLB": {
   "status": "ok",
   "file": "NASDAQ_RKLB.csv",
   "source": "yahoo",
   "source_code": "RKLB",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:CVNA": {
   "status": "ok",
   "file": "NYSE_CVNA.csv",
   "source": "yahoo",
   "source_code": "CVNA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:V": {
   "status": "ok",
   "file": "NYSE_V.csv",
   "source": "yahoo",
   "source_code": "V",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:MA": {
   "status": "ok",
   "file": "NYSE_MA.csv",
   "source": "yahoo",
   "source_code": "MA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:ICE": {
   "status": "ok",
   "file": "NYSE_ICE.csv",
   "source": "yahoo",
   "source_code": "ICE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MNST": {
   "status": "ok",
   "file": "NASDAQ_MNST.csv",
   "source": "yahoo",
   "source_code": "MNST",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:PAYX": {
   "status": "ok",
   "file": "NASDAQ_PAYX.csv",
   "source": "yahoo",
   "source_code": "PAYX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ADP": {
   "status": "ok",
   "file": "NASDAQ_ADP.csv",
   "source": "yahoo",
   "source_code": "ADP",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:GILD": {
   "status": "ok",
   "file": "NASDAQ_GILD.csv",
   "source": "yahoo",
   "source_code": "GILD",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:DHR": {
   "status": "ok",
   "file": "NYSE_DHR.csv",
   "source": "yahoo",
   "source_code": "DHR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ADI": {
   "status": "ok",
   "file": "NASDAQ_ADI.csv",
   "source": "yahoo",
   "source_code": "ADI",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:CB": {
   "status": "ok",
   "file": "NYSE_CB.csv",
   "source": "yahoo",
   "source_code": "CB",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:TJX": {
   "status": "ok",
   "file": "NYSE_TJX.csv",
   "source": "yahoo",
   "source_code": "TJX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:COST": {
   "status": "ok",
   "file": "NASDAQ_COST.csv",
   "source": "yahoo",
   "source_code": "COST",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:MCD": {
   "status": "ok",
   "file": "NYSE_MCD.csv",
   "source": "yahoo",
   "source_code": "MCD",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:XYL": {
   "status": "ok",
   "file": "NYSE_XYL.csv",
   "source": "yahoo",
   "source_code": "XYL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:AWK": {
   "status": "ok",
   "file": "NYSE_AWK.csv",
   "source": "yahoo",
   "source_code": "AWK",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:WTRG": {
   "status": "ok",
   "file": "NYSE_WTRG.csv",
   "source": "yahoo",
   "source_code": "WTRG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:ECL": {
   "status": "ok",
   "file": "NYSE_ECL.csv",
   "source": "yahoo",
   "source_code": "ECL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:PNR": {
   "status": "ok",
   "file": "NYSE_PNR.csv",
   "source": "yahoo",
   "source_code": "PNR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:MWA": {
   "status": "ok",
   "file": "NYSE_MWA.csv",
   "source": "yahoo",
   "source_code": "MWA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ERII": {
   "status": "ok",
   "file": "NASDAQ_ERII.csv",
   "source": "yahoo",
   "source_code": "ERII",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:VLTO": {
   "status": "ok",
   "file": "NYSE_VLTO.csv",
   "source": "yahoo",
   "source_code": "VLTO",
-  "rows": 706,
+  "rows": 707,
   "first": "2023-10-04",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:FIW": {
   "status": "ok",
   "file": "AMEX_FIW.csv",
   "source": "yahoo",
   "source_code": "FIW",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BHP": {
   "status": "ok",
   "file": "NYSE_BHP.csv",
   "source": "yahoo",
   "source_code": "BHP",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:COPX": {
   "status": "ok",
   "file": "AMEX_COPX.csv",
   "source": "yahoo",
   "source_code": "COPX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BAM": {
   "status": "ok",
   "file": "NYSE_BAM.csv",
   "source": "yahoo",
   "source_code": "BAM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BX": {
   "status": "ok",
   "file": "NYSE_BX.csv",
   "source": "yahoo",
   "source_code": "BX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "SGX:D05": {
   "status": "ok",
@@ -769,18 +769,18 @@
   "file": "NASDAQ_TSLA.csv",
   "source": "yahoo",
   "source_code": "TSLA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:TQQQ": {
   "status": "ok",
   "file": "NASDAQ_TQQQ.csv",
   "source": "yahoo",
   "source_code": "TQQQ",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "BITSTAMP:BTCUSD": {
   "status": "ok",
@@ -796,99 +796,99 @@
   "file": "NASDAQ_QUBT.csv",
   "source": "yahoo",
   "source_code": "QUBT",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:AXTI": {
   "status": "ok",
   "file": "NASDAQ_AXTI.csv",
   "source": "yahoo",
   "source_code": "AXTI",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:LUNR": {
   "status": "ok",
   "file": "NASDAQ_LUNR.csv",
   "source": "yahoo",
   "source_code": "LUNR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MBLY": {
   "status": "ok",
   "file": "NASDAQ_MBLY.csv",
   "source": "yahoo",
   "source_code": "MBLY",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:DUOL": {
   "status": "ok",
   "file": "NASDAQ_DUOL.csv",
   "source": "yahoo",
   "source_code": "DUOL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:FOUR": {
   "status": "ok",
   "file": "NYSE_FOUR.csv",
   "source": "yahoo",
   "source_code": "FOUR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:F": {
   "status": "ok",
   "file": "NYSE_F.csv",
   "source": "yahoo",
   "source_code": "F",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:HON": {
   "status": "ok",
   "file": "NASDAQ_HON.csv",
   "source": "yahoo",
   "source_code": "HON",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:GOOG": {
   "status": "ok",
   "file": "NASDAQ_GOOG.csv",
   "source": "yahoo",
   "source_code": "GOOG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:NDX": {
   "status": "ok",
   "file": "NASDAQ_NDX.csv",
   "source": "yahoo",
   "source_code": "^NDX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "SPCFD:SPX": {
   "status": "ok",
   "file": "SPCFD_SPX.csv",
   "source": "yahoo",
   "source_code": "^SPX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NQ=F": {
   "status": "ok",
@@ -904,468 +904,468 @@
   "file": "CBOE_UVIX.csv",
   "source": "yahoo",
   "source_code": "UVIX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:PHO": {
   "status": "ok",
   "file": "NASDAQ_PHO.csv",
   "source": "yahoo",
   "source_code": "PHO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:PIO": {
   "status": "ok",
   "file": "NASDAQ_PIO.csv",
   "source": "yahoo",
   "source_code": "PIO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:CGW": {
   "status": "ok",
   "file": "AMEX_CGW.csv",
   "source": "yahoo",
   "source_code": "CGW",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:AQWA": {
   "status": "ok",
   "file": "NASDAQ_AQWA.csv",
   "source": "yahoo",
   "source_code": "AQWA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:CPER": {
   "status": "ok",
   "file": "AMEX_CPER.csv",
   "source": "yahoo",
   "source_code": "CPER",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "LSE:BRK-A": {
   "status": "ok",
   "file": "LSE_BRK-A.csv",
   "source": "yahoo",
   "source_code": "BRK-A",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:ANET": {
   "status": "ok",
   "file": "NYSE_ANET.csv",
   "source": "yahoo",
   "source_code": "ANET",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:QCOM": {
   "status": "ok",
   "file": "NASDAQ_QCOM.csv",
   "source": "yahoo",
   "source_code": "QCOM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:UNH": {
   "status": "ok",
   "file": "NYSE_UNH.csv",
   "source": "yahoo",
   "source_code": "UNH",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:TXN": {
   "status": "ok",
   "file": "NASDAQ_TXN.csv",
   "source": "yahoo",
   "source_code": "TXN",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ADBE": {
   "status": "ok",
   "file": "NASDAQ_ADBE.csv",
   "source": "yahoo",
   "source_code": "ADBE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:AXP": {
   "status": "ok",
   "file": "NYSE_AXP.csv",
   "source": "yahoo",
   "source_code": "AXP",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "LSE:BRK-B": {
   "status": "ok",
   "file": "LSE_BRK-B.csv",
   "source": "yahoo",
   "source_code": "BRK-B",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:NVO": {
   "status": "ok",
   "file": "NYSE_NVO.csv",
   "source": "yahoo",
   "source_code": "NVO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:KO": {
   "status": "ok",
   "file": "NYSE_KO.csv",
   "source": "yahoo",
   "source_code": "KO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:PEP": {
   "status": "ok",
   "file": "NASDAQ_PEP.csv",
   "source": "yahoo",
   "source_code": "PEP",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:WMT": {
   "status": "ok",
   "file": "NASDAQ_WMT.csv",
   "source": "yahoo",
   "source_code": "WMT",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:CSCO": {
   "status": "ok",
   "file": "NASDAQ_CSCO.csv",
   "source": "yahoo",
   "source_code": "CSCO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:FDX": {
   "status": "ok",
   "file": "NYSE_FDX.csv",
   "source": "yahoo",
   "source_code": "FDX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:PYPL": {
   "status": "ok",
   "file": "NASDAQ_PYPL.csv",
   "source": "yahoo",
   "source_code": "PYPL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:WDAY": {
   "status": "ok",
   "file": "NASDAQ_WDAY.csv",
   "source": "yahoo",
   "source_code": "WDAY",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BSX": {
   "status": "ok",
   "file": "NYSE_BSX.csv",
   "source": "yahoo",
   "source_code": "BSX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:STE": {
   "status": "ok",
   "file": "NYSE_STE.csv",
   "source": "yahoo",
   "source_code": "STE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BR": {
   "status": "ok",
   "file": "NYSE_BR.csv",
   "source": "yahoo",
   "source_code": "BR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:INTC": {
   "status": "ok",
   "file": "NASDAQ_INTC.csv",
   "source": "yahoo",
   "source_code": "INTC",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BA": {
   "status": "ok",
   "file": "NYSE_BA.csv",
   "source": "yahoo",
   "source_code": "BA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:HUM": {
   "status": "ok",
   "file": "NYSE_HUM.csv",
   "source": "yahoo",
   "source_code": "HUM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:KHC": {
   "status": "ok",
   "file": "NASDAQ_KHC.csv",
   "source": "yahoo",
   "source_code": "KHC",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:ARE": {
   "status": "ok",
   "file": "NYSE_ARE.csv",
   "source": "yahoo",
   "source_code": "ARE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:MLM": {
   "status": "ok",
   "file": "NYSE_MLM.csv",
   "source": "yahoo",
   "source_code": "MLM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:COHR": {
   "status": "ok",
   "file": "NYSE_COHR.csv",
   "source": "yahoo",
   "source_code": "COHR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:LITE": {
   "status": "ok",
   "file": "NASDAQ_LITE.csv",
   "source": "yahoo",
   "source_code": "LITE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MCHP": {
   "status": "ok",
   "file": "NASDAQ_MCHP.csv",
   "source": "yahoo",
   "source_code": "MCHP",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:PPG": {
   "status": "ok",
   "file": "NYSE_PPG.csv",
   "source": "yahoo",
   "source_code": "PPG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:GDDY": {
   "status": "ok",
   "file": "NYSE_GDDY.csv",
   "source": "yahoo",
   "source_code": "GDDY",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:GEN": {
   "status": "ok",
   "file": "NASDAQ_GEN.csv",
   "source": "yahoo",
   "source_code": "GEN",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:CIEN": {
   "status": "ok",
   "file": "NYSE_CIEN.csv",
   "source": "yahoo",
   "source_code": "CIEN",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:COR": {
   "status": "ok",
   "file": "NYSE_COR.csv",
   "source": "yahoo",
   "source_code": "COR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:BABA": {
   "status": "ok",
   "file": "NYSE_BABA.csv",
   "source": "yahoo",
   "source_code": "BABA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:BIDU": {
   "status": "ok",
   "file": "NASDAQ_BIDU.csv",
   "source": "yahoo",
   "source_code": "BIDU",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:JD": {
   "status": "ok",
   "file": "NASDAQ_JD.csv",
   "source": "yahoo",
   "source_code": "JD",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:BILI": {
   "status": "ok",
   "file": "NASDAQ_BILI.csv",
   "source": "yahoo",
   "source_code": "BILI",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:TME": {
   "status": "ok",
   "file": "NYSE_TME.csv",
   "source": "yahoo",
   "source_code": "TME",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "OTC:TCEHY": {
   "status": "ok",
   "file": "OTC_TCEHY.csv",
   "source": "yahoo",
   "source_code": "TCEHY",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:EDU": {
   "status": "ok",
   "file": "NYSE_EDU.csv",
   "source": "yahoo",
   "source_code": "EDU",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:GRAB": {
   "status": "ok",
   "file": "NASDAQ_GRAB.csv",
   "source": "yahoo",
   "source_code": "GRAB",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ZLAB": {
   "status": "ok",
   "file": "NASDAQ_ZLAB.csv",
   "source": "yahoo",
   "source_code": "ZLAB",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "BGNE": {
   "status": "ok",
   "file": "BGNE.csv",
   "source": "yahoo",
   "source_code": "ONC",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:FXI": {
   "status": "ok",
   "file": "AMEX_FXI.csv",
   "source": "yahoo",
   "source_code": "FXI",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MCHI": {
   "status": "ok",
   "file": "NASDAQ_MCHI.csv",
   "source": "yahoo",
   "source_code": "MCHI",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:KWEB": {
   "status": "ok",
   "file": "AMEX_KWEB.csv",
   "source": "yahoo",
   "source_code": "KWEB",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "SSE:000300": {
   "status": "ok",
@@ -1624,36 +1624,36 @@
   "file": "NASDAQ_ZM.csv",
   "source": "yahoo",
   "source_code": "ZM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:BYND": {
   "status": "ok",
   "file": "NASDAQ_BYND.csv",
   "source": "yahoo",
   "source_code": "BYND",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:MRNA": {
   "status": "ok",
   "file": "NASDAQ_MRNA.csv",
   "source": "yahoo",
   "source_code": "MRNA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:BNTX": {
   "status": "ok",
   "file": "NASDAQ_BNTX.csv",
   "source": "yahoo",
   "source_code": "BNTX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "CFI:CVAC": {
   "status": "failed",
@@ -1665,36 +1665,36 @@
   "file": "NASDAQ_PACB.csv",
   "source": "yahoo",
   "source_code": "PACB",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:CRVS": {
   "status": "ok",
   "file": "NASDAQ_CRVS.csv",
   "source": "yahoo",
   "source_code": "CRVS",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:GME": {
   "status": "ok",
   "file": "NYSE_GME.csv",
   "source": "yahoo",
   "source_code": "GME",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:SARK": {
   "status": "ok",
   "file": "NASDAQ_SARK.csv",
   "source": "yahoo",
   "source_code": "SARK",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "ERUS": {
   "status": "failed",
@@ -1720,301 +1720,301 @@
   "file": "CBOE_TMFC.csv",
   "source": "yahoo",
   "source_code": "TMFC",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:ROKU": {
   "status": "ok",
   "file": "NASDAQ_ROKU.csv",
   "source": "yahoo",
   "source_code": "ROKU",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:DKNG": {
   "status": "ok",
   "file": "NASDAQ_DKNG.csv",
   "source": "yahoo",
   "source_code": "DKNG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:WYNN": {
   "status": "ok",
   "file": "NASDAQ_WYNN.csv",
   "source": "yahoo",
   "source_code": "WYNN",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:TTD": {
   "status": "ok",
   "file": "NASDAQ_TTD.csv",
   "source": "yahoo",
   "source_code": "TTD",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:RBLX": {
   "status": "ok",
   "file": "NYSE_RBLX.csv",
   "source": "yahoo",
   "source_code": "RBLX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:WSM": {
   "status": "ok",
   "file": "NYSE_WSM.csv",
   "source": "yahoo",
   "source_code": "WSM",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:IVZ": {
   "status": "ok",
   "file": "NYSE_IVZ.csv",
   "source": "yahoo",
   "source_code": "IVZ",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:DJCO": {
   "status": "ok",
   "file": "NASDAQ_DJCO.csv",
   "source": "yahoo",
   "source_code": "DJCO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:EWBC": {
   "status": "ok",
   "file": "NASDAQ_EWBC.csv",
   "source": "yahoo",
   "source_code": "EWBC",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:DIS": {
   "status": "ok",
   "file": "NYSE_DIS.csv",
   "source": "yahoo",
   "source_code": "DIS",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:C": {
   "status": "ok",
   "file": "NYSE_C.csv",
   "source": "yahoo",
   "source_code": "C",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:GE": {
   "status": "ok",
   "file": "NYSE_GE.csv",
   "source": "yahoo",
   "source_code": "GE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:PFE": {
   "status": "ok",
   "file": "NYSE_PFE.csv",
   "source": "yahoo",
   "source_code": "PFE",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:AMT": {
   "status": "ok",
   "file": "NYSE_AMT.csv",
   "source": "yahoo",
   "source_code": "AMT",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:MKL": {
   "status": "ok",
   "file": "NYSE_MKL.csv",
   "source": "yahoo",
   "source_code": "MKL",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:OXY": {
   "status": "ok",
   "file": "NYSE_OXY.csv",
   "source": "yahoo",
   "source_code": "OXY",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:MPLX": {
   "status": "ok",
   "file": "NYSE_MPLX.csv",
   "source": "yahoo",
   "source_code": "MPLX",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:KMI": {
   "status": "ok",
   "file": "NYSE_KMI.csv",
   "source": "yahoo",
   "source_code": "KMI",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:CW": {
   "status": "ok",
   "file": "NYSE_CW.csv",
   "source": "yahoo",
   "source_code": "CW",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:MP": {
   "status": "ok",
   "file": "NYSE_MP.csv",
   "source": "yahoo",
   "source_code": "MP",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:HIMS": {
   "status": "ok",
   "file": "NYSE_HIMS.csv",
   "source": "yahoo",
   "source_code": "HIMS",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:SG": {
   "status": "ok",
   "file": "NYSE_SG.csv",
   "source": "yahoo",
   "source_code": "SG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:CRCL": {
   "status": "ok",
   "file": "NYSE_CRCL.csv",
   "source": "yahoo",
   "source_code": "CRCL",
-  "rows": 288,
+  "rows": 289,
   "first": "2025-06-05",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NASDAQ:SPCX": {
   "status": "ok",
   "file": "NASDAQ_SPCX.csv",
   "source": "yahoo",
   "source_code": "SPCX",
-  "rows": 32,
+  "rows": 33,
   "first": "2026-06-12",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "NYSE:NOK": {
   "status": "ok",
   "file": "NYSE_NOK.csv",
   "source": "yahoo",
   "source_code": "NOK",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:VWO": {
   "status": "ok",
   "file": "AMEX_VWO.csv",
   "source": "yahoo",
   "source_code": "VWO",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:VEA": {
   "status": "ok",
   "file": "AMEX_VEA.csv",
   "source": "yahoo",
   "source_code": "VEA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "CBOE:IEFA": {
   "status": "ok",
   "file": "CBOE_IEFA.csv",
   "source": "yahoo",
   "source_code": "IEFA",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "AMEX:IEUR": {
   "status": "ok",
   "file": "AMEX_IEUR.csv",
   "source": "yahoo",
   "source_code": "IEUR",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "CBOE:ARKK": {
   "status": "ok",
   "file": "CBOE_ARKK.csv",
   "source": "yahoo",
   "source_code": "ARKK",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "CBOE:ARKG": {
   "status": "ok",
   "file": "CBOE_ARKG.csv",
   "source": "yahoo",
   "source_code": "ARKG",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-07-31",
-  "last": "2026-07-29"
+  "last": "2026-07-30"
  },
  "_meta": {
-  "generated_utc": "2026-07-30T10:08:22.429242+00:00",
+  "generated_utc": "2026-07-30T16:09:01.499398+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-07-29",
   "reference_symbol": "AMEX:SPY",
-  "reference_symbol_last": "2026-07-29",
-  "reference_symbol_at_expected": true,
+  "reference_symbol_last": "2026-07-30",
+  "reference_symbol_at_expected": false,
   "us_symbols_total": 190,
   "us_symbols_short": 0,
   "us_symbols_short_examples": [],
   "retry_rounds_used": 1,
-  "kept_previous": 0,
+  "kept_previous": 21,
   "source_counts": {
    "yahoo": 221
   },
