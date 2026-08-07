@@ -67,9 +67,9 @@
   "file": "CBOE_VIX.csv",
   "source": "yahoo",
   "source_code": "^VIX",
-  "rows": 754,
+  "rows": 755,
   "first": "2023-08-07",
-  "last": "2026-08-06"
+  "last": "2026-08-07"
  },
  "ICEUS:DXY": {
   "status": "ok",
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-07",
   "last": "2026-08-07"
  },
@@ -1534,9 +1534,9 @@
   "file": "LSE_ASC.csv",
   "source": "yahoo",
   "source_code": "ASC.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-08-07",
-  "last": "2026-08-06"
+  "last": "2026-08-07"
  },
  "OTC:ASOMY": {
   "status": "ok",
@@ -1561,45 +1561,45 @@
   "file": "BME_CLR.csv",
   "source": "yahoo",
   "source_code": "CLR.MC",
-  "rows": 765,
+  "rows": 767,
   "first": "2023-08-07",
-  "last": "2026-08-06"
+  "last": "2026-08-07"
  },
  "LSE:DEBS": {
   "status": "ok",
   "file": "LSE_DEBS.csv",
   "source": "yahoo",
   "source_code": "DEBS.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-08-07",
-  "last": "2026-08-06"
+  "last": "2026-08-07"
  },
  "SIX:NESN": {
   "status": "ok",
   "file": "SIX_NESN.csv",
   "source": "yahoo",
   "source_code": "NESN.SW",
-  "rows": 751,
+  "rows": 752,
   "first": "2023-08-07",
-  "last": "2026-08-06"
+  "last": "2026-08-07"
  },
  "LSE:SVT": {
   "status": "ok",
   "file": "LSE_SVT.csv",
   "source": "yahoo",
   "source_code": "SVT.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-08-07",
-  "last": "2026-08-06"
+  "last": "2026-08-07"
  },
  "EURONEXT:VIE": {
   "status": "ok",
   "file": "EURONEXT_VIE.csv",
   "source": "yahoo",
   "source_code": "VIE.PA",
-  "rows": 765,
+  "rows": 767,
   "first": "2023-08-07",
-  "last": "2026-08-06"
+  "last": "2026-08-07"
  },
  "OTC:RGAKF": {
   "status": "ok",
@@ -1615,9 +1615,9 @@
   "file": "QSE_MFMS.csv",
   "source": "yahoo",
   "source_code": "MFMS.QA",
-  "rows": 161,
+  "rows": 162,
   "first": "2025-12-15",
-  "last": "2026-08-05"
+  "last": "2026-08-06"
  },
  "NASDAQ:ZM": {
   "status": "ok",
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-07",
   "last": "2026-08-07"
  },
@@ -2004,7 +2004,7 @@
   "last": "2026-08-06"
  },
  "_meta": {
-  "generated_utc": "2026-08-07T06:02:26.065850+00:00",
+  "generated_utc": "2026-08-07T12:32:16.886716+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-08-06",
   "reference_symbol": "AMEX:SPY",
@@ -2014,7 +2014,7 @@
   "us_symbols_short": 0,
   "us_symbols_short_examples": [],
   "retry_rounds_used": 1,
-  "kept_previous": 5,
+  "kept_previous": 0,
   "source_counts": {
    "yahoo": 221
   },
