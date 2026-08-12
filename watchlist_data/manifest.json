@@ -68,8 +68,8 @@
   "source": "yahoo",
   "source_code": "^VIX",
   "rows": 753,
-  "first": "2023-08-11",
-  "last": "2026-08-11"
+  "first": "2023-08-14",
+  "last": "2026-08-12"
  },
  "ICEUS:DXY": {
   "status": "ok",
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-12",
   "last": "2026-08-12"
  },
@@ -1300,9 +1300,9 @@
   "file": "OTC_TCEHY.csv",
   "source": "yahoo",
   "source_code": "TCEHY",
-  "rows": 751,
+  "rows": 752,
   "first": "2023-08-14",
-  "last": "2026-08-11"
+  "last": "2026-08-12"
  },
  "NYSE:EDU": {
   "status": "ok",
@@ -1535,8 +1535,8 @@
   "source": "yahoo",
   "source_code": "ASC.L",
   "rows": 759,
-  "first": "2023-08-11",
-  "last": "2026-08-11"
+  "first": "2023-08-14",
+  "last": "2026-08-12"
  },
  "OTC:ASOMY": {
   "status": "ok",
@@ -1561,9 +1561,9 @@
   "file": "BME_CLR.csv",
   "source": "yahoo",
   "source_code": "CLR.MC",
-  "rows": 765,
-  "first": "2023-08-11",
-  "last": "2026-08-11"
+  "rows": 764,
+  "first": "2023-08-14",
+  "last": "2026-08-12"
  },
  "LSE:DEBS": {
   "status": "ok",
@@ -1571,8 +1571,8 @@
   "source": "yahoo",
   "source_code": "DEBS.L",
   "rows": 759,
-  "first": "2023-08-11",
-  "last": "2026-08-11"
+  "first": "2023-08-14",
+  "last": "2026-08-12"
  },
  "SIX:NESN": {
   "status": "ok",
@@ -1580,8 +1580,8 @@
   "source": "yahoo",
   "source_code": "NESN.SW",
   "rows": 750,
-  "first": "2023-08-11",
-  "last": "2026-08-11"
+  "first": "2023-08-14",
+  "last": "2026-08-12"
  },
  "LSE:SVT": {
   "status": "ok",
@@ -1589,17 +1589,17 @@
   "source": "yahoo",
   "source_code": "SVT.L",
   "rows": 759,
-  "first": "2023-08-11",
-  "last": "2026-08-11"
+  "first": "2023-08-14",
+  "last": "2026-08-12"
  },
  "EURONEXT:VIE": {
   "status": "ok",
   "file": "EURONEXT_VIE.csv",
   "source": "yahoo",
   "source_code": "VIE.PA",
-  "rows": 765,
-  "first": "2023-08-11",
-  "last": "2026-08-11"
+  "rows": 764,
+  "first": "2023-08-14",
+  "last": "2026-08-12"
  },
  "OTC:RGAKF": {
   "status": "ok",
@@ -1615,9 +1615,9 @@
   "file": "QSE_MFMS.csv",
   "source": "yahoo",
   "source_code": "MFMS.QA",
-  "rows": 164,
+  "rows": 165,
   "first": "2025-12-15",
-  "last": "2026-08-10"
+  "last": "2026-08-11"
  },
  "NASDAQ:ZM": {
   "status": "ok",
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-12",
   "last": "2026-08-12"
  },
@@ -2004,7 +2004,7 @@
   "last": "2026-08-11"
  },
  "_meta": {
-  "generated_utc": "2026-08-12T06:27:30.200508+00:00",
+  "generated_utc": "2026-08-12T12:57:15.822898+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-08-11",
   "reference_symbol": "AMEX:SPY",
@@ -2016,7 +2016,7 @@
    "OTC:ASOMY"
   ],
   "retry_rounds_used": 3,
-  "kept_previous": 71,
+  "kept_previous": 66,
   "source_counts": {
    "yahoo": 221
   },
