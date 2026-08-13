@@ -67,9 +67,9 @@
   "file": "CBOE_VIX.csv",
   "source": "yahoo",
   "source_code": "^VIX",
-  "rows": 753,
+  "rows": 751,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "ICEUS:DXY": {
   "status": "ok",
@@ -220,7 +220,7 @@
   "file": "NYSE_ETN.csv",
   "source": "yahoo",
   "source_code": "ETN",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -229,7 +229,7 @@
   "file": "NYSE_NRG.csv",
   "source": "yahoo",
   "source_code": "NRG",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -247,7 +247,7 @@
   "file": "NASDAQ_POWL.csv",
   "source": "yahoo",
   "source_code": "POWL",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -391,7 +391,7 @@
   "file": "NYSE_SCCO.csv",
   "source": "yahoo",
   "source_code": "SCCO",
-  "rows": 750,
+  "rows": 747,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -526,7 +526,7 @@
   "file": "NASDAQ_MNST.csv",
   "source": "yahoo",
   "source_code": "MNST",
-  "rows": 751,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -535,7 +535,7 @@
   "file": "NASDAQ_PAYX.csv",
   "source": "yahoo",
   "source_code": "PAYX",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -544,7 +544,7 @@
   "file": "NASDAQ_ADP.csv",
   "source": "yahoo",
   "source_code": "ADP",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -580,7 +580,7 @@
   "file": "NYSE_CB.csv",
   "source": "yahoo",
   "source_code": "CB",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -625,7 +625,7 @@
   "file": "NYSE_AWK.csv",
   "source": "yahoo",
   "source_code": "AWK",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -634,7 +634,7 @@
   "file": "NYSE_WTRG.csv",
   "source": "yahoo",
   "source_code": "WTRG",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -652,7 +652,7 @@
   "file": "NYSE_PNR.csv",
   "source": "yahoo",
   "source_code": "PNR",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -670,7 +670,7 @@
   "file": "NASDAQ_ERII.csv",
   "source": "yahoo",
   "source_code": "ERII",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -679,7 +679,7 @@
   "file": "NYSE_VLTO.csv",
   "source": "yahoo",
   "source_code": "VLTO",
-  "rows": 716,
+  "rows": 713,
   "first": "2023-10-04",
   "last": "2026-08-12"
  },
@@ -688,7 +688,7 @@
   "file": "AMEX_FIW.csv",
   "source": "yahoo",
   "source_code": "FIW",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-13",
   "last": "2026-08-13"
  },
@@ -832,7 +832,7 @@
   "file": "NASDAQ_DUOL.csv",
   "source": "yahoo",
   "source_code": "DUOL",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -841,7 +841,7 @@
   "file": "NYSE_FOUR.csv",
   "source": "yahoo",
   "source_code": "FOUR",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -859,7 +859,7 @@
   "file": "NASDAQ_HON.csv",
   "source": "yahoo",
   "source_code": "HON",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -877,7 +877,7 @@
   "file": "NASDAQ_NDX.csv",
   "source": "yahoo",
   "source_code": "^NDX",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -886,7 +886,7 @@
   "file": "SPCFD_SPX.csv",
   "source": "yahoo",
   "source_code": "^SPX",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -913,7 +913,7 @@
   "file": "NASDAQ_PHO.csv",
   "source": "yahoo",
   "source_code": "PHO",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -922,7 +922,7 @@
   "file": "NASDAQ_PIO.csv",
   "source": "yahoo",
   "source_code": "PIO",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -931,7 +931,7 @@
   "file": "AMEX_CGW.csv",
   "source": "yahoo",
   "source_code": "CGW",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -940,7 +940,7 @@
   "file": "NASDAQ_AQWA.csv",
   "source": "yahoo",
   "source_code": "AQWA",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -949,7 +949,7 @@
   "file": "AMEX_CPER.csv",
   "source": "yahoo",
   "source_code": "CPER",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -958,7 +958,7 @@
   "file": "LSE_BRK-A.csv",
   "source": "yahoo",
   "source_code": "BRK-A",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1012,7 +1012,7 @@
   "file": "NYSE_AXP.csv",
   "source": "yahoo",
   "source_code": "AXP",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1111,7 +1111,7 @@
   "file": "NYSE_STE.csv",
   "source": "yahoo",
   "source_code": "STE",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1120,7 +1120,7 @@
   "file": "NYSE_BR.csv",
   "source": "yahoo",
   "source_code": "BR",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1246,7 +1246,7 @@
   "file": "NYSE_COR.csv",
   "source": "yahoo",
   "source_code": "COR",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1264,7 +1264,7 @@
   "file": "NASDAQ_BIDU.csv",
   "source": "yahoo",
   "source_code": "BIDU",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1282,7 +1282,7 @@
   "file": "NASDAQ_BILI.csv",
   "source": "yahoo",
   "source_code": "BILI",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1291,7 +1291,7 @@
   "file": "NYSE_TME.csv",
   "source": "yahoo",
   "source_code": "TME",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1300,9 +1300,9 @@
   "file": "OTC_TCEHY.csv",
   "source": "yahoo",
   "source_code": "TCEHY",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "NYSE:EDU": {
   "status": "ok",
@@ -1345,7 +1345,7 @@
   "file": "AMEX_FXI.csv",
   "source": "yahoo",
   "source_code": "FXI",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1354,7 +1354,7 @@
   "file": "NASDAQ_MCHI.csv",
   "source": "yahoo",
   "source_code": "MCHI",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1534,16 +1534,16 @@
   "file": "LSE_ASC.csv",
   "source": "yahoo",
   "source_code": "ASC.L",
-  "rows": 759,
+  "rows": 760,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "OTC:ASOMY": {
   "status": "ok",
   "file": "OTC_ASOMY.csv",
   "source": "yahoo",
   "source_code": "ASOMY",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1563,34 +1563,34 @@
   "source_code": "CLR.MC",
   "rows": 764,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "LSE:DEBS": {
   "status": "ok",
   "file": "LSE_DEBS.csv",
   "source": "yahoo",
   "source_code": "DEBS.L",
-  "rows": 759,
+  "rows": 760,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "SIX:NESN": {
   "status": "ok",
   "file": "SIX_NESN.csv",
   "source": "yahoo",
   "source_code": "NESN.SW",
-  "rows": 749,
+  "rows": 750,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "LSE:SVT": {
   "status": "ok",
   "file": "LSE_SVT.csv",
   "source": "yahoo",
   "source_code": "SVT.L",
-  "rows": 759,
+  "rows": 760,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "EURONEXT:VIE": {
   "status": "ok",
@@ -1599,7 +1599,7 @@
   "source_code": "VIE.PA",
   "rows": 764,
   "first": "2023-08-14",
-  "last": "2026-08-12"
+  "last": "2026-08-13"
  },
  "OTC:RGAKF": {
   "status": "ok",
@@ -1617,7 +1617,7 @@
   "source_code": "MFMS.QA",
   "rows": 165,
   "first": "2025-12-15",
-  "last": "2026-08-11"
+  "last": "2026-08-12"
  },
  "NASDAQ:ZM": {
   "status": "ok",
@@ -1674,7 +1674,7 @@
   "file": "NASDAQ_CRVS.csv",
   "source": "yahoo",
   "source_code": "CRVS",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1692,7 +1692,7 @@
   "file": "NASDAQ_SARK.csv",
   "source": "yahoo",
   "source_code": "SARK",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-13",
   "last": "2026-08-13"
  },
@@ -1720,7 +1720,7 @@
   "file": "CBOE_TMFC.csv",
   "source": "yahoo",
   "source_code": "TMFC",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1729,7 +1729,7 @@
   "file": "NASDAQ_ROKU.csv",
   "source": "yahoo",
   "source_code": "ROKU",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1774,7 +1774,7 @@
   "file": "NYSE_WSM.csv",
   "source": "yahoo",
   "source_code": "WSM",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1846,7 +1846,7 @@
   "file": "NYSE_AMT.csv",
   "source": "yahoo",
   "source_code": "AMT",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1891,7 +1891,7 @@
   "file": "NYSE_CW.csv",
   "source": "yahoo",
   "source_code": "CW",
-  "rows": 752,
+  "rows": 749,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1990,7 +1990,7 @@
   "file": "CBOE_ARKK.csv",
   "source": "yahoo",
   "source_code": "ARKK",
-  "rows": 752,
+  "rows": 751,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
@@ -1999,12 +1999,12 @@
   "file": "CBOE_ARKG.csv",
   "source": "yahoo",
   "source_code": "ARKG",
-  "rows": 752,
+  "rows": 750,
   "first": "2023-08-14",
   "last": "2026-08-12"
  },
  "_meta": {
-  "generated_utc": "2026-08-13T06:09:47.133831+00:00",
+  "generated_utc": "2026-08-13T12:38:23.224333+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-08-12",
   "reference_symbol": "AMEX:SPY",
@@ -2014,7 +2014,7 @@
   "us_symbols_short": 0,
   "us_symbols_short_examples": [],
   "retry_rounds_used": 1,
-  "kept_previous": 6,
+  "kept_previous": 4,
   "source_counts": {
    "yahoo": 221
   },
