@@ -76,8 +76,8 @@
   "file": "ICEUS_DXY.csv",
   "source": "yahoo",
   "source_code": "DX-Y.NYB",
-  "rows": 756,
-  "first": "2023-08-21",
+  "rows": 755,
+  "first": "2023-08-22",
   "last": "2026-08-21"
  },
  "OANDA:XAUUSD": {
@@ -85,8 +85,8 @@
   "file": "OANDA_XAUUSD.csv",
   "source": "yahoo",
   "source_code": "GC=F",
-  "rows": 756,
-  "first": "2023-08-21",
+  "rows": 755,
+  "first": "2023-08-22",
   "last": "2026-08-21"
  },
  "NASDAQ:NVDA": {
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-22",
   "last": "2026-08-22"
  },
@@ -895,8 +895,8 @@
   "file": "NQ_F.csv",
   "source": "yahoo",
   "source_code": "NQ=F",
-  "rows": 757,
-  "first": "2023-08-21",
+  "rows": 756,
+  "first": "2023-08-22",
   "last": "2026-08-21"
  },
  "CBOE:UVIX": {
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-08-22",
   "last": "2026-08-22"
  },
@@ -2004,7 +2004,7 @@
   "last": "2026-08-21"
  },
  "_meta": {
-  "generated_utc": "2026-08-22T02:38:12.152247+00:00",
+  "generated_utc": "2026-08-22T10:29:11.547555+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-08-21",
   "reference_symbol": "AMEX:SPY",
