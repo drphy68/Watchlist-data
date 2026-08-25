@@ -5,8 +5,8 @@
   "source": "yahoo",
   "source_code": "SPY",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:QQQ": {
   "status": "ok",
@@ -14,8 +14,8 @@
   "source": "yahoo",
   "source_code": "QQQ",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:IWM": {
   "status": "ok",
@@ -23,8 +23,8 @@
   "source": "yahoo",
   "source_code": "IWM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:DIA": {
   "status": "ok",
@@ -32,8 +32,8 @@
   "source": "yahoo",
   "source_code": "DIA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:XLF": {
   "status": "ok",
@@ -41,8 +41,8 @@
   "source": "yahoo",
   "source_code": "XLF",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:XLE": {
   "status": "ok",
@@ -50,8 +50,8 @@
   "source": "yahoo",
   "source_code": "XLE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:SOXX": {
   "status": "ok",
@@ -59,8 +59,8 @@
   "source": "yahoo",
   "source_code": "SOXX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "CBOE:VIX": {
   "status": "ok",
@@ -95,8 +95,8 @@
   "source": "yahoo",
   "source_code": "NVDA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MSFT": {
   "status": "ok",
@@ -104,8 +104,8 @@
   "source": "yahoo",
   "source_code": "MSFT",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:AAPL": {
   "status": "ok",
@@ -113,8 +113,8 @@
   "source": "yahoo",
   "source_code": "AAPL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:AMZN": {
   "status": "ok",
@@ -122,8 +122,8 @@
   "source": "yahoo",
   "source_code": "AMZN",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:META": {
   "status": "ok",
@@ -131,8 +131,8 @@
   "source": "yahoo",
   "source_code": "META",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:GOOGL": {
   "status": "ok",
@@ -140,8 +140,8 @@
   "source": "yahoo",
   "source_code": "GOOGL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:AMD": {
   "status": "ok",
@@ -149,8 +149,8 @@
   "source": "yahoo",
   "source_code": "AMD",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:AVGO": {
   "status": "ok",
@@ -158,8 +158,8 @@
   "source": "yahoo",
   "source_code": "AVGO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:TSM": {
   "status": "ok",
@@ -167,8 +167,8 @@
   "source": "yahoo",
   "source_code": "TSM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MU": {
   "status": "ok",
@@ -176,8 +176,8 @@
   "source": "yahoo",
   "source_code": "MU",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:VST": {
   "status": "ok",
@@ -185,8 +185,8 @@
   "source": "yahoo",
   "source_code": "VST",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:CEG": {
   "status": "ok",
@@ -194,8 +194,8 @@
   "source": "yahoo",
   "source_code": "CEG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:VRT": {
   "status": "ok",
@@ -203,17 +203,17 @@
   "source": "yahoo",
   "source_code": "VRT",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:GEV": {
   "status": "ok",
   "file": "NYSE_GEV.csv",
   "source": "yahoo",
   "source_code": "GEV",
-  "rows": 604,
+  "rows": 605,
   "first": "2024-03-27",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "NYSE:ETN": {
   "status": "ok",
@@ -221,8 +221,8 @@
   "source": "yahoo",
   "source_code": "ETN",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:NRG": {
   "status": "ok",
@@ -230,8 +230,8 @@
   "source": "yahoo",
   "source_code": "NRG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BE": {
   "status": "ok",
@@ -239,8 +239,8 @@
   "source": "yahoo",
   "source_code": "BE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:POWL": {
   "status": "ok",
@@ -248,8 +248,8 @@
   "source": "yahoo",
   "source_code": "POWL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ASML": {
   "status": "ok",
@@ -257,17 +257,17 @@
   "source": "yahoo",
   "source_code": "ASML",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ARM": {
   "status": "ok",
   "file": "NASDAQ_ARM.csv",
   "source": "yahoo",
   "source_code": "ARM",
-  "rows": 738,
+  "rows": 739,
   "first": "2023-09-14",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "NASDAQ:MRVL": {
   "status": "ok",
@@ -275,8 +275,8 @@
   "source": "yahoo",
   "source_code": "MRVL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:WDC": {
   "status": "ok",
@@ -284,17 +284,17 @@
   "source": "yahoo",
   "source_code": "WDC",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:SNDK": {
   "status": "ok",
   "file": "NASDAQ_SNDK.csv",
   "source": "yahoo",
   "source_code": "SNDK",
-  "rows": 383,
+  "rows": 384,
   "first": "2025-02-13",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "NASDAQ:TER": {
   "status": "ok",
@@ -302,8 +302,8 @@
   "source": "yahoo",
   "source_code": "TER",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:PLTR": {
   "status": "ok",
@@ -311,8 +311,8 @@
   "source": "yahoo",
   "source_code": "PLTR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:CRWD": {
   "status": "ok",
@@ -320,8 +320,8 @@
   "source": "yahoo",
   "source_code": "CRWD",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:NOW": {
   "status": "ok",
@@ -329,8 +329,8 @@
   "source": "yahoo",
   "source_code": "NOW",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:CRM": {
   "status": "ok",
@@ -338,8 +338,8 @@
   "source": "yahoo",
   "source_code": "CRM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:SNOW": {
   "status": "ok",
@@ -347,8 +347,8 @@
   "source": "yahoo",
   "source_code": "SNOW",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:HOOD": {
   "status": "ok",
@@ -356,8 +356,8 @@
   "source": "yahoo",
   "source_code": "HOOD",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:FCX": {
   "status": "ok",
@@ -365,8 +365,8 @@
   "source": "yahoo",
   "source_code": "FCX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:GDX": {
   "status": "ok",
@@ -374,8 +374,8 @@
   "source": "yahoo",
   "source_code": "GDX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:FANG": {
   "status": "ok",
@@ -383,8 +383,8 @@
   "source": "yahoo",
   "source_code": "FANG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:SCCO": {
   "status": "ok",
@@ -392,8 +392,8 @@
   "source": "yahoo",
   "source_code": "SCCO",
   "rows": 750,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:HBM": {
   "status": "ok",
@@ -401,8 +401,8 @@
   "source": "yahoo",
   "source_code": "HBM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BAC": {
   "status": "ok",
@@ -410,8 +410,8 @@
   "source": "yahoo",
   "source_code": "BAC",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:JPM": {
   "status": "ok",
@@ -419,8 +419,8 @@
   "source": "yahoo",
   "source_code": "JPM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:GS": {
   "status": "ok",
@@ -428,26 +428,26 @@
   "source": "yahoo",
   "source_code": "GS",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:HONA": {
   "status": "ok",
   "file": "NASDAQ_HONA.csv",
   "source": "yahoo",
   "source_code": "HONA",
-  "rows": 49,
+  "rows": 50,
   "first": "2026-06-15",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "NYSE:VGNT": {
   "status": "ok",
   "file": "NYSE_VGNT.csv",
   "source": "yahoo",
   "source_code": "VGNT",
-  "rows": 103,
+  "rows": 104,
   "first": "2026-03-27",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "NYSE:OKLO": {
   "status": "ok",
@@ -455,8 +455,8 @@
   "source": "yahoo",
   "source_code": "OKLO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:WULF": {
   "status": "ok",
@@ -464,8 +464,8 @@
   "source": "yahoo",
   "source_code": "WULF",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MSTR": {
   "status": "ok",
@@ -473,8 +473,8 @@
   "source": "yahoo",
   "source_code": "MSTR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:RKLB": {
   "status": "ok",
@@ -482,8 +482,8 @@
   "source": "yahoo",
   "source_code": "RKLB",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:CVNA": {
   "status": "ok",
@@ -491,8 +491,8 @@
   "source": "yahoo",
   "source_code": "CVNA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:V": {
   "status": "ok",
@@ -500,8 +500,8 @@
   "source": "yahoo",
   "source_code": "V",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:MA": {
   "status": "ok",
@@ -509,8 +509,8 @@
   "source": "yahoo",
   "source_code": "MA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:ICE": {
   "status": "ok",
@@ -518,8 +518,8 @@
   "source": "yahoo",
   "source_code": "ICE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MNST": {
   "status": "ok",
@@ -527,8 +527,8 @@
   "source": "yahoo",
   "source_code": "MNST",
   "rows": 750,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:PAYX": {
   "status": "ok",
@@ -536,8 +536,8 @@
   "source": "yahoo",
   "source_code": "PAYX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ADP": {
   "status": "ok",
@@ -545,8 +545,8 @@
   "source": "yahoo",
   "source_code": "ADP",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:GILD": {
   "status": "ok",
@@ -554,8 +554,8 @@
   "source": "yahoo",
   "source_code": "GILD",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:DHR": {
   "status": "ok",
@@ -563,8 +563,8 @@
   "source": "yahoo",
   "source_code": "DHR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ADI": {
   "status": "ok",
@@ -572,8 +572,8 @@
   "source": "yahoo",
   "source_code": "ADI",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:CB": {
   "status": "ok",
@@ -581,8 +581,8 @@
   "source": "yahoo",
   "source_code": "CB",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:TJX": {
   "status": "ok",
@@ -590,8 +590,8 @@
   "source": "yahoo",
   "source_code": "TJX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:COST": {
   "status": "ok",
@@ -599,8 +599,8 @@
   "source": "yahoo",
   "source_code": "COST",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:MCD": {
   "status": "ok",
@@ -608,8 +608,8 @@
   "source": "yahoo",
   "source_code": "MCD",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:XYL": {
   "status": "ok",
@@ -617,8 +617,8 @@
   "source": "yahoo",
   "source_code": "XYL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:AWK": {
   "status": "ok",
@@ -626,8 +626,8 @@
   "source": "yahoo",
   "source_code": "AWK",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:WTRG": {
   "status": "ok",
@@ -635,8 +635,8 @@
   "source": "yahoo",
   "source_code": "WTRG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:ECL": {
   "status": "ok",
@@ -644,8 +644,8 @@
   "source": "yahoo",
   "source_code": "ECL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:PNR": {
   "status": "ok",
@@ -653,8 +653,8 @@
   "source": "yahoo",
   "source_code": "PNR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:MWA": {
   "status": "ok",
@@ -662,8 +662,8 @@
   "source": "yahoo",
   "source_code": "MWA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ERII": {
   "status": "ok",
@@ -671,17 +671,17 @@
   "source": "yahoo",
   "source_code": "ERII",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:VLTO": {
   "status": "ok",
   "file": "NYSE_VLTO.csv",
   "source": "yahoo",
   "source_code": "VLTO",
-  "rows": 724,
+  "rows": 725,
   "first": "2023-10-04",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "AMEX:FIW": {
   "status": "ok",
@@ -689,8 +689,8 @@
   "source": "yahoo",
   "source_code": "FIW",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BHP": {
   "status": "ok",
@@ -698,8 +698,8 @@
   "source": "yahoo",
   "source_code": "BHP",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:COPX": {
   "status": "ok",
@@ -707,8 +707,8 @@
   "source": "yahoo",
   "source_code": "COPX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BAM": {
   "status": "ok",
@@ -716,8 +716,8 @@
   "source": "yahoo",
   "source_code": "BAM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BX": {
   "status": "ok",
@@ -725,8 +725,8 @@
   "source": "yahoo",
   "source_code": "BX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "SGX:D05": {
   "status": "ok",
@@ -770,8 +770,8 @@
   "source": "yahoo",
   "source_code": "TSLA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:TQQQ": {
   "status": "ok",
@@ -779,8 +779,8 @@
   "source": "yahoo",
   "source_code": "TQQQ",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "BITSTAMP:BTCUSD": {
   "status": "ok",
@@ -797,8 +797,8 @@
   "source": "yahoo",
   "source_code": "QUBT",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:AXTI": {
   "status": "ok",
@@ -806,8 +806,8 @@
   "source": "yahoo",
   "source_code": "AXTI",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:LUNR": {
   "status": "ok",
@@ -815,8 +815,8 @@
   "source": "yahoo",
   "source_code": "LUNR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MBLY": {
   "status": "ok",
@@ -824,8 +824,8 @@
   "source": "yahoo",
   "source_code": "MBLY",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:DUOL": {
   "status": "ok",
@@ -833,8 +833,8 @@
   "source": "yahoo",
   "source_code": "DUOL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:FOUR": {
   "status": "ok",
@@ -842,8 +842,8 @@
   "source": "yahoo",
   "source_code": "FOUR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:F": {
   "status": "ok",
@@ -851,8 +851,8 @@
   "source": "yahoo",
   "source_code": "F",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:HON": {
   "status": "ok",
@@ -860,8 +860,8 @@
   "source": "yahoo",
   "source_code": "HON",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:GOOG": {
   "status": "ok",
@@ -869,8 +869,8 @@
   "source": "yahoo",
   "source_code": "GOOG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:NDX": {
   "status": "ok",
@@ -878,8 +878,8 @@
   "source": "yahoo",
   "source_code": "^NDX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "SPCFD:SPX": {
   "status": "ok",
@@ -887,8 +887,8 @@
   "source": "yahoo",
   "source_code": "^SPX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NQ=F": {
   "status": "ok",
@@ -905,8 +905,8 @@
   "source": "yahoo",
   "source_code": "UVIX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:PHO": {
   "status": "ok",
@@ -914,8 +914,8 @@
   "source": "yahoo",
   "source_code": "PHO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:PIO": {
   "status": "ok",
@@ -923,8 +923,8 @@
   "source": "yahoo",
   "source_code": "PIO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:CGW": {
   "status": "ok",
@@ -932,8 +932,8 @@
   "source": "yahoo",
   "source_code": "CGW",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:AQWA": {
   "status": "ok",
@@ -941,8 +941,8 @@
   "source": "yahoo",
   "source_code": "AQWA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:CPER": {
   "status": "ok",
@@ -950,8 +950,8 @@
   "source": "yahoo",
   "source_code": "CPER",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "LSE:BRK-A": {
   "status": "ok",
@@ -959,8 +959,8 @@
   "source": "yahoo",
   "source_code": "BRK-A",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:ANET": {
   "status": "ok",
@@ -968,8 +968,8 @@
   "source": "yahoo",
   "source_code": "ANET",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:QCOM": {
   "status": "ok",
@@ -977,8 +977,8 @@
   "source": "yahoo",
   "source_code": "QCOM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:UNH": {
   "status": "ok",
@@ -986,8 +986,8 @@
   "source": "yahoo",
   "source_code": "UNH",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:TXN": {
   "status": "ok",
@@ -995,8 +995,8 @@
   "source": "yahoo",
   "source_code": "TXN",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ADBE": {
   "status": "ok",
@@ -1004,8 +1004,8 @@
   "source": "yahoo",
   "source_code": "ADBE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:AXP": {
   "status": "ok",
@@ -1013,8 +1013,8 @@
   "source": "yahoo",
   "source_code": "AXP",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "LSE:BRK-B": {
   "status": "ok",
@@ -1022,8 +1022,8 @@
   "source": "yahoo",
   "source_code": "BRK-B",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:NVO": {
   "status": "ok",
@@ -1031,8 +1031,8 @@
   "source": "yahoo",
   "source_code": "NVO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:KO": {
   "status": "ok",
@@ -1040,8 +1040,8 @@
   "source": "yahoo",
   "source_code": "KO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:PEP": {
   "status": "ok",
@@ -1049,8 +1049,8 @@
   "source": "yahoo",
   "source_code": "PEP",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:WMT": {
   "status": "ok",
@@ -1058,8 +1058,8 @@
   "source": "yahoo",
   "source_code": "WMT",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:CSCO": {
   "status": "ok",
@@ -1067,8 +1067,8 @@
   "source": "yahoo",
   "source_code": "CSCO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:FDX": {
   "status": "ok",
@@ -1076,8 +1076,8 @@
   "source": "yahoo",
   "source_code": "FDX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:PYPL": {
   "status": "ok",
@@ -1085,8 +1085,8 @@
   "source": "yahoo",
   "source_code": "PYPL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:WDAY": {
   "status": "ok",
@@ -1094,8 +1094,8 @@
   "source": "yahoo",
   "source_code": "WDAY",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BSX": {
   "status": "ok",
@@ -1103,8 +1103,8 @@
   "source": "yahoo",
   "source_code": "BSX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:STE": {
   "status": "ok",
@@ -1112,8 +1112,8 @@
   "source": "yahoo",
   "source_code": "STE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BR": {
   "status": "ok",
@@ -1121,8 +1121,8 @@
   "source": "yahoo",
   "source_code": "BR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:INTC": {
   "status": "ok",
@@ -1130,8 +1130,8 @@
   "source": "yahoo",
   "source_code": "INTC",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BA": {
   "status": "ok",
@@ -1139,8 +1139,8 @@
   "source": "yahoo",
   "source_code": "BA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:HUM": {
   "status": "ok",
@@ -1148,8 +1148,8 @@
   "source": "yahoo",
   "source_code": "HUM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:KHC": {
   "status": "ok",
@@ -1157,8 +1157,8 @@
   "source": "yahoo",
   "source_code": "KHC",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:ARE": {
   "status": "ok",
@@ -1166,8 +1166,8 @@
   "source": "yahoo",
   "source_code": "ARE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:MLM": {
   "status": "ok",
@@ -1175,8 +1175,8 @@
   "source": "yahoo",
   "source_code": "MLM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:COHR": {
   "status": "ok",
@@ -1184,8 +1184,8 @@
   "source": "yahoo",
   "source_code": "COHR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:LITE": {
   "status": "ok",
@@ -1193,8 +1193,8 @@
   "source": "yahoo",
   "source_code": "LITE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MCHP": {
   "status": "ok",
@@ -1202,8 +1202,8 @@
   "source": "yahoo",
   "source_code": "MCHP",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:PPG": {
   "status": "ok",
@@ -1211,8 +1211,8 @@
   "source": "yahoo",
   "source_code": "PPG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:GDDY": {
   "status": "ok",
@@ -1220,8 +1220,8 @@
   "source": "yahoo",
   "source_code": "GDDY",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:GEN": {
   "status": "ok",
@@ -1229,8 +1229,8 @@
   "source": "yahoo",
   "source_code": "GEN",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:CIEN": {
   "status": "ok",
@@ -1238,8 +1238,8 @@
   "source": "yahoo",
   "source_code": "CIEN",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:COR": {
   "status": "ok",
@@ -1247,8 +1247,8 @@
   "source": "yahoo",
   "source_code": "COR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:BABA": {
   "status": "ok",
@@ -1256,8 +1256,8 @@
   "source": "yahoo",
   "source_code": "BABA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:BIDU": {
   "status": "ok",
@@ -1265,8 +1265,8 @@
   "source": "yahoo",
   "source_code": "BIDU",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:JD": {
   "status": "ok",
@@ -1274,8 +1274,8 @@
   "source": "yahoo",
   "source_code": "JD",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:BILI": {
   "status": "ok",
@@ -1283,8 +1283,8 @@
   "source": "yahoo",
   "source_code": "BILI",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:TME": {
   "status": "ok",
@@ -1292,8 +1292,8 @@
   "source": "yahoo",
   "source_code": "TME",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "OTC:TCEHY": {
   "status": "ok",
@@ -1301,8 +1301,8 @@
   "source": "yahoo",
   "source_code": "TCEHY",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:EDU": {
   "status": "ok",
@@ -1310,8 +1310,8 @@
   "source": "yahoo",
   "source_code": "EDU",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:GRAB": {
   "status": "ok",
@@ -1319,8 +1319,8 @@
   "source": "yahoo",
   "source_code": "GRAB",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ZLAB": {
   "status": "ok",
@@ -1328,8 +1328,8 @@
   "source": "yahoo",
   "source_code": "ZLAB",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "BGNE": {
   "status": "ok",
@@ -1337,8 +1337,8 @@
   "source": "yahoo",
   "source_code": "ONC",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:FXI": {
   "status": "ok",
@@ -1346,8 +1346,8 @@
   "source": "yahoo",
   "source_code": "FXI",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MCHI": {
   "status": "ok",
@@ -1355,8 +1355,8 @@
   "source": "yahoo",
   "source_code": "MCHI",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:KWEB": {
   "status": "ok",
@@ -1364,8 +1364,8 @@
   "source": "yahoo",
   "source_code": "KWEB",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "SSE:000300": {
   "status": "ok",
@@ -1534,7 +1534,7 @@
   "file": "LSE_ASC.csv",
   "source": "yahoo",
   "source_code": "ASC.L",
-  "rows": 758,
+  "rows": 759,
   "first": "2023-08-25",
   "last": "2026-08-25"
  },
@@ -1543,8 +1543,8 @@
   "file": "OTC_ASOMY.csv",
   "source": "yahoo",
   "source_code": "ASOMY",
-  "rows": 751,
-  "first": "2023-08-25",
+  "rows": 750,
+  "first": "2023-08-28",
   "last": "2026-08-24"
  },
  "MIL:BF-B": {
@@ -1552,9 +1552,9 @@
   "file": "MIL_BF-B.csv",
   "source": "yahoo",
   "source_code": "BF.MI",
-  "rows": 526,
+  "rows": 527,
   "first": "2024-07-01",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "BME:CLR": {
   "status": "ok",
@@ -1570,7 +1570,7 @@
   "file": "LSE_DEBS.csv",
   "source": "yahoo",
   "source_code": "DEBS.L",
-  "rows": 758,
+  "rows": 759,
   "first": "2023-08-25",
   "last": "2026-08-25"
  },
@@ -1588,7 +1588,7 @@
   "file": "LSE_SVT.csv",
   "source": "yahoo",
   "source_code": "SVT.L",
-  "rows": 758,
+  "rows": 759,
   "first": "2023-08-25",
   "last": "2026-08-25"
  },
@@ -1606,9 +1606,9 @@
   "file": "OTC_RGAKF.csv",
   "source": "yahoo",
   "source_code": "RGAKF",
-  "rows": 133,
+  "rows": 134,
   "first": "2025-04-07",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "QSE:MFMS": {
   "status": "ok",
@@ -1625,8 +1625,8 @@
   "source": "yahoo",
   "source_code": "ZM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:BYND": {
   "status": "ok",
@@ -1634,8 +1634,8 @@
   "source": "yahoo",
   "source_code": "BYND",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:MRNA": {
   "status": "ok",
@@ -1643,8 +1643,8 @@
   "source": "yahoo",
   "source_code": "MRNA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:BNTX": {
   "status": "ok",
@@ -1652,8 +1652,8 @@
   "source": "yahoo",
   "source_code": "BNTX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "CFI:CVAC": {
   "status": "failed",
@@ -1666,8 +1666,8 @@
   "source": "yahoo",
   "source_code": "PACB",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:CRVS": {
   "status": "ok",
@@ -1675,8 +1675,8 @@
   "source": "yahoo",
   "source_code": "CRVS",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:GME": {
   "status": "ok",
@@ -1684,8 +1684,8 @@
   "source": "yahoo",
   "source_code": "GME",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:SARK": {
   "status": "ok",
@@ -1693,8 +1693,8 @@
   "source": "yahoo",
   "source_code": "SARK",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "ERUS": {
   "status": "failed",
@@ -1721,8 +1721,8 @@
   "source": "yahoo",
   "source_code": "TMFC",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:ROKU": {
   "status": "ok",
@@ -1730,8 +1730,8 @@
   "source": "yahoo",
   "source_code": "ROKU",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:DKNG": {
   "status": "ok",
@@ -1739,8 +1739,8 @@
   "source": "yahoo",
   "source_code": "DKNG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:WYNN": {
   "status": "ok",
@@ -1748,8 +1748,8 @@
   "source": "yahoo",
   "source_code": "WYNN",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:TTD": {
   "status": "ok",
@@ -1757,8 +1757,8 @@
   "source": "yahoo",
   "source_code": "TTD",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:RBLX": {
   "status": "ok",
@@ -1766,8 +1766,8 @@
   "source": "yahoo",
   "source_code": "RBLX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:WSM": {
   "status": "ok",
@@ -1775,8 +1775,8 @@
   "source": "yahoo",
   "source_code": "WSM",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:IVZ": {
   "status": "ok",
@@ -1784,8 +1784,8 @@
   "source": "yahoo",
   "source_code": "IVZ",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:DJCO": {
   "status": "ok",
@@ -1793,8 +1793,8 @@
   "source": "yahoo",
   "source_code": "DJCO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NASDAQ:EWBC": {
   "status": "ok",
@@ -1802,8 +1802,8 @@
   "source": "yahoo",
   "source_code": "EWBC",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:DIS": {
   "status": "ok",
@@ -1811,8 +1811,8 @@
   "source": "yahoo",
   "source_code": "DIS",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:C": {
   "status": "ok",
@@ -1820,8 +1820,8 @@
   "source": "yahoo",
   "source_code": "C",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:GE": {
   "status": "ok",
@@ -1829,8 +1829,8 @@
   "source": "yahoo",
   "source_code": "GE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:PFE": {
   "status": "ok",
@@ -1838,8 +1838,8 @@
   "source": "yahoo",
   "source_code": "PFE",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:AMT": {
   "status": "ok",
@@ -1847,8 +1847,8 @@
   "source": "yahoo",
   "source_code": "AMT",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:MKL": {
   "status": "ok",
@@ -1856,8 +1856,8 @@
   "source": "yahoo",
   "source_code": "MKL",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:OXY": {
   "status": "ok",
@@ -1865,8 +1865,8 @@
   "source": "yahoo",
   "source_code": "OXY",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:MPLX": {
   "status": "ok",
@@ -1874,8 +1874,8 @@
   "source": "yahoo",
   "source_code": "MPLX",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:KMI": {
   "status": "ok",
@@ -1883,8 +1883,8 @@
   "source": "yahoo",
   "source_code": "KMI",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:CW": {
   "status": "ok",
@@ -1892,8 +1892,8 @@
   "source": "yahoo",
   "source_code": "CW",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:MP": {
   "status": "ok",
@@ -1901,8 +1901,8 @@
   "source": "yahoo",
   "source_code": "MP",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:HIMS": {
   "status": "ok",
@@ -1910,8 +1910,8 @@
   "source": "yahoo",
   "source_code": "HIMS",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:SG": {
   "status": "ok",
@@ -1919,26 +1919,26 @@
   "source": "yahoo",
   "source_code": "SG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "NYSE:CRCL": {
   "status": "ok",
   "file": "NYSE_CRCL.csv",
   "source": "yahoo",
   "source_code": "CRCL",
-  "rows": 306,
+  "rows": 307,
   "first": "2025-06-05",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "NASDAQ:SPCX": {
   "status": "ok",
   "file": "NASDAQ_SPCX.csv",
   "source": "yahoo",
   "source_code": "SPCX",
-  "rows": 50,
+  "rows": 51,
   "first": "2026-06-12",
-  "last": "2026-08-24"
+  "last": "2026-08-25"
  },
  "NYSE:NOK": {
   "status": "ok",
@@ -1946,8 +1946,8 @@
   "source": "yahoo",
   "source_code": "NOK",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:VWO": {
   "status": "ok",
@@ -1955,8 +1955,8 @@
   "source": "yahoo",
   "source_code": "VWO",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:VEA": {
   "status": "ok",
@@ -1964,8 +1964,8 @@
   "source": "yahoo",
   "source_code": "VEA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "CBOE:IEFA": {
   "status": "ok",
@@ -1973,8 +1973,8 @@
   "source": "yahoo",
   "source_code": "IEFA",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "AMEX:IEUR": {
   "status": "ok",
@@ -1982,8 +1982,8 @@
   "source": "yahoo",
   "source_code": "IEUR",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "CBOE:ARKK": {
   "status": "ok",
@@ -1991,8 +1991,8 @@
   "source": "yahoo",
   "source_code": "ARKK",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "CBOE:ARKG": {
   "status": "ok",
@@ -2000,21 +2000,23 @@
   "source": "yahoo",
   "source_code": "ARKG",
   "rows": 751,
-  "first": "2023-08-25",
-  "last": "2026-08-24"
+  "first": "2023-08-28",
+  "last": "2026-08-25"
  },
  "_meta": {
-  "generated_utc": "2026-08-25T10:37:47.870760+00:00",
+  "generated_utc": "2026-08-25T23:05:19.084366+00:00",
   "script_version": "1.3",
-  "expected_last_us_session": "2026-08-24",
+  "expected_last_us_session": "2026-08-25",
   "reference_symbol": "AMEX:SPY",
-  "reference_symbol_last": "2026-08-24",
+  "reference_symbol_last": "2026-08-25",
   "reference_symbol_at_expected": true,
   "us_symbols_total": 190,
-  "us_symbols_short": 0,
-  "us_symbols_short_examples": [],
-  "retry_rounds_used": 1,
-  "kept_previous": 1,
+  "us_symbols_short": 1,
+  "us_symbols_short_examples": [
+   "OTC:ASOMY"
+  ],
+  "retry_rounds_used": 3,
+  "kept_previous": 10,
   "source_counts": {
    "yahoo": 221
   },
