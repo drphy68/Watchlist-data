@@ -2004,7 +2004,7 @@
   "last": "2026-08-28"
  },
  "_meta": {
-  "generated_utc": "2026-08-29T03:43:55.597861+00:00",
+  "generated_utc": "2026-08-29T08:13:24.142090+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-08-28",
   "reference_symbol": "AMEX:SPY",
@@ -2014,7 +2014,7 @@
   "us_symbols_short": 0,
   "us_symbols_short_examples": [],
   "retry_rounds_used": 1,
-  "kept_previous": 28,
+  "kept_previous": 201,
   "source_counts": {
    "yahoo": 221
   },
