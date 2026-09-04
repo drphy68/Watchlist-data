@@ -787,9 +787,9 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1097,
-  "first": "2023-09-03",
-  "last": "2026-09-03"
+  "rows": 1096,
+  "first": "2023-09-04",
+  "last": "2026-09-04"
  },
  "NASDAQ:QUBT": {
   "status": "ok",
@@ -1552,9 +1552,9 @@
   "file": "MIL_BF-B.csv",
   "source": "yahoo",
   "source_code": "BF.MI",
-  "rows": 533,
+  "rows": 534,
   "first": "2024-07-01",
-  "last": "2026-09-02"
+  "last": "2026-09-03"
  },
  "BME:CLR": {
   "status": "ok",
@@ -1706,9 +1706,9 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1097,
-  "first": "2023-09-03",
-  "last": "2026-09-03"
+  "rows": 1096,
+  "first": "2023-09-04",
+  "last": "2026-09-04"
  },
  "JJC": {
   "status": "failed",
@@ -2004,17 +2004,21 @@
   "last": "2026-09-03"
  },
  "_meta": {
-  "generated_utc": "2026-09-03T14:16:23.782692+00:00",
+  "generated_utc": "2026-09-04T00:25:04.908244+00:00",
   "script_version": "1.3",
-  "expected_last_us_session": "2026-09-02",
+  "expected_last_us_session": "2026-09-03",
   "reference_symbol": "AMEX:SPY",
   "reference_symbol_last": "2026-09-03",
-  "reference_symbol_at_expected": false,
+  "reference_symbol_at_expected": true,
   "us_symbols_total": 190,
-  "us_symbols_short": 0,
-  "us_symbols_short_examples": [],
-  "retry_rounds_used": 1,
-  "kept_previous": 0,
+  "us_symbols_short": 3,
+  "us_symbols_short_examples": [
+   "NASDAQ:PIO",
+   "OTC:ASOMY",
+   "OTC:RGAKF"
+  ],
+  "retry_rounds_used": 3,
+  "kept_previous": 189,
   "source_counts": {
    "yahoo": 221
   },
