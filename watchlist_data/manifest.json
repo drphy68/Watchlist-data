@@ -78,7 +78,7 @@
   "source_code": "DX-Y.NYB",
   "rows": 755,
   "first": "2023-09-05",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "OANDA:XAUUSD": {
   "status": "ok",
@@ -87,7 +87,7 @@
   "source_code": "GC=F",
   "rows": 755,
   "first": "2023-09-05",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "NASDAQ:NVDA": {
   "status": "ok",
@@ -733,36 +733,36 @@
   "file": "SGX_D05.csv",
   "source": "yahoo",
   "source_code": "D05.SI",
-  "rows": 756,
+  "rows": 757,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "SGX:ES3": {
   "status": "ok",
   "file": "SGX_ES3.csv",
   "source": "yahoo",
   "source_code": "ES3.SI",
-  "rows": 757,
+  "rows": 758,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "SGX:C6L": {
   "status": "ok",
   "file": "SGX_C6L.csv",
   "source": "yahoo",
   "source_code": "C6L.SI",
-  "rows": 756,
+  "rows": 757,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:9926": {
   "status": "ok",
   "file": "HKEX_9926.csv",
   "source": "yahoo",
   "source_code": "9926.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "NASDAQ:TSLA": {
   "status": "ok",
@@ -897,7 +897,7 @@
   "source_code": "NQ=F",
   "rows": 756,
   "first": "2023-09-05",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "CBOE:UVIX": {
   "status": "ok",
@@ -1381,153 +1381,153 @@
   "file": "TPEX_00845B.csv",
   "source": "yahoo",
   "source_code": "00845B.TWO",
-  "rows": 730,
+  "rows": 731,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "TWSE:00885": {
   "status": "ok",
   "file": "TWSE_00885.csv",
   "source": "yahoo",
   "source_code": "00885.TW",
-  "rows": 729,
+  "rows": 730,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:0700": {
   "status": "ok",
   "file": "HKEX_0700.csv",
   "source": "yahoo",
   "source_code": "0700.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:1211": {
   "status": "ok",
   "file": "HKEX_1211.csv",
   "source": "yahoo",
   "source_code": "1211.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:1477": {
   "status": "ok",
   "file": "HKEX_1477.csv",
   "source": "yahoo",
   "source_code": "1477.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "TSE:268A": {
   "status": "ok",
   "file": "TSE_268A.csv",
   "source": "yahoo",
   "source_code": "268A.T",
-  "rows": 453,
+  "rows": 454,
   "first": "2024-10-25",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:2801": {
   "status": "ok",
   "file": "HKEX_2801.csv",
   "source": "yahoo",
   "source_code": "2801.HK",
-  "rows": 735,
+  "rows": 736,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "SZSE:300122": {
   "status": "ok",
   "file": "SZSE_300122.csv",
   "source": "yahoo",
   "source_code": "300122.SZ",
-  "rows": 727,
+  "rows": 728,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "SZSE:300142": {
   "status": "ok",
   "file": "SZSE_300142.csv",
   "source": "yahoo",
   "source_code": "300142.SZ",
-  "rows": 727,
+  "rows": 728,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "SZSE:300601": {
   "status": "ok",
   "file": "SZSE_300601.csv",
   "source": "yahoo",
   "source_code": "300601.SZ",
-  "rows": 727,
+  "rows": 728,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:3067": {
   "status": "ok",
   "file": "HKEX_3067.csv",
   "source": "yahoo",
   "source_code": "3067.HK",
-  "rows": 735,
+  "rows": 736,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:3088": {
   "status": "ok",
   "file": "HKEX_3088.csv",
   "source": "yahoo",
   "source_code": "3088.HK",
-  "rows": 735,
+  "rows": 736,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "SSE:600196": {
   "status": "ok",
   "file": "SSE_600196.csv",
   "source": "yahoo",
   "source_code": "600196.SS",
-  "rows": 727,
+  "rows": 728,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "TSE:6125": {
   "status": "ok",
   "file": "TSE_6125.csv",
   "source": "yahoo",
   "source_code": "6125.T",
-  "rows": 733,
+  "rows": 734,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "SSE:688755": {
   "status": "ok",
   "file": "SSE_688755.csv",
   "source": "yahoo",
   "source_code": "688755.SS",
-  "rows": 320,
+  "rows": 321,
   "first": "2025-05-16",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:9626": {
   "status": "ok",
   "file": "HKEX_9626.csv",
   "source": "yahoo",
   "source_code": "9626.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "HKEX:9988": {
   "status": "ok",
   "file": "HKEX_9988.csv",
   "source": "yahoo",
   "source_code": "9988.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-04",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "LSE:ASC": {
   "status": "ok",
@@ -2004,7 +2004,7 @@
   "last": "2026-09-03"
  },
  "_meta": {
-  "generated_utc": "2026-09-04T00:25:04.908244+00:00",
+  "generated_utc": "2026-09-04T06:44:26.759408+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-09-03",
   "reference_symbol": "AMEX:SPY",
