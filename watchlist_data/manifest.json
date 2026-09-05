@@ -391,7 +391,7 @@
   "file": "NYSE_SCCO.csv",
   "source": "yahoo",
   "source_code": "SCCO",
-  "rows": 753,
+  "rows": 754,
   "first": "2023-09-05",
   "last": "2026-09-04"
  },
@@ -922,9 +922,9 @@
   "file": "NASDAQ_PIO.csv",
   "source": "yahoo",
   "source_code": "PIO",
-  "rows": 753,
+  "rows": 754,
   "first": "2023-09-05",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "AMEX:CGW": {
   "status": "ok",
@@ -940,9 +940,9 @@
   "file": "NASDAQ_AQWA.csv",
   "source": "yahoo",
   "source_code": "AQWA",
-  "rows": 753,
+  "rows": 754,
   "first": "2023-09-05",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "AMEX:CPER": {
   "status": "ok",
@@ -1543,9 +1543,9 @@
   "file": "OTC_ASOMY.csv",
   "source": "yahoo",
   "source_code": "ASOMY",
-  "rows": 753,
+  "rows": 754,
   "first": "2023-09-05",
-  "last": "2026-09-03"
+  "last": "2026-09-04"
  },
  "MIL:BF-B": {
   "status": "ok",
@@ -2004,21 +2004,17 @@
   "last": "2026-09-04"
  },
  "_meta": {
-  "generated_utc": "2026-09-05T00:23:44.611536+00:00",
+  "generated_utc": "2026-09-05T06:12:44.690944+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-09-04",
   "reference_symbol": "AMEX:SPY",
   "reference_symbol_last": "2026-09-04",
   "reference_symbol_at_expected": true,
   "us_symbols_total": 190,
-  "us_symbols_short": 3,
-  "us_symbols_short_examples": [
-   "NASDAQ:PIO",
-   "NASDAQ:AQWA",
-   "OTC:ASOMY"
-  ],
-  "retry_rounds_used": 3,
-  "kept_previous": 189,
+  "us_symbols_short": 0,
+  "us_symbols_short_examples": [],
+  "retry_rounds_used": 1,
+  "kept_previous": 11,
   "source_counts": {
    "yahoo": 221
   },
