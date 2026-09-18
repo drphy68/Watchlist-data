@@ -787,9 +787,9 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1097,
-  "first": "2023-09-17",
-  "last": "2026-09-17"
+  "rows": 1096,
+  "first": "2023-09-18",
+  "last": "2026-09-18"
  },
  "NASDAQ:QUBT": {
   "status": "ok",
@@ -1426,9 +1426,9 @@
   "file": "TSE_268A.csv",
   "source": "yahoo",
   "source_code": "268A.T",
-  "rows": 463,
+  "rows": 464,
   "first": "2024-10-25",
-  "last": "2026-09-17"
+  "last": "2026-09-18"
  },
  "HKEX:2801": {
   "status": "ok",
@@ -1498,9 +1498,9 @@
   "file": "TSE_6125.csv",
   "source": "yahoo",
   "source_code": "6125.T",
-  "rows": 733,
+  "rows": 734,
   "first": "2023-09-19",
-  "last": "2026-09-17"
+  "last": "2026-09-18"
  },
  "SSE:688755": {
   "status": "ok",
@@ -1543,18 +1543,18 @@
   "file": "OTC_ASOMY.csv",
   "source": "yahoo",
   "source_code": "ASOMY",
-  "rows": 752,
+  "rows": 753,
   "first": "2023-09-18",
-  "last": "2026-09-16"
+  "last": "2026-09-17"
  },
  "MIL:BF-B": {
   "status": "ok",
   "file": "MIL_BF-B.csv",
   "source": "yahoo",
   "source_code": "BF.MI",
-  "rows": 542,
+  "rows": 543,
   "first": "2024-07-01",
-  "last": "2026-09-16"
+  "last": "2026-09-17"
  },
  "BME:CLR": {
   "status": "ok",
@@ -1606,9 +1606,9 @@
   "file": "OTC_RGAKF.csv",
   "source": "yahoo",
   "source_code": "RGAKF",
-  "rows": 147,
+  "rows": 148,
   "first": "2025-04-07",
-  "last": "2026-09-16"
+  "last": "2026-09-17"
  },
  "QSE:MFMS": {
   "status": "ok",
@@ -1706,9 +1706,9 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1097,
-  "first": "2023-09-17",
-  "last": "2026-09-17"
+  "rows": 1096,
+  "first": "2023-09-18",
+  "last": "2026-09-18"
  },
  "JJC": {
   "status": "failed",
@@ -2004,17 +2004,19 @@
   "last": "2026-09-17"
  },
  "_meta": {
-  "generated_utc": "2026-09-17T14:48:57.289127+00:00",
+  "generated_utc": "2026-09-18T00:35:50.799143+00:00",
   "script_version": "1.3",
-  "expected_last_us_session": "2026-09-16",
+  "expected_last_us_session": "2026-09-17",
   "reference_symbol": "AMEX:SPY",
   "reference_symbol_last": "2026-09-17",
-  "reference_symbol_at_expected": false,
+  "reference_symbol_at_expected": true,
   "us_symbols_total": 190,
-  "us_symbols_short": 0,
-  "us_symbols_short_examples": [],
-  "retry_rounds_used": 1,
-  "kept_previous": 1,
+  "us_symbols_short": 1,
+  "us_symbols_short_examples": [
+   "NASDAQ:AQWA"
+  ],
+  "retry_rounds_used": 3,
+  "kept_previous": 190,
   "source_counts": {
    "yahoo": 221
   },
