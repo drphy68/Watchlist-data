@@ -734,17 +734,17 @@
   "source": "yahoo",
   "source_code": "D05.SI",
   "rows": 755,
-  "first": "2023-09-29",
-  "last": "2026-09-29"
+  "first": "2023-10-02",
+  "last": "2026-09-30"
  },
  "SGX:ES3": {
   "status": "ok",
   "file": "SGX_ES3.csv",
   "source": "yahoo",
   "source_code": "ES3.SI",
-  "rows": 757,
-  "first": "2023-09-29",
-  "last": "2026-09-29"
+  "rows": 756,
+  "first": "2023-10-02",
+  "last": "2026-09-30"
  },
  "SGX:C6L": {
   "status": "ok",
@@ -752,17 +752,17 @@
   "source": "yahoo",
   "source_code": "C6L.SI",
   "rows": 755,
-  "first": "2023-09-29",
-  "last": "2026-09-29"
+  "first": "2023-10-02",
+  "last": "2026-09-30"
  },
  "HKEX:9926": {
   "status": "ok",
   "file": "HKEX_9926.csv",
   "source": "yahoo",
   "source_code": "9926.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-29",
-  "last": "2026-09-29"
+  "last": "2026-09-30"
  },
  "NASDAQ:TSLA": {
   "status": "ok",
@@ -787,9 +787,9 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1097,
-  "first": "2023-09-29",
-  "last": "2026-09-29"
+  "rows": 1096,
+  "first": "2023-09-30",
+  "last": "2026-09-30"
  },
  "NASDAQ:QUBT": {
   "status": "ok",
@@ -877,8 +877,8 @@
   "file": "NASDAQ_NDX.csv",
   "source": "yahoo",
   "source_code": "^NDX",
-  "rows": 752,
-  "first": "2023-09-29",
+  "rows": 751,
+  "first": "2023-10-02",
   "last": "2026-09-29"
  },
  "SPCFD:SPX": {
@@ -886,8 +886,8 @@
   "file": "SPCFD_SPX.csv",
   "source": "yahoo",
   "source_code": "^SPX",
-  "rows": 752,
-  "first": "2023-09-29",
+  "rows": 751,
+  "first": "2023-10-02",
   "last": "2026-09-29"
  },
  "NQ=F": {
@@ -958,8 +958,8 @@
   "file": "LSE_BRK-A.csv",
   "source": "yahoo",
   "source_code": "BRK-A",
-  "rows": 752,
-  "first": "2023-09-29",
+  "rows": 751,
+  "first": "2023-10-02",
   "last": "2026-09-29"
  },
  "NYSE:ANET": {
@@ -1300,8 +1300,8 @@
   "file": "OTC_TCEHY.csv",
   "source": "yahoo",
   "source_code": "TCEHY",
-  "rows": 752,
-  "first": "2023-09-29",
+  "rows": 751,
+  "first": "2023-10-02",
   "last": "2026-09-29"
  },
  "NYSE:EDU": {
@@ -1399,18 +1399,18 @@
   "file": "HKEX_0700.csv",
   "source": "yahoo",
   "source_code": "0700.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-29",
-  "last": "2026-09-29"
+  "last": "2026-09-30"
  },
  "HKEX:1211": {
   "status": "ok",
   "file": "HKEX_1211.csv",
   "source": "yahoo",
   "source_code": "1211.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-29",
-  "last": "2026-09-29"
+  "last": "2026-09-30"
  },
  "HKEX:1477": {
   "status": "ok",
@@ -1426,9 +1426,9 @@
   "file": "TSE_268A.csv",
   "source": "yahoo",
   "source_code": "268A.T",
-  "rows": 468,
+  "rows": 469,
   "first": "2024-10-25",
-  "last": "2026-09-29"
+  "last": "2026-09-30"
  },
  "HKEX:2801": {
   "status": "ok",
@@ -1499,8 +1499,8 @@
   "source": "yahoo",
   "source_code": "6125.T",
   "rows": 730,
-  "first": "2023-09-29",
-  "last": "2026-09-29"
+  "first": "2023-10-02",
+  "last": "2026-09-30"
  },
  "SSE:688755": {
   "status": "ok",
@@ -1516,18 +1516,18 @@
   "file": "HKEX_9626.csv",
   "source": "yahoo",
   "source_code": "9626.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-29",
-  "last": "2026-09-29"
+  "last": "2026-09-30"
  },
  "HKEX:9988": {
   "status": "ok",
   "file": "HKEX_9988.csv",
   "source": "yahoo",
   "source_code": "9988.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-09-29",
-  "last": "2026-09-29"
+  "last": "2026-09-30"
  },
  "LSE:ASC": {
   "status": "ok",
@@ -1544,17 +1544,17 @@
   "source": "yahoo",
   "source_code": "ASOMY",
   "rows": 751,
-  "first": "2023-09-29",
-  "last": "2026-09-28"
+  "first": "2023-10-02",
+  "last": "2026-09-29"
  },
  "MIL:BF-B": {
   "status": "ok",
   "file": "MIL_BF-B.csv",
   "source": "yahoo",
   "source_code": "BF.MI",
-  "rows": 550,
+  "rows": 551,
   "first": "2024-07-01",
-  "last": "2026-09-28"
+  "last": "2026-09-29"
  },
  "BME:CLR": {
   "status": "ok",
@@ -1706,9 +1706,9 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1097,
-  "first": "2023-09-29",
-  "last": "2026-09-29"
+  "rows": 1096,
+  "first": "2023-09-30",
+  "last": "2026-09-30"
  },
  "JJC": {
   "status": "failed",
@@ -2004,19 +2004,19 @@
   "last": "2026-09-29"
  },
  "_meta": {
-  "generated_utc": "2026-09-29T16:45:31.253911+00:00",
+  "generated_utc": "2026-09-30T01:38:46.926627+00:00",
   "script_version": "1.3",
-  "expected_last_us_session": "2026-09-28",
+  "expected_last_us_session": "2026-09-29",
   "reference_symbol": "AMEX:SPY",
   "reference_symbol_last": "2026-09-29",
-  "reference_symbol_at_expected": false,
+  "reference_symbol_at_expected": true,
   "us_symbols_total": 190,
   "us_symbols_short": 1,
   "us_symbols_short_examples": [
    "OTC:RGAKF"
   ],
   "retry_rounds_used": 3,
-  "kept_previous": 20,
+  "kept_previous": 190,
   "source_counts": {
    "yahoo": 221
   },
