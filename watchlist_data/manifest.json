@@ -67,9 +67,9 @@
   "file": "CBOE_VIX.csv",
   "source": "yahoo",
   "source_code": "^VIX",
-  "rows": 755,
+  "rows": 756,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "ICEUS:DXY": {
   "status": "ok",
@@ -78,7 +78,7 @@
   "source_code": "DX-Y.NYB",
   "rows": 756,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "OANDA:XAUUSD": {
   "status": "ok",
@@ -87,7 +87,7 @@
   "source_code": "GC=F",
   "rows": 757,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "NASDAQ:NVDA": {
   "status": "ok",
@@ -742,7 +742,7 @@
   "file": "SGX_ES3.csv",
   "source": "yahoo",
   "source_code": "ES3.SI",
-  "rows": 753,
+  "rows": 754,
   "first": "2023-10-09",
   "last": "2026-10-09"
  },
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-10-09",
   "last": "2026-10-09"
  },
@@ -897,7 +897,7 @@
   "source_code": "NQ=F",
   "rows": 757,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "CBOE:UVIX": {
   "status": "ok",
@@ -1536,7 +1536,7 @@
   "source_code": "ASC.L",
   "rows": 760,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "OTC:ASOMY": {
   "status": "ok",
@@ -1563,7 +1563,7 @@
   "source_code": "CLR.MC",
   "rows": 766,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "LSE:DEBS": {
   "status": "ok",
@@ -1572,16 +1572,16 @@
   "source_code": "DEBS.L",
   "rows": 760,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "SIX:NESN": {
   "status": "ok",
   "file": "SIX_NESN.csv",
   "source": "yahoo",
   "source_code": "NESN.SW",
-  "rows": 751,
+  "rows": 752,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "LSE:SVT": {
   "status": "ok",
@@ -1590,7 +1590,7 @@
   "source_code": "SVT.L",
   "rows": 760,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "EURONEXT:VIE": {
   "status": "ok",
@@ -1599,7 +1599,7 @@
   "source_code": "VIE.PA",
   "rows": 766,
   "first": "2023-10-09",
-  "last": "2026-10-08"
+  "last": "2026-10-09"
  },
  "OTC:RGAKF": {
   "status": "ok",
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-10-09",
   "last": "2026-10-09"
  },
@@ -2004,7 +2004,7 @@
   "last": "2026-10-08"
  },
  "_meta": {
-  "generated_utc": "2026-10-09T02:28:23.173736+00:00",
+  "generated_utc": "2026-10-09T08:12:58.187556+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-10-08",
   "reference_symbol": "AMEX:SPY",
@@ -2016,7 +2016,7 @@
    "OTC:RGAKF"
   ],
   "retry_rounds_used": 3,
-  "kept_previous": 8,
+  "kept_previous": 3,
   "source_counts": {
    "yahoo": 221
   },
