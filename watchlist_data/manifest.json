@@ -742,7 +742,7 @@
   "file": "SGX_ES3.csv",
   "source": "yahoo",
   "source_code": "ES3.SI",
-  "rows": 755,
+  "rows": 754,
   "first": "2023-10-23",
   "last": "2026-10-23"
  },
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-10-24",
   "last": "2026-10-24"
  },
@@ -1381,18 +1381,18 @@
   "file": "TPEX_00845B.csv",
   "source": "yahoo",
   "source_code": "00845B.TWO",
-  "rows": 729,
+  "rows": 730,
   "first": "2023-10-23",
-  "last": "2026-10-22"
+  "last": "2026-10-23"
  },
  "TWSE:00885": {
   "status": "ok",
   "file": "TWSE_00885.csv",
   "source": "yahoo",
   "source_code": "00885.TW",
-  "rows": 729,
+  "rows": 730,
   "first": "2023-10-23",
-  "last": "2026-10-22"
+  "last": "2026-10-23"
  },
  "HKEX:0700": {
   "status": "ok",
@@ -1435,7 +1435,7 @@
   "file": "HKEX_2801.csv",
   "source": "yahoo",
   "source_code": "2801.HK",
-  "rows": 737,
+  "rows": 736,
   "first": "2023-10-24",
   "last": "2026-10-23"
  },
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-10-24",
   "last": "2026-10-24"
  },
@@ -2004,7 +2004,7 @@
   "last": "2026-10-23"
  },
  "_meta": {
-  "generated_utc": "2026-10-24T06:39:41.189127+00:00",
+  "generated_utc": "2026-10-24T14:14:58.404940+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-10-23",
   "reference_symbol": "AMEX:SPY",
@@ -2016,7 +2016,7 @@
    "OTC:RGAKF"
   ],
   "retry_rounds_used": 3,
-  "kept_previous": 11,
+  "kept_previous": 1,
   "source_counts": {
    "yahoo": 221
   },
