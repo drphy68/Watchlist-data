@@ -67,9 +67,9 @@
   "file": "CBOE_VIX.csv",
   "source": "yahoo",
   "source_code": "^VIX",
-  "rows": 755,
+  "rows": 756,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "ICEUS:DXY": {
   "status": "ok",
@@ -78,7 +78,7 @@
   "source_code": "DX-Y.NYB",
   "rows": 756,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "OANDA:XAUUSD": {
   "status": "ok",
@@ -87,7 +87,7 @@
   "source_code": "GC=F",
   "rows": 757,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "NASDAQ:NVDA": {
   "status": "ok",
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-11-13",
   "last": "2026-11-13"
  },
@@ -897,7 +897,7 @@
   "source_code": "NQ=F",
   "rows": 757,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "CBOE:UVIX": {
   "status": "ok",
@@ -1534,9 +1534,9 @@
   "file": "LSE_ASC.csv",
   "source": "yahoo",
   "source_code": "ASC.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "OTC:ASOMY": {
   "status": "ok",
@@ -1563,16 +1563,16 @@
   "source_code": "CLR.MC",
   "rows": 766,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "LSE:DEBS": {
   "status": "ok",
   "file": "LSE_DEBS.csv",
   "source": "yahoo",
   "source_code": "DEBS.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "SIX:NESN": {
   "status": "ok",
@@ -1581,16 +1581,16 @@
   "source_code": "NESN.SW",
   "rows": 751,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "LSE:SVT": {
   "status": "ok",
   "file": "LSE_SVT.csv",
   "source": "yahoo",
   "source_code": "SVT.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "EURONEXT:VIE": {
   "status": "ok",
@@ -1599,7 +1599,7 @@
   "source_code": "VIE.PA",
   "rows": 766,
   "first": "2023-11-13",
-  "last": "2026-11-12"
+  "last": "2026-11-13"
  },
  "OTC:RGAKF": {
   "status": "ok",
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-11-13",
   "last": "2026-11-13"
  },
@@ -2004,7 +2004,7 @@
   "last": "2026-11-12"
  },
  "_meta": {
-  "generated_utc": "2026-11-13T02:58:16.047766+00:00",
+  "generated_utc": "2026-11-13T08:58:23.196677+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-11-12",
   "reference_symbol": "AMEX:SPY",
@@ -2016,7 +2016,7 @@
    "NASDAQ:ROKU"
   ],
   "retry_rounds_used": 3,
-  "kept_previous": 8,
+  "kept_previous": 2,
   "source_counts": {
    "yahoo": 221
   },
