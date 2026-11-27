@@ -67,9 +67,9 @@
   "file": "CBOE_VIX.csv",
   "source": "yahoo",
   "source_code": "^VIX",
-  "rows": 756,
+  "rows": 757,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "ICEUS:DXY": {
   "status": "ok",
@@ -78,7 +78,7 @@
   "source_code": "DX-Y.NYB",
   "rows": 756,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "OANDA:XAUUSD": {
   "status": "ok",
@@ -87,7 +87,7 @@
   "source_code": "GC=F",
   "rows": 756,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "NASDAQ:NVDA": {
   "status": "ok",
@@ -742,7 +742,7 @@
   "file": "SGX_ES3.csv",
   "source": "yahoo",
   "source_code": "ES3.SI",
-  "rows": 754,
+  "rows": 755,
   "first": "2023-11-27",
   "last": "2026-11-27"
  },
@@ -787,7 +787,7 @@
   "file": "BITSTAMP_BTCUSD.csv",
   "source": "yahoo",
   "source_code": "BTC-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-11-27",
   "last": "2026-11-27"
  },
@@ -897,7 +897,7 @@
   "source_code": "NQ=F",
   "rows": 756,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "CBOE:UVIX": {
   "status": "ok",
@@ -1381,16 +1381,16 @@
   "file": "TPEX_00845B.csv",
   "source": "yahoo",
   "source_code": "00845B.TWO",
-  "rows": 728,
+  "rows": 729,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "TWSE:00885": {
   "status": "ok",
   "file": "TWSE_00885.csv",
   "source": "yahoo",
   "source_code": "00885.TW",
-  "rows": 728,
+  "rows": 729,
   "first": "2023-11-27",
   "last": "2026-11-27"
  },
@@ -1435,7 +1435,7 @@
   "file": "HKEX_2801.csv",
   "source": "yahoo",
   "source_code": "2801.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-11-27",
   "last": "2026-11-27"
  },
@@ -1471,7 +1471,7 @@
   "file": "HKEX_3067.csv",
   "source": "yahoo",
   "source_code": "3067.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-11-27",
   "last": "2026-11-27"
  },
@@ -1480,7 +1480,7 @@
   "file": "HKEX_3088.csv",
   "source": "yahoo",
   "source_code": "3088.HK",
-  "rows": 737,
+  "rows": 738,
   "first": "2023-11-27",
   "last": "2026-11-27"
  },
@@ -1534,9 +1534,9 @@
   "file": "LSE_ASC.csv",
   "source": "yahoo",
   "source_code": "ASC.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "OTC:ASOMY": {
   "status": "ok",
@@ -1561,45 +1561,45 @@
   "file": "BME_CLR.csv",
   "source": "yahoo",
   "source_code": "CLR.MC",
-  "rows": 766,
+  "rows": 767,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "LSE:DEBS": {
   "status": "ok",
   "file": "LSE_DEBS.csv",
   "source": "yahoo",
   "source_code": "DEBS.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "SIX:NESN": {
   "status": "ok",
   "file": "SIX_NESN.csv",
   "source": "yahoo",
   "source_code": "NESN.SW",
-  "rows": 751,
+  "rows": 752,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "LSE:SVT": {
   "status": "ok",
   "file": "LSE_SVT.csv",
   "source": "yahoo",
   "source_code": "SVT.L",
-  "rows": 760,
+  "rows": 761,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "EURONEXT:VIE": {
   "status": "ok",
   "file": "EURONEXT_VIE.csv",
   "source": "yahoo",
   "source_code": "VIE.PA",
-  "rows": 766,
+  "rows": 767,
   "first": "2023-11-27",
-  "last": "2026-11-26"
+  "last": "2026-11-27"
  },
  "OTC:RGAKF": {
   "status": "ok",
@@ -1706,7 +1706,7 @@
   "file": "MANA-USD.csv",
   "source": "yahoo",
   "source_code": "MANA-USD",
-  "rows": 1096,
+  "rows": 1097,
   "first": "2023-11-27",
   "last": "2026-11-27"
  },
@@ -2004,7 +2004,7 @@
   "last": "2026-11-25"
  },
  "_meta": {
-  "generated_utc": "2026-11-27T04:34:05.792761+00:00",
+  "generated_utc": "2026-11-27T10:21:57.350848+00:00",
   "script_version": "1.3",
   "expected_last_us_session": "2026-11-25",
   "reference_symbol": "AMEX:SPY",
@@ -2017,7 +2017,7 @@
    "NASDAQ:ROKU"
   ],
   "retry_rounds_used": 3,
-  "kept_previous": 9,
+  "kept_previous": 3,
   "source_counts": {
    "yahoo": 221
   },
